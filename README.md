@@ -55,6 +55,20 @@ All modules are mapped to **CSTA K-12 Standards**.
 | [Resource Hub](./docs/resource-hub.md) | Website and portal vision |
 | [Platform & Tools](./docs/platform-tools.md) | Technology stack recommendations |
 
+---
+
+## 🤝 Contributing
+
+Want to help Block Buddies grow? We welcome contributions from parents, educators, tech volunteers, community organizers, and even AI assistants.
+
+| Document | Description |
+|----------|-------------|
+| **[Contributing Guide](./CONTRIBUTING.md)** | ⭐ Start here—how to contribute |
+| [Contributor Types](./docs/contributor-types.md) | Roles for parents, educators, tech volunteers, orgs, AI |
+| [Governance](./docs/governance.md) | How we make decisions and grow sustainably |
+
+---
+
 ## Quick Links
 
 - 🎯 [MVP Definition](./docs/mvp.md) - What we need to launch
