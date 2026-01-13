@@ -1,8 +1,54 @@
 # Curriculum Ideas
 
+## The Dynamic, Nested Curriculum Matrix
+
+Block Buddies uses a **Decision Tree** approach rather than a linear path. A rigid curriculum fails when facing the variable baselines of modern digital literacy.
+
+### Curriculum Entry Process
+
+```
+┌─────────────────────────────────────────────────────────────┐
+│  STEP 1: Diagnostic Protocol ("The Sorting Hat")            │
+│  → 5-minute assessment to determine Tech Fluency & Archetype│
+│  → See: diagnostic-protocol.md                              │
+├─────────────────────────────────────────────────────────────┤
+│  STEP 2: Core Trunk (Universal Skills)                      │
+│  → File Systems, Backups, Digital Safety                    │
+│  → All students complete before specialization              │
+│  → See: core-trunk.md                                       │
+├─────────────────────────────────────────────────────────────┤
+│  STEP 3: Specialization Track (Based on Archetype)          │
+│  → Track A: Visualist (Builders) - Resource Packs, Shaders  │
+│  → Track B: Mechanist (Engineers) - Redstone, Create Mod    │
+│  → Track C: Operator (Admins) - Servers, Permissions        │
+└─────────────────────────────────────────────────────────────┘
+```
+
+### Tech Fluency Levels
+
+| Level | Profile | Instructional Strategy |
+|-------|---------|----------------------|
+| **0** | iPad Native | Heavy scaffolding, 80% on OS navigation |
+| **1** | Gamer | Bridge building, consumer → creator |
+| **2** | Tinkerer | Challenge mode, focus on "why" |
+
+### Archetype Specializations
+
+| Code | Profile | Entry Point |
+|------|---------|-------------|
+| **A** | Visualist | Resource Packs, Shaders |
+| **B** | Mechanist | Redstone, Create Mod |
+| **C** | Operator | Server Config, Permissions |
+
+For detailed assessment, see [Diagnostic Protocol](diagnostic-protocol.md).
+
+---
+
 ## Philosophy
 
 > **"Build first, explain later"**
+
+
 
 Kids learn best by DOING, then understanding WHY. Every session should have them creating something, not just listening.
 

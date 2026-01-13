@@ -23,6 +23,20 @@ The **Teen Mentor (14-17)** is not a traditional teacher, but a **"hacker" impar
 
 Every lesson begins with a desirable in-game outcome—such as night vision or a lightning sword—and works backward to the necessary technical skill.
 
+### Related Curriculum Documents
+
+> For the complete curriculum framework, see these companion documents:
+
+| Document | Description |
+|----------|-------------|
+| [Diagnostic Protocol](diagnostic-protocol.md) | The "Sorting Hat" — 5-minute assessment to profile mentees |
+| [Core Trunk](core-trunk.md) | Universal prerequisite skills (File Systems, Backups, Safety) |
+| [Track A: Visualist](track-a-visualist.md) | Specialization for Builders (Resource Packs, Shaders) |
+| [Track B: Mechanist](track-b-mechanist.md) | Specialization for Engineers (Redstone, Create Mod) |
+| [Track C: Operator](track-c-operator.md) | Specialization for Admins (Servers, Permissions) |
+| [Troubleshooting Framework](troubleshooting-framework.md) | Debugging skills and "Friction Points" curriculum |
+| [Mentor Pedagogy](mentor-pedagogy.md) | Teaching skills (Socratic Method, Scaffolding) |
+
 ### Non-Negotiable Constraints
 
 - ❌ No automated installers
