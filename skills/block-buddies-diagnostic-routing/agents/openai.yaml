@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies Diagnostic Routing"
+  short_description: "Maintain fluency-archetype routing across docs and forms"
+  default_prompt: "Ensure diagnostic profile coding and routing remain consistent across curriculum docs and intake forms."

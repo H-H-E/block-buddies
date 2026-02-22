@@ -1,28 +1,30 @@
-# Success Metrics
+# Success Metrics (V2)
 
-## What Does Success Look Like?
+## Program Success
 
-- **First Cohort**: Complete without safety issues, 50%+ would do it again
-- **First Year**: 3+ cohorts, steady pipeline, less founder involvement needed
-- **Long Term**: Replicable model with proven impact
+1. Learners finish the 8-session spine with no safety incidents.
+2. Mentors can execute runbooks with low improvisation burden.
+3. Families report clarity and confidence in program structure.
 
-## Key Metrics
+## Core Metrics
 
-| Category | Metric | MVP Target |
-|----------|--------|------------|
-| Engagement | Session completion rate | 75% |
-| Retention | Program completion | 60% |
-| Quality | Satisfaction (all parties) | 4+/5 |
+| Category | Metric | Target |
+|---|---|---|
 | Safety | Incidents | 0 |
+| Engagement | Session completion rate | >= 80% |
+| Progress | Session pass rate (Do + one) | >= 70% |
+| Retention | Program completion | >= 60% |
+| Quality | Parent + mentor satisfaction | >= 4/5 |
 
-## Feedback Collection
+## Leading Indicators
 
-- **Each session**: Quick emoji rating from mentee
-- **Mid-program**: Short parent/mentor check-in
-- **End of program**: Detailed surveys for all parties
+- Early win achieved by minute 10
+- Fallback activation rate by fluency band
+- Debug retrieval trigger frequency
+- Runbook compliance rate
 
 ## Red Flags
 
-- <50% session completion → engagement issue
-- Multiple early dropouts → matching/onboarding problem
-- Parent complaints → immediate review needed
+- High hard-cap triggers in one runbook
+- Frequent Do failures in same session index
+- Repeated mismatch between profile code and assigned track

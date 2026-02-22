@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies Workflow Orchestrator"
+  short_description: "Coordinate Block Buddies specialized skills in repeatable flows"
+  default_prompt: "Choose and sequence Block Buddies skills for the current task, then provide a deterministic multi-skill execution plan."

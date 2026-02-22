@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies V2 Canon Guardian"
+  short_description: "Enforce Pedagogy V2 canonical rules across all surfaces"
+  default_prompt: "Audit and align Block Buddies changes to Pedagogy Engine V2, identifying conflicts and required updates."

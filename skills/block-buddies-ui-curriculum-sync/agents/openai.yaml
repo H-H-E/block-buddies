@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies UI Curriculum Sync"
+  short_description: "Keep UI curriculum data aligned with canonical docs"
+  default_prompt: "Sync curriculum UI types/data/pages with canonical docs and report any mismatch."

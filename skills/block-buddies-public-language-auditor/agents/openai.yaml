@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies Public Language Auditor"
+  short_description: "Audit public-facing language for V2 messaging compliance"
+  default_prompt: "Review and revise public-facing copy to match the language guide while preserving meaning."

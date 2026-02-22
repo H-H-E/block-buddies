@@ -44,8 +44,9 @@ const benefits = [
 const expectations = [
   'Weekly 45-minute video call sessions with your mentee',
   '8-week minimum commitment (most mentors stay longer!)',
-  '15-20 minutes of prep time using our provided materials',
+  '15-20 minutes of prep with a structured runbook',
   'Being patient, encouraging, and a good role model',
+  'Track Do/Explain/Debug mastery results after each session',
   'Following our safety guidelines and code of conduct',
 ];
 
@@ -186,9 +187,9 @@ const ForTeens = () => {
               
               <ul className="space-y-4">
                 {[
-                  { icon: FileText, text: 'Complete lesson plans and teaching materials' },
+                  { icon: FileText, text: 'Session runbooks with fallback options' },
                   { icon: MessageCircle, text: 'Access to mentor community & support' },
-                  { icon: Sparkles, text: 'Training on teaching and communication' },
+                  { icon: Sparkles, text: 'Training on coaching and controlled challenge' },
                   { icon: Award, text: 'Certificate and potential letter of recommendation' },
                   { icon: Heart, text: 'The satisfaction of making a real difference' },
                 ].map((item) => (

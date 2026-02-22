@@ -1,80 +1,43 @@
-# Block Buddies 🎮
+# Block Buddies
 
-> Teens teaching kids to code through Minecraft—using the "Trojan Horse" pedagogy.
+> Teen mentors help pre-teens build real tech skills through Minecraft-powered, confidence-first learning.
 
-## The Concept
+## What Block Buddies Is
 
-Block Buddies is a volunteer network where **Teen Mentors (14-17)** teach **Pre-teens (9-12)** real systems administration skills through Minecraft. We reject sanitized "edutainment"—instead, we use the messy, text-based reality of file management, command-line interfaces, and configuration debugging.
+Block Buddies is a mentorship program where teen mentors (14-17) guide pre-teens (9-12) through practical computer science concepts using hands-on Minecraft projects.
 
-**The secret**: Kids think they're learning to "hack" their game. They're actually learning Computer Science fundamentals.
+## Pedagogy V2
 
-### The "Trojan Horse" Pedagogy
+Our teaching model is now standardized around:
 
-Every lesson starts with a **Cool Result First**—night vision, a lightning sword, a custom mob—and works backward to the necessary technical skill. No automated installers. No GUI configuration. **Friction is the teacher.**
+- Success-first session starts
+- Controlled friction with intervention limits
+- Mastery-gated progression (Do/Explain/Debug)
+- Progressive side-quest disclosure
+- Personalized pacing by session index
 
----
+Canonical reference: [Pedagogy Engine V2](./docs/pedagogy/engine-v2.md)
 
-## 🎓 The Mastery Tree (Core Curriculum)
+## Curriculum Structure
 
-**[📖 View the Complete Mastery Tree →](./docs/mastery-tree.md)**
+1. **Core Trunk** (universal prerequisites)
+2. **Track A: Visualist**
+3. **Track B: Mechanist**
+4. **Track C: Operator**
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│  PHASE 1: THE MECHANIC                                          │
-│  Local Files & Optimization                                     │
-│  └── File systems, config editing, RAM management               │
-├─────────────────────────────────────────────────────────────────┤
-│  PHASE 2: THE NETWORK ENGINEER                                  │
-│  Servers & IPs                                                  │
-│  └── Client-server model, TCP/IP, ports, latency                │
-├─────────────────────────────────────────────────────────────────┤
-│  PHASE 3: THE PROGRAMMER                                        │
-│  Logic & Scripting                                              │
-│  └── Boolean logic (Redstone), JSON, NBT, command syntax        │
-├─────────────────────────────────────────────────────────────────┤
-│  PHASE 4: THE ADMIN                                             │
-│  Maintenance & Ethics                                           │
-│  └── Backups, access control, disaster recovery, ethics         │
-└─────────────────────────────────────────────────────────────────┘
-```
+Program spine: 8 sessions with runbooks in [`docs/runbooks`](./docs/runbooks/session-01-diagnostic-trust-win.md).
 
-All modules are mapped to **CSTA K-12 Standards**.
+## Key Documents
 
----
+- [Mastery Tree](./docs/mastery-tree.md)
+- [Curriculum Matrix](./docs/curriculum.md)
+- [Diagnostic Protocol](./docs/diagnostic-protocol.md)
+- [Mentor Pedagogy](./docs/mentor-pedagogy.md)
+- [Troubleshooting Framework](./docs/troubleshooting-framework.md)
+- [Mentorship Program](./docs/mentorship-program.md)
+- [MVP Definition](./docs/mvp.md)
+- [Success Metrics](./docs/metrics.md)
 
-## Program Structure
+## Public Messaging Principle
 
-| Document | Description |
-|----------|-------------|
-| **[Mastery Tree](./docs/mastery-tree.md)** | ⭐ The complete 4-phase technical curriculum |
-| [Mentorship Program](./docs/mentorship-program.md) | How the buddy system works |
-| [Safety & Guidelines](./docs/safety-guidelines.md) | Rules for safe, effective mentoring |
-| [Value Proposition](./docs/value-proposition.md) | What everyone gets out of this |
-| [Potential Challenges](./docs/challenges.md) | Problems to anticipate and solve |
-| [Curriculum Ideas](./docs/curriculum.md) | Additional learning path ideas |
-| [Resource Hub](./docs/resource-hub.md) | Website and portal vision |
-| [Platform & Tools](./docs/platform-tools.md) | Technology stack recommendations |
-
----
-
-## 🤝 Contributing
-
-Want to help Block Buddies grow? We welcome contributions from parents, educators, tech volunteers, community organizers, and even AI assistants.
-
-| Document | Description |
-|----------|-------------|
-| **[Contributing Guide](./CONTRIBUTING.md)** | ⭐ Start here—how to contribute |
-| [Contributor Types](./docs/contributor-types.md) | Roles for parents, educators, tech volunteers, orgs, AI |
-| [Governance](./docs/governance.md) | How we make decisions and grow sustainably |
-
----
-
-## Quick Links
-
-- 🎯 [MVP Definition](./docs/mvp.md) - What we need to launch
-- 📊 [Success Metrics](./docs/metrics.md) - How we measure success
-- 📋 [Open Questions](./brainstorm/open-questions.md) - Unresolved brainstorms
-
----
-
-*"They do not just learn to play the game; they learn to administer the system."*
+Public pages use family-friendly framing (confidence-first, game-based learning). Internal mentor docs may use internal pedagogical shorthand when useful.

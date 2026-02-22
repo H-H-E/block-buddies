@@ -5,6 +5,7 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
+import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
 import { 
   ArrowRight, 
@@ -28,9 +29,15 @@ const steps = [
 ];
 
 const experienceLevels = [
-  { value: 'beginner', label: 'Beginner', description: 'Just started playing or plays casually' },
-  { value: 'intermediate', label: 'Intermediate', description: 'Comfortable with most game mechanics' },
-  { value: 'advanced', label: 'Advanced', description: 'Has done some modding or server work' },
+  { value: '0', label: 'Fluency 0', description: 'Needs heavy step-by-step support with files/setup' },
+  { value: '1', label: 'Fluency 1', description: 'Can follow guided steps and complete simple edits' },
+  { value: '2', label: 'Fluency 2', description: 'Can work independently and handle debugging challenges' },
+];
+
+const archetypeOptions = [
+  { value: 'A', label: 'Track A: Visualist', description: 'Loves design, textures, and visuals' },
+  { value: 'B', label: 'Track B: Mechanist', description: 'Loves logic, automation, and systems' },
+  { value: 'C', label: 'Track C: Operator', description: 'Loves servers, rules, and moderation tools' },
 ];
 
 const learningGoals = [
@@ -68,9 +75,11 @@ const MenteeApplication = () => {
     parentName: '',
     parentEmail: '',
     parentPhone: '',
-    experienceLevel: '',
+    fluencyLevel: '',
+    archetypePreference: '',
     learningGoals: [] as string[],
     availability: [] as string[],
+    accessibilityNeeds: '',
     computerType: '',
     internetQuality: '',
     hasMinecraft: false,
@@ -79,7 +88,7 @@ const MenteeApplication = () => {
     safetyAcknowledgment: false,
   });
 
-  const updateFormData = (field: string, value: any) => {
+  const updateFormData = (field: string, value: string | boolean | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
@@ -113,13 +122,22 @@ const MenteeApplication = () => {
       case 2:
         return formData.parentName && formData.parentEmail;
       case 3:
-        return formData.experienceLevel && formData.learningGoals.length > 0 && formData.availability.length > 0;
+        return (
+          formData.fluencyLevel &&
+          formData.archetypePreference &&
+          formData.learningGoals.length > 0 &&
+          formData.availability.length > 0
+        );
       case 4:
         return formData.hasMinecraft && formData.hasWebcam && formData.parentalConsent && formData.safetyAcknowledgment;
       default:
         return false;
     }
   };
+
+  const profileCode = formData.fluencyLevel && formData.archetypePreference
+    ? `${formData.fluencyLevel}-${formData.archetypePreference}`
+    : '';
 
   return (
     <Layout>
@@ -269,14 +287,14 @@ const MenteeApplication = () => {
                     <h2 className="font-display text-xl font-bold mb-6">Experience & Goals</h2>
                     
                     <div>
-                      <Label className="mb-3 block">Your child's Minecraft experience *</Label>
+                      <Label className="mb-3 block">Current learner fluency *</Label>
                       <div className="space-y-3">
                         {experienceLevels.map((level) => (
                           <div
                             key={level.value}
-                            onClick={() => updateFormData('experienceLevel', level.value)}
+                            onClick={() => updateFormData('fluencyLevel', level.value)}
                             className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                              formData.experienceLevel === level.value
+                              formData.fluencyLevel === level.value
                                 ? 'border-secondary bg-secondary/10'
                                 : 'border-border hover:border-secondary/50'
                             }`}
@@ -286,6 +304,44 @@ const MenteeApplication = () => {
                           </div>
                         ))}
                       </div>
+                    </div>
+
+                    <div>
+                      <Label className="mb-3 block">Preferred starting track *</Label>
+                      <div className="space-y-3">
+                        {archetypeOptions.map((option) => (
+                          <div
+                            key={option.value}
+                            onClick={() => updateFormData('archetypePreference', option.value)}
+                            className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                              formData.archetypePreference === option.value
+                                ? 'border-secondary bg-secondary/10'
+                                : 'border-border hover:border-secondary/50'
+                            }`}
+                          >
+                            <div className="font-medium">{option.label}</div>
+                            <div className="text-sm text-muted-foreground">{option.description}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="accessibilityNeeds">Accessibility or support needs (optional)</Label>
+                      <Textarea
+                        id="accessibilityNeeds"
+                        value={formData.accessibilityNeeds}
+                        onChange={(e) => updateFormData('accessibilityNeeds', e.target.value)}
+                        placeholder="Anything that helps us support your child better (attention, reading support, device constraints, etc.)"
+                        className="mt-1 min-h-[96px]"
+                      />
+                    </div>
+
+                    <div className="rounded-lg border border-secondary/30 bg-secondary/5 p-4">
+                      <p className="text-sm font-medium">Profile code preview</p>
+                      <p className="text-sm text-muted-foreground mt-1">
+                        {profileCode || 'Select fluency and track to generate profile code'}
+                      </p>
                     </div>
 
                     <div>

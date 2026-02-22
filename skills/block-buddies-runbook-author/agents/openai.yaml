@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies Runbook Author"
+  short_description: "Create and maintain S01-S08 runbooks with V2 contracts"
+  default_prompt: "Draft or update Block Buddies runbooks using the required V2 frontmatter, loop structure, and mastery gates."

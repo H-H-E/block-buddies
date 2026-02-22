@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies Ops Alignment"
+  short_description: "Align MVP, metrics, and ops docs with Pedagogy V2"
+  default_prompt: "Audit and align ops/program docs with V2 pedagogy rules, pacing policy, and mastery gates."

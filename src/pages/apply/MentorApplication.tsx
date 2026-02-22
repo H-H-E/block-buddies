@@ -39,6 +39,18 @@ const experienceOptions = [
   'Server administration',
 ];
 
+const trackOptions = [
+  { value: 'visualist', label: 'Track A: Visualist (design and visuals)' },
+  { value: 'mechanist', label: 'Track B: Mechanist (logic and automation)' },
+  { value: 'operator', label: 'Track C: Operator (servers and roles)' },
+];
+
+const fluencySupportOptions = [
+  { value: '0', label: 'Fluency 0: heavy scaffolding' },
+  { value: '1', label: 'Fluency 1: guided practice' },
+  { value: '2', label: 'Fluency 2: challenge/fade mode' },
+];
+
 const availabilityOptions = [
   'Monday afternoons',
   'Monday evenings',
@@ -66,18 +78,21 @@ const MentorApplication = () => {
     email: '',
     parentEmail: '',
     experience: [] as string[],
+    preferredTrack: '',
+    supportedFluency: [] as string[],
     whyMentor: '',
     availability: [] as string[],
     codeOfConduct: false,
     parentApproval: false,
     commitment: false,
+    masteryLogging: false,
   });
 
-  const updateFormData = (field: string, value: any) => {
+  const updateFormData = (field: string, value: string | boolean | string[]) => {
     setFormData(prev => ({ ...prev, [field]: value }));
   };
 
-  const toggleArrayItem = (field: 'experience' | 'availability', item: string) => {
+  const toggleArrayItem = (field: 'experience' | 'availability' | 'supportedFluency', item: string) => {
     setFormData(prev => ({
       ...prev,
       [field]: prev[field].includes(item)
@@ -105,11 +120,16 @@ const MentorApplication = () => {
       case 1:
         return formData.name && formData.age && formData.email && formData.parentEmail;
       case 2:
-        return formData.experience.length > 0 && formData.whyMentor;
+        return (
+          formData.experience.length > 0 &&
+          formData.whyMentor &&
+          formData.preferredTrack &&
+          formData.supportedFluency.length > 0
+        );
       case 3:
         return formData.availability.length > 0;
       case 4:
-        return formData.codeOfConduct && formData.parentApproval && formData.commitment;
+        return formData.codeOfConduct && formData.parentApproval && formData.commitment && formData.masteryLogging;
       default:
         return false;
     }
@@ -251,7 +271,7 @@ const MentorApplication = () => {
                     exit={{ opacity: 0, x: -20 }}
                     className="space-y-6"
                   >
-                    <h2 className="font-display text-xl font-bold mb-6">Your Minecraft Experience</h2>
+                    <h2 className="font-display text-xl font-bold mb-6">Experience & Track Fit</h2>
                     
                     <div>
                       <Label className="mb-3 block">What have you done with Minecraft? *</Label>
@@ -269,6 +289,47 @@ const MentorApplication = () => {
                             <div className="flex items-center gap-2">
                               <Checkbox checked={formData.experience.includes(option)} />
                               <span className="text-sm">{option}</span>
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label className="mb-3 block">Preferred mentoring track *</Label>
+                      <div className="space-y-3">
+                        {trackOptions.map((option) => (
+                          <div
+                            key={option.value}
+                            onClick={() => updateFormData('preferredTrack', option.value)}
+                            className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                              formData.preferredTrack === option.value
+                                ? 'border-primary bg-primary/10 text-foreground'
+                                : 'border-border hover:border-primary/50'
+                            }`}
+                          >
+                            <div className="text-sm">{option.label}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label className="mb-3 block">Which learner fluency levels can you support? *</Label>
+                      <div className="grid sm:grid-cols-1 gap-3">
+                        {fluencySupportOptions.map((option) => (
+                          <div
+                            key={option.value}
+                            onClick={() => toggleArrayItem('supportedFluency', option.value)}
+                            className={`p-3 rounded-lg border cursor-pointer transition-all ${
+                              formData.supportedFluency.includes(option.value)
+                                ? 'border-primary bg-primary/10 text-foreground'
+                                : 'border-border hover:border-primary/50'
+                            }`}
+                          >
+                            <div className="flex items-center gap-2">
+                              <Checkbox checked={formData.supportedFluency.includes(option.value)} />
+                              <span className="text-sm">{option.label}</span>
                             </div>
                           </div>
                         ))}
@@ -369,6 +430,25 @@ const MentorApplication = () => {
                             <span className="font-medium">I have my parent/guardian's approval *</span>
                             <p className="text-sm text-muted-foreground mt-1">
                               My parent or guardian knows about and supports my participation in this program.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        onClick={() => updateFormData('masteryLogging', !formData.masteryLogging)}
+                        className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                          formData.masteryLogging
+                            ? 'border-primary bg-primary/10'
+                            : 'border-border hover:border-primary/50'
+                        }`}
+                      >
+                        <div className="flex items-start gap-3">
+                          <Checkbox checked={formData.masteryLogging} className="mt-1" />
+                          <div>
+                            <span className="font-medium">I agree to record Do/Explain/Debug outcomes each session *</span>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              I understand V2 delivery requires brief structured session notes.
                             </p>
                           </div>
                         </div>

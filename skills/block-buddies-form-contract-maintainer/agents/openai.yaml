@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies Form Contract Maintainer"
+  short_description: "Maintain intake field contracts for matching and pacing"
+  default_prompt: "Update mentee/mentor intake forms to satisfy V2 profile, matching, and pacing data requirements."

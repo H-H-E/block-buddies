@@ -16,8 +16,8 @@ import {
 const values = [
   {
     icon: Lightbulb,
-    title: 'Trojan Horse Learning',
-    description: 'Kids think they\'re learning to "hack" their game—but they\'re actually mastering file systems, networking, and programming.',
+    title: 'Interest-First Learning',
+    description: 'We start from projects kids care about and turn that motivation into real file, network, and logic skills.',
   },
   {
     icon: Users,
@@ -32,7 +32,7 @@ const values = [
   {
     icon: Target,
     title: 'Real Skills, Real Fun',
-    description: 'Every lesson is designed around activities that are genuinely enjoyable—not just educational theater.',
+    description: 'Every lesson combines meaningful progress with hands-on projects learners can demonstrate and explain.',
   },
 ];
 
@@ -95,7 +95,7 @@ const About = () => {
                 Block Buddies was founded on a simple observation: kids learn best from people they can relate to. Teen mentors are close enough in age to understand their mentees' world, yet experienced enough to guide them.
               </p>
               <p className="text-muted-foreground mb-4">
-                We use Minecraft as our "Trojan Horse"—a beloved game that secretly teaches file systems, networking, programming logic, and system administration. Kids think they're learning to hack their game. They're actually building a foundation for a future in tech.
+                We use Minecraft as an engaging learning platform that makes computer science approachable. Learners build confidence through guided projects that teach file systems, networking, programming logic, and system administration.
               </p>
               <p className="text-muted-foreground">
                 Our program is entirely volunteer-powered and free for all families, because we believe socioeconomic status shouldn't determine access to quality CS education.
@@ -109,9 +109,9 @@ const About = () => {
               className="glass-card p-8 bg-gradient-to-br from-accent/10 to-primary/10"
             >
               <Sparkles className="w-10 h-10 text-accent mb-4" />
-              <h3 className="font-display text-2xl font-bold mb-4">The "Trojan Horse" Approach</h3>
+              <h3 className="font-display text-2xl font-bold mb-4">Confidence-First Approach</h3>
               <p className="text-muted-foreground mb-6">
-                Our pedagogy is built on the idea that learning should feel like play. By embedding computer science concepts into Minecraft activities, we bypass the intimidation factor that often stops kids from exploring tech.
+                Our pedagogy combines an early success moment, guided practice, and optional challenge branches so learners stay motivated while developing durable technical habits.
               </p>
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">

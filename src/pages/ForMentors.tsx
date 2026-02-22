@@ -43,8 +43,8 @@ const benefits = [
   },
   {
     icon: BookOpen,
-    title: 'Ready-Made Lessons',
-    description: 'We provide all teaching materials, lesson plans, and curriculum.',
+    title: 'Runbook-Based Lessons',
+    description: 'You get structured session runbooks with fallback paths and mastery checks.',
   },
   {
     icon: MessageCircle,
@@ -55,8 +55,9 @@ const benefits = [
 
 const responsibilities = [
   'Lead weekly 45-minute video call sessions with your mentee',
-  'Prepare for sessions using our provided lesson plans (15-20 min)',
+  'Prepare with the assigned session runbook (15-20 min)',
   'Track progress and celebrate your mentee\'s achievements',
+  'Record Do/Explain/Debug mastery outcomes each session',
   'Communicate with parents/guardians as needed',
   'Follow our safety guidelines and code of conduct',
 ];
@@ -159,6 +160,7 @@ const ForMentors = () => {
               </h2>
               <p className="text-muted-foreground mb-8">
                 As a Block Buddy mentor, you'll guide a pre-teen through our curriculum using Minecraft as the teaching platform.
+                Each session follows a clear loop: hook, worked example, core quest, side quest or fallback, and exit ticket.
               </p>
               
               <ul className="space-y-4">

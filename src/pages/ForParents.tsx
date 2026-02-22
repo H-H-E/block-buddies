@@ -164,7 +164,7 @@ const ForParents = () => {
               What Your Child Will <span className="gradient-text">Learn</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Through our "Trojan Horse" approach, kids think they're learning to hack their game—but they're actually mastering real tech skills.
+              Through our confidence-first approach, kids build real tech skills through projects they enjoy and can explain.
             </p>
           </motion.div>
 

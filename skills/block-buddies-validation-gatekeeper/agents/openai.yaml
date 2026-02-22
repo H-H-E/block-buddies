@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies Validation Gatekeeper"
+  short_description: "Run and enforce Block Buddies pre-merge validation gates"
+  default_prompt: "Execute validation gates, summarize failures, and block release until acceptance checks pass."

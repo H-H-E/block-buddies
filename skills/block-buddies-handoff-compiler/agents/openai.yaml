@@ -1,0 +1,4 @@
+interface:
+  display_name: "Block Buddies Handoff Compiler"
+  short_description: "Standardize session-to-session handoff artifacts and memory"
+  default_prompt: "Compile a concise, decision-complete handoff for the next agent with risks, assumptions, and next actions."
