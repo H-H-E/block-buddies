@@ -60,6 +60,7 @@ const Curriculum = () => {
                 "Early win by minute 10",
                 "Do/Explain/Debug mastery gates",
                 "Tiered side quests with fallback paths",
+                "Profile code + confidence driven pacing",
               ].map((item) => (
                 <div key={item} className="px-3 py-2 rounded-md bg-muted text-muted-foreground">
                   {item}
@@ -178,6 +179,31 @@ const Curriculum = () => {
         </div>
       </section>
 
+      <section className="py-16 md:py-24">
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card p-6 md:p-8 max-w-4xl mx-auto"
+          >
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              What Happens If A Learner Struggles
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6 text-sm text-muted-foreground">
+              <div>
+                <p className="font-medium text-foreground mb-2">Support ladder</p>
+                <p>Guiding question -&gt; specific hint -&gt; model one step -&gt; fallback mini-win at 7-minute hard cap.</p>
+              </div>
+              <div>
+                <p className="font-medium text-foreground mb-2">Quality controls</p>
+                <p>Every session logs Do/Explain/Debug outcomes, fallback events, and the required start condition for the next session.</p>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
       <section className="py-20 md:py-32">
         <div className="section-container">
           <motion.div
@@ -249,6 +275,9 @@ const Curriculum = () => {
                 </div>
               ))}
             </div>
+            <p className="text-xs text-muted-foreground mb-6">
+              Mentors also use the internal Curriculum Session Playbook for quick evidence and quality checks per session.
+            </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link to="/apply/mentee">
                 <Button variant="hero" size="lg">

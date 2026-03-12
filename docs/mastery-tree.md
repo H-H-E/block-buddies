@@ -16,7 +16,7 @@ Canonical policy lives in [Pedagogy Engine V2](./pedagogy/engine-v2.md).
 
 ## Architecture
 
-1. **Diagnostic Protocol** -> profile code (`fluency-archetype`)
+1. **Diagnostic Protocol** -> profile code (`fluency-archetype`) + profile confidence
 2. **Core Trunk** -> universal safety and systems baseline
 3. **Specialization Track**
    - A Visualist
@@ -36,6 +36,19 @@ Canonical policy lives in [Pedagogy Engine V2](./pedagogy/engine-v2.md).
 | S06 | Troubleshooting studio | root cause + fix evidence |
 | S07 | Capstone build | mentor fade + independent steps |
 | S08 | Demo + reflection | mastery verification complete |
+
+## Session Artifact Expectations (Canonical)
+
+| Session | Minimum artifact |
+|---|---|
+| S01 | profile code + confidence + first-win file |
+| S02 | valid backup + restore verification |
+| S03 | working starter artifact by selected track |
+| S04 | seeded fault + successful fix evidence |
+| S05 | one tested extension with predicted effect |
+| S06 | root-cause statement + verified resolution |
+| S07 | capstone slice + proof of function |
+| S08 | structured demo evidence + continuation plan |
 
 ## Learning Mechanics
 
@@ -71,6 +84,10 @@ Internal mentor shorthand may reference "Trojan Horse" as a concept bridge. Publ
 - [S07](./runbooks/session-07-capstone-build-fade.md)
 - [S08](./runbooks/session-08-demo-reflection-verification.md)
 
+## Mentor Companion
+
+- [Curriculum Session Playbook](./curriculum-session-playbook.md)
+
 ## Track Docs
 
 - [Core Trunk](./core-trunk.md)
@@ -81,3 +98,7 @@ Internal mentor shorthand may reference "Trojan Horse" as a concept bridge. Publ
 ## Standards and Safety
 
 Standards mapping remains CSTA-aligned. Safety boundaries and escalation are non-negotiable and must be followed in all tracks.
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)

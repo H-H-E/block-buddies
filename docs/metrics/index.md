@@ -22,9 +22,15 @@
 - Fallback activation rate by fluency band
 - Debug retrieval trigger frequency
 - Runbook compliance rate
+- Profile confidence distribution (`high/medium/low`)
+- Reassessment and rematch rate by profile code
 
 ## Red Flags
 
 - High hard-cap triggers in one runbook
 - Frequent Do failures in same session index
 - Repeated mismatch between profile code and assigned track
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](../pedagogy/engine-v2.md)

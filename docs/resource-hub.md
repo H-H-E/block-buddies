@@ -14,6 +14,7 @@ Provide a single place for mentors, families, and learners to access aligned V2 
 
 ### Mentor Layer
 - Session runbooks (S01-S08)
+- Post-S08 advanced labs (optional extension set)
 - Troubleshooting atlas
 - Session log templates
 - Mentor decision tree
@@ -22,6 +23,8 @@ Provide a single place for mentors, families, and learners to access aligned V2 
 - Matching guide
 - Escalation protocol
 - Metrics dashboard template
+- Intake field mapping and quick-view template
+- Pilot coordinator runbook and incident templates
 
 ## Phase 1 (Launch Minimum)
 
@@ -40,3 +43,7 @@ Provide a single place for mentors, families, and learners to access aligned V2 
 
 - [ ] Analytics dashboards for pass/fallback trends
 - [ ] Program-level impact reporting
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)

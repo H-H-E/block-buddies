@@ -14,6 +14,8 @@ All pedagogy changes must align with:
 - [Pedagogy Engine V2](./docs/pedagogy/engine-v2.md)
 - [Session Template](./docs/pedagogy/session-template.md)
 - [Mastery Gate Rubric](./docs/pedagogy/mastery-gate-rubric.md)
+- [Contributor Decision Tree](./docs/pedagogy/contributor-decision-tree.md)
+- [Source of Truth Mapping](./docs/pedagogy/source-of-truth-mapping.md)
 
 ## Contribution Flow
 

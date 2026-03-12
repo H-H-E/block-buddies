@@ -61,3 +61,7 @@ Pass if Do and one of Explain/Debug pass.
 Use precise, calm, respectful language.
 
 Public-facing and parent-facing language should remain confidence-first and family-friendly.
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)

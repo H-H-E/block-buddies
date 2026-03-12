@@ -28,6 +28,7 @@ Run one 8-session cohort with personalized pacing and full V2 pedagogy complianc
 
 ### Program Ops
 - [ ] Matching process uses profile code
+- [ ] Matching process records profile confidence and reassessment flags
 - [ ] Mentor onboarding includes controlled friction rules
 - [ ] Tech stack selected and tested
 - [ ] Incident and concern escalation path documented
@@ -36,6 +37,7 @@ Run one 8-session cohort with personalized pacing and full V2 pedagogy complianc
 - [ ] Every pilot pair completed S01 and S02 with logs
 - [ ] At least one track path trialed end-to-end
 - [ ] Runbook schema and link checks pass
+- [ ] Reassessment/rematch workflow tested once end-to-end
 
 ## MVP Success Criteria
 
@@ -43,3 +45,7 @@ Run one 8-session cohort with personalized pacing and full V2 pedagogy complianc
 - >= 60% cohort completion
 - >= 70% session pass rate
 - Families and mentors report clarity in expectations
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)

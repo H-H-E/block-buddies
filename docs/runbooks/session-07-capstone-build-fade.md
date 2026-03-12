@@ -16,7 +16,7 @@ fallback_path: Narrow capstone to one demonstrable slice and complete it end-to-
 # Session 7: Capstone Build and Mentor Fade
 
 ## Objective
-Learner builds a capstone slice with minimal mentor intervention.
+By end of session, learner can ship one scoped capstone slice with minimal mentor intervention.
 
 ## Loop Plan
 - Hook (4m): define end-of-session demo target.
@@ -24,12 +24,20 @@ Learner builds a capstone slice with minimal mentor intervention.
 - Core Quest (24m): learner builds while mentor fades support.
 - Side Quest or Fallback (8m): polish or scope reduction.
 - Exit Ticket (5m): rehearsal for final demo.
+- Intervention limits: Fluency 0 (30s), Fluency 1 (2m), Fluency 2 (5m).
 
 ## Early Win
-Learner chooses and commits to a scoped capstone target in first 10 minutes.
+Learner commits to one scoped capstone target in first 10 minutes.
 
 ## Tier 1 Core Quest
 Deliver one complete capstone slice with test proof.
+
+Expected output: one demonstrable slice + proof of function.
+
+## Track-Specific Worked Examples (A/B/C)
+- `A` Visualist: themed visual pack slice with before/after comparison.
+- `B` Mechanist: automation slice with measurable reliability behavior.
+- `C` Operator: admin/setup slice with explicit access/recovery behavior.
 
 ## Tier 2 Stretch Side Quest
 - Unlock: Fluency >= 1
@@ -39,10 +47,47 @@ Deliver one complete capstone slice with test proof.
 - Unlock: Fluency = 2 and MG-S07-DO pass
 - Outcome: self-run full Do/Explain/Debug rubric before mentor review.
 
+## Branch Minute Budgets
+| Path | Hook | Worked Example | Core Quest | Side/Fallback | Exit Ticket | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| Core + fallback | 4 | 4 | 24 | 8 | 5 | 45 |
+| Core + stretch | 4 | 4 | 24 | 8 | 5 | 45 |
+| Core + expert | 4 | 4 | 22 | 10 | 5 | 45 |
+
 ## Fallback Path
-Reduce capstone scope to one core slice that can be completed and demonstrated.
+Trigger when blocked >= 7 total minutes or scope exceeds session budget.
+
+Recovery ladder order:
+1. Guiding question.
+2. Specific hint.
+3. Model one step.
+4. Fallback mini-win.
+
+Fallback mini-win: reduce to one core capstone slice that can be demonstrated end-to-end.
 
 ## Mastery Gates
 - Do: capstone slice works.
 - Explain: learner explains architecture choices.
 - Debug: learner resolves one live bug during rehearsal.
+- Pass rule: `Do=pass/support-pass` and at least one of `Explain` or `Debug=pass/support-pass`.
+- If `Debug=fail`: start S08 with debug retrieval.
+- If `Do=fail`: repeat S07 with narrower scope.
+
+## Session Artifact Checklist
+- [ ] Scoped capstone target statement captured.
+- [ ] Working slice evidence captured.
+- [ ] Architecture explanation captured.
+- [ ] Live debug/fix note captured.
+- [ ] S08 start condition set.
+
+## Accessibility Notes
+- Planning cards/checklists are allowed.
+- Reduced writing load via checklist responses is allowed.
+- Oral rehearsal in place of full typed script is valid.
+
+## Session Log Fields
+- Capstone scope and completion evidence.
+- Gate outcomes and pass result.
+- Intervention/fallback events.
+- Accessibility supports used.
+- S08 start condition.

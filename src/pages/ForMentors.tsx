@@ -60,6 +60,7 @@ const responsibilities = [
   'Record Do/Explain/Debug mastery outcomes each session',
   'Communicate with parents/guardians as needed',
   'Follow our safety guidelines and code of conduct',
+  'Flag reassessment triggers or mentor mismatch risks within 24-48 hours',
 ];
 
 const requirements = [
@@ -247,6 +248,27 @@ const ForMentors = () => {
         </div>
       </section>
 
+      <section className="py-16 md:py-24">
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card p-8 max-w-4xl mx-auto"
+          >
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              Mentor Quality Controls
+            </h2>
+            <ul className="space-y-3 text-sm text-muted-foreground">
+                <li>Runbook contract: Hook -&gt; Worked Example -&gt; Core Quest -&gt; Side/Fallback -&gt; Exit Ticket.</li>
+              <li>Mastery contract: session advances only when Do plus one of Explain/Debug passes.</li>
+              <li>Support contract: intervention timing follows fluency limits with a fixed 7-minute hard cap.</li>
+              <li>Logging contract: every session records gates, fallback events, and next-session condition.</li>
+            </ul>
+          </motion.div>
+        </div>
+      </section>
+
       {/* CTA Section */}
       <section className="py-20 md:py-32">
         <div className="section-container">
@@ -261,7 +283,7 @@ const ForMentors = () => {
               Ready to Inspire the Next Generation?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Join hundreds of teen mentors who are making a difference while building their future.
+              Join teen mentors who are making a difference while building real coaching and leadership skills.
             </p>
             <Link to="/apply/mentor">
               <Button variant="hero" size="xl">

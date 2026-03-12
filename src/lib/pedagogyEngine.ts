@@ -1,4 +1,11 @@
-import type { Archetype, FluencyLevel, SideQuest, TrackId } from "@/lib/curriculumModel";
+import type {
+  Archetype,
+  FluencyLevel,
+  ProfileConfidence,
+  RoutingProfile,
+  SideQuest,
+  TrackId,
+} from "@/lib/curriculumModel";
 
 export interface ProfileCode {
   fluency: FluencyLevel;
@@ -66,4 +73,24 @@ export function trackFromArchetype(archetype: Archetype): Exclude<TrackId, "core
 
 export function profileCodeLabel(profile: ProfileCode): string {
   return `${profile.fluency}-${profile.archetype}`;
+}
+
+export function createRoutingProfile(
+  profile: ProfileCode,
+  profileConfidence: ProfileConfidence,
+  reassessmentTriggerFlags: string[] = [],
+  mentorMismatchFlag = false
+): RoutingProfile {
+  return {
+    profileCode: profileCodeLabel(profile),
+    fluency: profile.fluency,
+    archetype: profile.archetype,
+    profileConfidence,
+    reassessmentTriggerFlags,
+    mentorMismatchFlag,
+  };
+}
+
+export function needsReassessment(profile: RoutingProfile): boolean {
+  return profile.profileConfidence === "low" || profile.reassessmentTriggerFlags.length > 0;
 }

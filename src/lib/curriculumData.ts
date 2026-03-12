@@ -24,13 +24,13 @@ export const curriculumPhases: CurriculumPhase[] = [
     description:
       "Students establish file-system confidence, backups, and safe workflow habits before specialization.",
     objectives: [
-      "Complete profile diagnostic",
+      "Complete profile diagnostic with confidence rating",
       "Create and restore named backups",
       "Understand safe editing workflow",
       "Build confidence with first visible wins",
     ],
     activities: [
-      { name: "Profile Setup", description: "Capture fluency and archetype code" },
+      { name: "Profile Setup", description: "Capture fluency-archetype code and confidence" },
       { name: "Backup Drill", description: "Run zip-label-restore cycle" },
       { name: "Safe Edit", description: "Apply one reversible config change" },
     ],

@@ -20,6 +20,7 @@ Clarify who contributes what, and where V2 quality gates apply.
 - Maintain curriculum data model in code
 - Keep website copy aligned with canonical docs
 - Build validation tests for runbook/frontmatter consistency
+- Maintain docs-link and public-language policy checks
 
 ### Parent/Guardian Advisors
 - Review clarity and trust language

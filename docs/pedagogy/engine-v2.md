@@ -68,3 +68,7 @@ Every session follows one loop:
 - [Session Log Template](./session-log-template.md)
 - [Quality Checklist](./quality-checklist.md)
 - [Language Guide](./faq-language-guide.md)
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./engine-v2.md)

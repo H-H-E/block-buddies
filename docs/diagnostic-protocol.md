@@ -9,6 +9,9 @@ Place each learner on the right scaffolding level and track entry point within 5
 - Fluency: `0`, `1`, or `2`
 - Archetype: `A`, `B`, or `C`
 - Profile code: `fluency-archetype` (for example `2-C`)
+- Profile confidence: `high`, `medium`, or `low`
+- Reassessment trigger flags: `string[]`
+- Mentor mismatch flag: `boolean`
 
 ## Diagnostic Tasks
 
@@ -51,6 +54,9 @@ By minute 10, learner must complete one visible success action (for confidence a
 - Fluency level
 - Archetype
 - Profile code
+- Profile confidence
+- Reassessment trigger flags
+- Mentor mismatch flag
 - Accessibility notes
 - Starting session
 
@@ -59,3 +65,23 @@ By minute 10, learner must complete one visible success action (for confidence a
 - Recheck profile every 2-3 sessions
 - Update fluency when skill evidence changes
 - Allow archetype shift when motivation changes
+- Trigger immediate reassessment if any of the following are true:
+  - `profile_confidence = low`
+  - 2+ tasks conflict with selected archetype behavior
+  - `Do` passes but `Explain` and `Debug` both require heavy prompting
+  - Mentor mismatch reported in two consecutive sessions
+
+## Rematch Escalation Protocol
+
+1. Mentor logs mismatch with evidence in session log.
+2. Coordinator reviews within 48 hours.
+3. Run a short reassessment mini-session.
+4. If mismatch remains, assign rematch and reset next-session start condition.
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)

@@ -40,6 +40,12 @@ const archetypeOptions = [
   { value: 'C', label: 'Track C: Operator', description: 'Loves servers, rules, and moderation tools' },
 ];
 
+const confidenceOptions = [
+  { value: 'high', label: 'High confidence', description: 'This profile guess is very likely correct today' },
+  { value: 'medium', label: 'Medium confidence', description: 'Likely correct, but we should verify in Session 1' },
+  { value: 'low', label: 'Low confidence', description: 'Needs reassessment early based on live evidence' },
+];
+
 const learningGoals = [
   'Learn how games store data (files & configs)',
   'Understand how multiplayer servers work',
@@ -77,6 +83,7 @@ const MenteeApplication = () => {
     parentPhone: '',
     fluencyLevel: '',
     archetypePreference: '',
+    profileConfidence: '',
     learningGoals: [] as string[],
     availability: [] as string[],
     accessibilityNeeds: '',
@@ -125,6 +132,8 @@ const MenteeApplication = () => {
         return (
           formData.fluencyLevel &&
           formData.archetypePreference &&
+          formData.profileConfidence &&
+          formData.accessibilityNeeds.trim().length > 0 &&
           formData.learningGoals.length > 0 &&
           formData.availability.length > 0
         );
@@ -327,12 +336,32 @@ const MenteeApplication = () => {
                     </div>
 
                     <div>
-                      <Label htmlFor="accessibilityNeeds">Accessibility or support needs (optional)</Label>
+                      <Label className="mb-3 block">Profile confidence for this selection *</Label>
+                      <div className="space-y-3">
+                        {confidenceOptions.map((option) => (
+                          <div
+                            key={option.value}
+                            onClick={() => updateFormData('profileConfidence', option.value)}
+                            className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                              formData.profileConfidence === option.value
+                                ? 'border-secondary bg-secondary/10'
+                                : 'border-border hover:border-secondary/50'
+                            }`}
+                          >
+                            <div className="font-medium">{option.label}</div>
+                            <div className="text-sm text-muted-foreground">{option.description}</div>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+
+                    <div>
+                      <Label htmlFor="accessibilityNeeds">Accessibility or support needs *</Label>
                       <Textarea
                         id="accessibilityNeeds"
                         value={formData.accessibilityNeeds}
                         onChange={(e) => updateFormData('accessibilityNeeds', e.target.value)}
-                        placeholder="Anything that helps us support your child better (attention, reading support, device constraints, etc.)"
+                        placeholder="List support needs, or write: No additional support needed"
                         className="mt-1 min-h-[96px]"
                       />
                     </div>
@@ -340,7 +369,7 @@ const MenteeApplication = () => {
                     <div className="rounded-lg border border-secondary/30 bg-secondary/5 p-4">
                       <p className="text-sm font-medium">Profile code preview</p>
                       <p className="text-sm text-muted-foreground mt-1">
-                        {profileCode || 'Select fluency and track to generate profile code'}
+                        {profileCode ? `${profileCode} (${formData.profileConfidence || 'select confidence'})` : 'Select fluency and track to generate profile code'}
                       </p>
                     </div>
 

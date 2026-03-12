@@ -16,7 +16,7 @@ fallback_path: Run a curated two-option diagnosis puzzle when open troubleshooti
 # Session 6: Troubleshooting Studio
 
 ## Objective
-Learner applies the troubleshooting algorithm to diagnose and fix a realistic issue.
+By end of session, learner can run one full diagnosis loop and justify the chosen fix.
 
 ## Loop Plan
 - Hook (3m): "The system broke. You are on-call."
@@ -24,12 +24,20 @@ Learner applies the troubleshooting algorithm to diagnose and fix a realistic is
 - Core Quest (20m): learner runs one full diagnosis loop.
 - Side Quest or Fallback (10m): additional fault or curated puzzle.
 - Exit Ticket (5m): learner summarizes root cause and fix.
+- Intervention limits: Fluency 0 (30s), Fluency 1 (2m), Fluency 2 (5m).
 
 ## Early Win
-Learner finds one meaningful clue from logs/error text by minute 10.
+Learner finds one meaningful clue from logs or error text by minute 10.
 
 ## Tier 1 Core Quest
-Use track-aligned error atlas item and resolve it.
+Use a track-aligned error atlas item and resolve it.
+
+Expected output: issue resolved plus root-cause statement.
+
+## Track-Specific Worked Examples (A/B/C)
+- `A` Visualist: diagnose missing/invalid texture path and restore proper load.
+- `B` Mechanist: diagnose logic failure from missing power or wrong orientation.
+- `C` Operator: diagnose configuration/network mismatch and restore connectivity.
 
 ## Tier 2 Stretch Side Quest
 - Unlock: Fluency >= 1
@@ -39,10 +47,47 @@ Use track-aligned error atlas item and resolve it.
 - Unlock: Fluency = 2 and MG-S06-DO pass
 - Outcome: perform binary search on multi-change failure set.
 
+## Branch Minute Budgets
+| Path | Hook | Worked Example | Core Quest | Side/Fallback | Exit Ticket | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| Core + fallback | 3 | 7 | 20 | 10 | 5 | 45 |
+| Core + stretch | 3 | 7 | 20 | 10 | 5 | 45 |
+| Core + expert | 3 | 7 | 18 | 12 | 5 | 45 |
+
 ## Fallback Path
-Use curated scenario with only two candidate causes and guided elimination.
+Trigger when blocked >= 7 total minutes in open troubleshooting.
+
+Recovery ladder order:
+1. Guiding question.
+2. Specific hint.
+3. Model one step.
+4. Fallback mini-win.
+
+Fallback mini-win: curated scenario with only two candidate causes and guided elimination.
 
 ## Mastery Gates
 - Do: issue resolved to working state.
 - Explain: learner describes why chosen fix works.
-- Debug: learner can reproduce and re-fix the same failure quickly.
+- Debug: learner reproduces and re-fixes the same failure.
+- Pass rule: `Do=pass/support-pass` and at least one of `Explain` or `Debug=pass/support-pass`.
+- If `Debug=fail`: start S07 with debug retrieval.
+- If `Do=fail`: repeat S06 with constrained fault set.
+
+## Session Artifact Checklist
+- [ ] Fault scenario and root cause logged.
+- [ ] Fix and verification evidence captured.
+- [ ] One eliminated false-cause note recorded.
+- [ ] Repro/re-fix check recorded.
+- [ ] S07 start condition set.
+
+## Accessibility Notes
+- Read-aloud error text and simplified clue cards are allowed.
+- Reduced-option diagnosis cards are allowed.
+- Alternate verbal explanation accepted for exit ticket.
+
+## Session Log Fields
+- Fault type, root cause, and fix evidence.
+- Gate outcomes and pass result.
+- Intervention and fallback events.
+- Accessibility supports used.
+- S07 start condition.

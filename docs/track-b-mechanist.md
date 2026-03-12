@@ -27,3 +27,27 @@ For learners motivated by automation, logic, efficiency, and systems behavior.
 - [S06](./runbooks/session-06-troubleshooting-studio.md)
 - [S07](./runbooks/session-07-capstone-build-fade.md)
 - [S08](./runbooks/session-08-demo-reflection-verification.md)
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)
+
+## Worked-Example Anchors (B)
+
+- S03: build starter NOT/OR path and verify input/output behavior.
+- S04: fix one seeded signal/timing fault with isolate-and-test logic.
+- S05: add one timing/throughput extension and verify effect.
+- S06: compare two plausible causes and eliminate one with evidence.
+- S07: deliver one capstone automation slice with reliability check.
+- S08: present behavior proof and debugging rationale.
+
+## Mechanist Evidence Checklist
+
+- [ ] At least two test states logged for core logic tasks.
+- [ ] One cause-elimination note captured in S06.
+- [ ] One reliability metric (timing, consistency, or throughput) captured in S07.
+
+## Accessibility Defaults (B)
+
+- Reduced-step circuit templates are allowed when needed.
+- Spoken logic walkthroughs are valid for Explain evidence.

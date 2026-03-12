@@ -1,6 +1,8 @@
 import { describe, expect, it } from "vitest";
 import {
   canPassSession,
+  createRoutingProfile,
+  needsReassessment,
   nextSessionAction,
   profileCodeLabel,
   shouldIntervene,
@@ -46,6 +48,20 @@ describe("pedagogy engine rules", () => {
     expect(trackFromArchetype("B")).toBe("mechanist");
     expect(trackFromArchetype("C")).toBe("operator");
     expect(profileCodeLabel({ fluency: 0, archetype: "A" })).toBe("0-A");
+  });
+
+  it("builds deterministic routing profile contracts", () => {
+    const routing = createRoutingProfile(
+      { fluency: 1, archetype: "B" },
+      "low",
+      ["confidence_low"],
+      true
+    );
+    expect(routing.profileCode).toBe("1-B");
+    expect(routing.profileConfidence).toBe("low");
+    expect(routing.reassessmentTriggerFlags).toContain("confidence_low");
+    expect(routing.mentorMismatchFlag).toBe(true);
+    expect(needsReassessment(routing)).toBe(true);
   });
 
   it("unlocks side quests by fluency and gates", () => {

@@ -28,3 +28,7 @@ A lesson is releasable only if every item passes.
 - [ ] Prerequisites are testable
 - [ ] Artifacts and tool versions are specified
 - [ ] Links to troubleshooting references are valid
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./engine-v2.md)

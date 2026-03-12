@@ -65,3 +65,7 @@ fallback_path: One-line summary of fallback path
    - Time-cap events
    - Gate outcomes
    - Next session start condition
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./engine-v2.md)

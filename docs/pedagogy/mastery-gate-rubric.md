@@ -38,3 +38,7 @@ Session passes only if:
 | Do | "Show me how to find `.minecraft`." | Navigates without correction | Random searching, no path logic |
 | Explain | "Why close the game before editing?" | Mentions overwrite/file lock behavior | "Because you said so" only |
 | Debug | "Fix this missing comma JSON error." | Finds and corrects syntax issue | Repeats same edit loop blindly |
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./engine-v2.md)

@@ -41,3 +41,7 @@ Use this decision tree during any block or confusion event.
 ## Required Logging
 
 Log all time-cap and fallback events in session notes.
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./engine-v2.md)

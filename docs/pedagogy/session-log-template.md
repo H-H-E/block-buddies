@@ -36,3 +36,7 @@ Next Session Start Condition:
 - Repeat theme required? (Y/N)
 - Planned next session:
 ```
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./engine-v2.md)

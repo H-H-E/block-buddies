@@ -86,6 +86,7 @@ const MentorApplication = () => {
     parentApproval: false,
     commitment: false,
     masteryLogging: false,
+    mismatchEscalationAgreement: false,
   });
 
   const updateFormData = (field: string, value: string | boolean | string[]) => {
@@ -129,7 +130,13 @@ const MentorApplication = () => {
       case 3:
         return formData.availability.length > 0;
       case 4:
-        return formData.codeOfConduct && formData.parentApproval && formData.commitment && formData.masteryLogging;
+        return (
+          formData.codeOfConduct &&
+          formData.parentApproval &&
+          formData.commitment &&
+          formData.masteryLogging &&
+          formData.mismatchEscalationAgreement
+        );
       default:
         return false;
     }
@@ -449,6 +456,25 @@ const MentorApplication = () => {
                             <span className="font-medium">I agree to record Do/Explain/Debug outcomes each session *</span>
                             <p className="text-sm text-muted-foreground mt-1">
                               I understand V2 delivery requires brief structured session notes.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div
+                        onClick={() => updateFormData('mismatchEscalationAgreement', !formData.mismatchEscalationAgreement)}
+                        className={`p-4 rounded-lg border cursor-pointer transition-all ${
+                          formData.mismatchEscalationAgreement
+                            ? 'border-primary bg-primary/10'
+                            : 'border-border hover:border-primary/50'
+                        }`}
+                      >
+                        <div className="flex items-start gap-3">
+                          <Checkbox checked={formData.mismatchEscalationAgreement} className="mt-1" />
+                          <div>
+                            <span className="font-medium">I agree to flag profile mismatch signals for coordinator review *</span>
+                            <p className="text-sm text-muted-foreground mt-1">
+                              I will report reassessment triggers and mentor-fit concerns using the session log workflow.
                             </p>
                           </div>
                         </div>

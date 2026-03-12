@@ -1,6 +1,7 @@
 export type FluencyLevel = 0 | 1 | 2;
 export type Archetype = "A" | "B" | "C";
 export type TrackId = "core" | "visualist" | "mechanist" | "operator";
+export type ProfileConfidence = "high" | "medium" | "low";
 
 export interface MasteryGate {
   id: string;
@@ -49,4 +50,13 @@ export interface TrackOverview {
   subtitle: string;
   description: string;
   focus: string[];
+}
+
+export interface RoutingProfile {
+  profileCode: string;
+  fluency: FluencyLevel;
+  archetype: Archetype;
+  profileConfidence: ProfileConfidence;
+  reassessmentTriggerFlags: string[];
+  mentorMismatchFlag: boolean;
 }

@@ -10,7 +10,9 @@
     "lint": "eslint .",
     "preview": "vite preview",
     "test": "vitest run",
-    "test:watch": "vitest"
+    "test:watch": "vitest",
+    "check:docs-links": "node scripts/check-doc-links.mjs",
+    "check:contracts": "npm run check:docs-links && npm test"
   },
   "dependencies": {
     "@fontsource/inter": "^5.2.8",

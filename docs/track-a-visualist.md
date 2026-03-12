@@ -27,3 +27,27 @@ For learners motivated by design, textures, lighting, and presentation.
 - [S06](./runbooks/session-06-troubleshooting-studio.md)
 - [S07](./runbooks/session-07-capstone-build-fade.md)
 - [S08](./runbooks/session-08-demo-reflection-verification.md)
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)
+
+## Worked-Example Anchors (A)
+
+- S03: apply one starter texture swap and verify visual output.
+- S04: fix one seeded `pack.mcmeta` or path fault.
+- S05: add one extension family and verify render behavior.
+- S06: isolate one texture/shader failure and prove root cause.
+- S07: deliver one capstone visual slice with test proof.
+- S08: present before/after evidence with concept transfer explanation.
+
+## Visualist Evidence Checklist
+
+- [ ] File/path proof captured in each build/debug session.
+- [ ] One prediction-before-change statement captured in S05+.
+- [ ] One reproducible debug repair captured in S04 or S06.
+
+## Accessibility Defaults (A)
+
+- Visual comparisons are valid evidence when typing load is high.
+- Mentors may provide high-contrast path guides and labeled screenshots.

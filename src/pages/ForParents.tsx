@@ -70,6 +70,13 @@ const safetyPoints = [
   },
 ];
 
+const pacingPoints = [
+  'Every learner follows the same 8-session spine (S01-S08).',
+  'Pacing is personalized by mastery gates, not by calendar pressure.',
+  'When a learner struggles, mentors switch to fallback mini-wins before confidence drops.',
+  'If Debug is weak, the next session starts with a 5-minute retrieval warmup.',
+];
+
 const faqs = [
   {
     question: 'Is this program really free?',
@@ -89,7 +96,7 @@ const faqs = [
   },
   {
     question: 'What if my child doesn\'t enjoy it?',
-    answer: 'That\'s okay! We want this to be a positive experience. If your child isn\'t enjoying the program after a few sessions, you can withdraw at any time with no obligations. We\'ll also work with you to try different approaches or mentor matches if needed.',
+    answer: 'That\'s okay. We review what is causing friction, adjust support, and can reassess mentor fit. If needed, we can rematch or pause with no penalty.',
   },
   {
     question: 'How much supervision do I need to provide?',
@@ -147,6 +154,33 @@ const ForParents = () => {
                 <ArrowRight className="w-5 h-5" />
               </Button>
             </Link>
+          </motion.div>
+        </div>
+      </section>
+
+      <section className="py-20 md:py-28 bg-background-secondary">
+        <div className="section-container">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
+            className="glass-card p-8 md:p-10 max-w-4xl mx-auto"
+          >
+            <h2 className="font-display text-2xl md:text-3xl font-bold mb-4">
+              How Personalized Pacing Works
+            </h2>
+            <p className="text-muted-foreground mb-6">
+              Mentors never rush learners through sessions. Progress depends on Do/Explain/Debug evidence,
+              and support level is adjusted when needed.
+            </p>
+            <ul className="space-y-3">
+              {pacingPoints.map((item) => (
+                <li key={item} className="flex items-start gap-3">
+                  <CheckCircle2 className="w-5 h-5 text-primary flex-shrink-0 mt-0.5" />
+                  <span>{item}</span>
+                </li>
+              ))}
+            </ul>
           </motion.div>
         </div>
       </section>

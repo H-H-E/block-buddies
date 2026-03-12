@@ -21,6 +21,17 @@ By end of Core, learner can:
 - Perform one basic debug correction
 - Explain one safety rule for downloads/configuration
 
+## Core Session Artifacts
+
+- S01:
+  - first-win file present
+  - `fluency-archetype` + confidence recorded
+  - one evidence note for fluency and archetype
+- S02:
+  - named backup archive exists
+  - controlled restore completed
+  - backup naming rationale captured
+
 ## Core Mastery Gate Expectations
 
 | Gate | Minimum pass signal |
@@ -32,3 +43,9 @@ By end of Core, learner can:
 ## Core-to-Track Promotion Rule
 
 Promote only if Core Do passes and at least one of Explain/Debug passes.
+
+If S02 Debug fails, S03 begins with a 5-minute debug retrieval before onboarding.
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)

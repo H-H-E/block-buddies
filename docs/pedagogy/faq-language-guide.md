@@ -31,3 +31,7 @@ Required in all contexts:
 - Respectful language
 - Safety-first language
 - Clear boundaries and escalation wording
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./engine-v2.md)

@@ -8,8 +8,9 @@ This doc defines how learners move through the same 8-session spine with persona
 
 1. Run [Diagnostic Protocol](./diagnostic-protocol.md)
 2. Assign profile code: `fluency-archetype` (for example `1-B`)
-3. Start Session 1 at profile-appropriate scaffolding level
-4. Progress only by mastery gates
+3. Assign profile confidence: `high` | `medium` | `low`
+4. Start Session 1 at profile-appropriate scaffolding level
+5. Progress only by mastery gates
 
 ## Profile Dimensions
 
@@ -39,15 +40,46 @@ Every session must include:
 4. Tier 2/3 Side Quest or fallback path
 5. Exit Ticket
 
+### Standard Minute Budget
+
+Unless a runbook specifies a session-specific split, use this default:
+
+| Segment | Minutes |
+|---|---:|
+| Hook | 3-5 |
+| Worked Example | 5-7 |
+| Core Quest | 18-20 |
+| Side Quest or Fallback | 8-12 |
+| Exit Ticket | 5 |
+
+### Recovery Ladder (fixed order)
+
+1. Guiding question
+2. Specific hint
+3. Model one step
+4. Fallback mini-win (required at 7-minute hard cap)
+
 ## Side-Quest Disclosure Rules
 
 - Side quests never replace core quest
 - Stretch unlock: Fluency >= 1 and prior gate readiness
 - Expert unlock: Fluency = 2 and current core quest stability
 
+## Session Artifact Contract (all sessions)
+
+Every session log must include:
+
+- One objective-completion artifact (file/screenshot/state proof)
+- Do/Explain/Debug gate outcomes
+- Any fallback/hard-cap event
+- Any accessibility support used
+- Next-session start condition (`normal`, `debug retrieval`, `repeat theme`)
+
 ## Runbook Index
 
 Canonical runbooks are in [`docs/runbooks`](./runbooks/session-01-diagnostic-trust-win.md).
+Mentor quick-reference companion: [Curriculum Session Playbook](./curriculum-session-playbook.md).
+Optional extension set: [Post-S08 Advanced Labs](./lessons/post-s08-advanced-labs.md).
 
 ## Track Mapping by Session
 
@@ -70,3 +102,16 @@ Canonical runbooks are in [`docs/runbooks`](./runbooks/session-01-diagnostic-tru
 - Fallback usage
 - Accessibility shortcut usage
 - Next session start condition
+
+## Accessibility Baseline
+
+All sessions allow accessibility alternatives when needed and logged:
+
+- GUI-first workflow when terminal/typing is a barrier
+- Visual cue cards or sentence starters for explanations
+- Reduced motor-load options (prepared snippets/checklists)
+- Spoken responses as valid exit-ticket evidence
+
+## Canonical Reference
+
+Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)

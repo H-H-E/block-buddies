@@ -16,7 +16,7 @@ fallback_path: Use a mentor-curated demo script and complete reflection checklis
 # Session 8: Demo, Reflection, and Mastery Verification
 
 ## Objective
-Learner demonstrates outcomes, reflects on growth, and confirms next learning path.
+By end of session, learner can demonstrate outcomes, explain transfer, and define next-step learning goals.
 
 ## Loop Plan
 - Hook (3m): demo expectations and confidence framing.
@@ -24,17 +24,25 @@ Learner demonstrates outcomes, reflects on growth, and confirms next learning pa
 - Core Quest (20m): learner performs capstone demonstration.
 - Side Quest or Fallback (12m): extended Q&A or guided reflection.
 - Exit Ticket (5m): continuation plan and celebration.
+- Intervention limits: Fluency 0 (30s), Fluency 1 (2m), Fluency 2 (5m).
 
 ## Early Win
 Learner shows one working artifact feature before minute 10.
 
 ## Tier 1 Core Quest
 Complete structured demo:
-1. Goal
-2. Build steps summary
-3. Problem faced
-4. Debug fix
-5. Final output
+1. Goal.
+2. Build steps summary.
+3. Problem faced.
+4. Debug fix.
+5. Final output.
+
+Expected output: complete demo narrative with working artifact evidence.
+
+## Track-Specific Worked Examples (A/B/C)
+- `A` Visualist: before/after visual comparison with debug story.
+- `B` Mechanist: system behavior demonstration with measured output.
+- `C` Operator: configuration/admin flow demo including recovery action.
 
 ## Tier 2 Stretch Side Quest
 - Unlock: Fluency >= 1
@@ -44,10 +52,45 @@ Complete structured demo:
 - Unlock: Fluency = 2 and MG-S08-DO pass
 - Outcome: propose next independent project with risk plan.
 
+## Branch Minute Budgets
+| Path | Hook | Worked Example | Core Quest | Side/Fallback | Exit Ticket | Total |
+|---|---:|---:|---:|---:|---:|---:|
+| Core + fallback | 3 | 5 | 20 | 12 | 5 | 45 |
+| Core + stretch | 3 | 5 | 20 | 12 | 5 | 45 |
+| Core + expert | 3 | 5 | 18 | 14 | 5 | 45 |
+
 ## Fallback Path
-Use mentor-curated script prompts and complete reflection checklist.
+Trigger when blocked >= 7 total minutes in live demo or reflection.
+
+Recovery ladder order:
+1. Guiding question.
+2. Specific hint.
+3. Model one step.
+4. Fallback mini-win.
+
+Fallback mini-win: use mentor-curated demo script prompts and complete reflection checklist.
 
 ## Mastery Gates
 - Do: learner delivers working demo.
 - Explain: learner clearly explains one key concept transfer.
 - Debug: learner handles one live change request or bug check.
+- Pass rule: `Do=pass/support-pass` and at least one of `Explain` or `Debug=pass/support-pass`.
+
+## Session Artifact Checklist
+- [ ] Demo structure completed (goal, steps, problem, fix, output).
+- [ ] Working artifact proof captured.
+- [ ] Concept-transfer explanation captured.
+- [ ] Live debug or change-response note captured.
+- [ ] Independent continuation plan captured.
+
+## Accessibility Notes
+- Visual demo cards and sentence starters are allowed.
+- Oral presentation in place of long written reflection is valid.
+- Prompted checklist completion is allowed and logged.
+
+## Session Log Fields
+- Demo evidence and reflection summary.
+- Gate outcomes and final pass status.
+- Intervention/fallback events.
+- Accessibility supports used.
+- Independent next-project plan and risks.
