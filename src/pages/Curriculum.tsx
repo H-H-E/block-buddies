@@ -55,6 +55,20 @@ const Curriculum = () => {
               A confidence-first 8-session model with controlled challenge, mastery gates, and personalized pacing.
             </p>
 
+            <div className="mb-8 flex flex-col justify-center gap-3 sm:flex-row">
+              <Link to="/lesson">
+                <Button variant="hero" size="lg">
+                  Open Lesson Workspace
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/lesson/student">
+                <Button variant="glass" size="lg">
+                  Preview Student View
+                </Button>
+              </Link>
+            </div>
+
             <div className="grid sm:grid-cols-3 gap-3 text-sm max-w-3xl mx-auto">
               {[
                 "Early win by minute 10",
