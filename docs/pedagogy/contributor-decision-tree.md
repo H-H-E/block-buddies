@@ -5,17 +5,17 @@ Use this quick path before changing any Block Buddies surface.
 ## 1) What are you changing?
 
 - Pedagogy policy, pass rules, loop timing, or intervention rules:
-  - Edit `/Users/hhe/Documents/block-buddies/docs/pedagogy/engine-v2.md` first.
+  - Edit `docs/pedagogy/engine-v2.md` first.
 - Session flow, side quests, fallback logic, or gates:
-  - Edit runbooks in `/Users/hhe/Documents/block-buddies/docs/runbooks/` using `/Users/hhe/Documents/block-buddies/docs/pedagogy/session-template.md`.
+  - Edit runbooks in `docs/runbooks/` using `docs/pedagogy/session-template.md`.
 - Profile code, matching, or reassessment behavior:
-  - Edit `/Users/hhe/Documents/block-buddies/docs/diagnostic-protocol.md`, `/Users/hhe/Documents/block-buddies/src/lib/pedagogyEngine.ts`, `/Users/hhe/Documents/block-buddies/src/lib/curriculumModel.ts`, and intake forms together.
+  - Edit `docs/diagnostic-protocol.md`, `src/lib/pedagogyEngine.ts`, `src/lib/curriculumModel.ts`, and intake forms together.
 - Curriculum claims on website pages:
-  - Update `/Users/hhe/Documents/block-buddies/src/lib/curriculumData.ts` first, then dependent UI pages.
+  - Update `src/lib/curriculumData.ts` first, then dependent UI pages.
 - Public-facing wording:
-  - Align with `/Users/hhe/Documents/block-buddies/docs/pedagogy/faq-language-guide.md`.
+  - Align with `docs/pedagogy/faq-language-guide.md`.
 - Ops checklists or launch criteria:
-  - Update `/Users/hhe/Documents/block-buddies/docs/mvp.md`, `/Users/hhe/Documents/block-buddies/docs/metrics/index.md`, and `/Users/hhe/Documents/block-buddies/docs/mentorship-program.md`.
+  - Update `docs/mvp.md`, `docs/metrics/index.md`, and `docs/mentorship-program.md`.
 
 ## 2) Does the change affect more than one surface?
 

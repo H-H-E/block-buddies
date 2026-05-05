@@ -65,10 +65,6 @@ Every session requires:
 3. Coordinator runs reassessment mini-session.
 4. If mismatch persists, rematch based on track and fluency support fit.
 
-## Canonical Reference
-
-Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)
-
 ## Mentor Support
 
 - Pre-service training on V2 pedagogy

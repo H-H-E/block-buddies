@@ -1,6 +1,14 @@
-# V2 Delivery Roadmap (Elaborated TODOs)
+# V2 Delivery Roadmap (Completion Record)
 
-This roadmap expands the V2 work into execution-ready epics and tasks for project management.
+This roadmap records the V2 work that was expanded into execution-ready epics and tasks for project management.
+
+## Current Status
+
+The Pedagogy V2 baseline is implemented in the repository. As of 2026-05-05:
+
+- S01-S08 runbooks exist with A/B/C worked examples, branch minute budgets, artifact checklists, accessibility notes, fallback paths, and mastery gates.
+- Public pages, intake forms, operations docs, metrics templates, and validation gates are aligned to the V2 model.
+- The live GitHub Project board should now be used for cleanup and interface/content work, not as the source of truth for unfinished V2 baseline tasks.
 
 ## Milestone Objective
 
@@ -27,10 +35,10 @@ Deliver a stable Pedagogy V2 release where docs, UI, forms, validation, and oper
 ### Why
 Prevent future drift from V2 rules.
 
-### TODOs
-- [ ] Add references to V2 canon in all curriculum docs and remove stale pointers.
-- [ ] Add a short contributor decision tree for “which doc to edit first”.
-- [ ] Enforce “single source of truth” mapping table in one canonical location.
+### Completed Work
+- [x] Add references to V2 canon in all curriculum docs and remove stale pointers.
+- [x] Add a short contributor decision tree for “which doc to edit first”.
+- [x] Enforce “single source of truth” mapping table in one canonical location.
 
 ### Acceptance Criteria
 - Every pedagogy doc points to `docs/pedagogy/engine-v2.md`.
@@ -42,11 +50,11 @@ Prevent future drift from V2 rules.
 ### Why
 S01-S08 are canonical but still need richer track-specific implementation depth.
 
-### TODOs
-- [ ] Add track-specific worked examples per session (`A/B/C`).
-- [ ] Add explicit artifact checklist for each session outcome.
-- [ ] Add estimated minute budgets per branch path (core/stretch/expert).
-- [ ] Add accessibility alternatives for each runbook step where relevant.
+### Completed Work
+- [x] Add track-specific worked examples per session (`A/B/C`).
+- [x] Add explicit artifact checklist for each session outcome.
+- [x] Add estimated minute budgets per branch path (core/stretch/expert).
+- [x] Add accessibility alternatives for each runbook step where relevant.
 
 ### Acceptance Criteria
 - Each session supports A/B/C execution without mentor improvisation.
@@ -58,10 +66,10 @@ S01-S08 are canonical but still need richer track-specific implementation depth.
 ### Why
 Profile quality determines pacing and mentor fit.
 
-### TODOs
-- [ ] Add mentor-side profile confirmation checklist at S01 end.
-- [ ] Add reassessment trigger rules to coordinator process docs.
-- [ ] Add mismatch escalation protocol (when mentor fit fails).
+### Completed Work
+- [x] Add mentor-side profile confirmation checklist at S01 end.
+- [x] Add reassessment trigger rules to coordinator process docs.
+- [x] Add mismatch escalation protocol (when mentor fit fails).
 
 ### Acceptance Criteria
 - Every learner has profile code + confidence level recorded.
@@ -73,10 +81,10 @@ Profile quality determines pacing and mentor fit.
 ### Why
 Public pages must stay aligned and parent-trust optimized.
 
-### TODOs
-- [ ] Add “How personalized pacing works” explainer on parent-facing pages.
-- [ ] Add transparent “what happens if a learner struggles” content.
-- [ ] Add “mentor quality controls” section linked to session logs.
+### Completed Work
+- [x] Add “How personalized pacing works” explainer on parent-facing pages.
+- [x] Add transparent “what happens if a learner struggles” content.
+- [x] Add “mentor quality controls” section linked to session logs.
 
 ### Acceptance Criteria
 - Public copy is confidence-first and policy-compliant.
@@ -88,10 +96,10 @@ Public pages must stay aligned and parent-trust optimized.
 ### Why
 Form data must map directly to matching and first-session planning.
 
-### TODOs
-- [ ] Define canonical field-to-operation mapping table.
-- [ ] Add coordinator quick-view template (who needs extra scaffolding).
-- [ ] Add mandatory “read-before-match” fields for mentor assignment.
+### Completed Work
+- [x] Define canonical field-to-operation mapping table.
+- [x] Add coordinator quick-view template (who needs extra scaffolding).
+- [x] Add mandatory “read-before-match” fields for mentor assignment.
 
 ### Acceptance Criteria
 - Coordinator can assign pairings using form outputs only.
@@ -103,10 +111,10 @@ Form data must map directly to matching and first-session planning.
 ### Why
 Prevent regressions and hidden drift.
 
-### TODOs
-- [ ] Add a docs-link checker for pedagogy/runbook references.
-- [ ] Add test for public-language restricted terms on public pages.
-- [ ] Add a CI workflow running test + build + contract checks.
+### Completed Work
+- [x] Add a docs-link checker for pedagogy/runbook references.
+- [x] Add test for public-language restricted terms on public pages.
+- [x] Add a CI workflow running test + build + contract checks.
 
 ### Acceptance Criteria
 - Validation catches schema, logic, and messaging drift before merge.
@@ -118,10 +126,10 @@ Prevent regressions and hidden drift.
 ### Why
 Translate V2 docs into runnable pilot operations.
 
-### TODOs
-- [ ] Create pilot runbook for coordinators (week-by-week operations).
-- [ ] Define minimum mentor calibration session protocol.
-- [ ] Define incident drill and parent communication templates.
+### Completed Work
+- [x] Create pilot runbook for coordinators (week-by-week operations).
+- [x] Define minimum mentor calibration session protocol.
+- [x] Define incident drill and parent communication templates.
 
 ### Acceptance Criteria
 - Pilot can run without undocumented coordinator knowledge.
@@ -133,10 +141,10 @@ Translate V2 docs into runnable pilot operations.
 ### Why
 Enable evidence-based iteration after first cohorts.
 
-### TODOs
-- [ ] Add session-level KPI rollup template.
-- [ ] Add fallback-rate and hard-cap dashboards.
-- [ ] Add track outcome comparisons by profile code.
+### Completed Work
+- [x] Add session-level KPI rollup template.
+- [x] Add fallback-rate and hard-cap dashboards.
+- [x] Add track outcome comparisons by profile code.
 
 ### Acceptance Criteria
 - Team can identify weak sessions and adjust quickly.
@@ -177,6 +185,8 @@ Enable evidence-based iteration after first cohorts.
 
 ## Suggested Execution Order
 
+Completed in baseline delivery order:
+
 1. Epic 1
 2. Epic 2
 3. Epic 3
@@ -185,6 +195,14 @@ Enable evidence-based iteration after first cohorts.
 6. Epic 5
 7. Epic 7
 8. Epic 8
+
+## Interface-Content Readiness
+
+The next product workstream can now focus on the content interface:
+
+- Translate `src/lib/curriculumData.ts`, `docs/runbooks/`, and `docs/operations/` into browsable internal UI surfaces.
+- Keep the public site confidence-first while moving operational detail into mentor/coordinator-facing views.
+- Preserve validation coverage for docs integrity, public language, route loading, runbook schema, and curriculum consistency.
 
 ## Dependency Notes
 

@@ -81,7 +81,3 @@ By minute 10, learner must complete one visible success action (for confidence a
 ## Canonical Reference
 
 Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)
-
-## Canonical Reference
-
-Canonical policy source: [Pedagogy Engine V2](./pedagogy/engine-v2.md)
