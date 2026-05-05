@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import {
   ArrowRight,
   BookOpen,
@@ -24,16 +24,11 @@ import {
 } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
-  adultLessonSteps,
-  commonFailureSigns,
-  evidenceItems,
-  fallbackHints,
-  lessonWorkspaceRunbook,
-  masteryChecks,
-  studentChecklist,
-  studentLessonActions,
+  lessonWorkspaceSessions,
+  resolveLessonWorkspaceContent,
   trackExamples,
   workspaceRoles,
+  type LessonWorkspaceContent,
 } from "@/lib/lessonWorkspaceData";
 import { cn } from "@/lib/utils";
 
@@ -48,7 +43,7 @@ const statusStyles = {
   next: "border-[#cdbf9b] bg-[#f5efe0] text-[#574b33]",
 };
 
-const AdultChrome = ({ children }: { children: React.ReactNode }) => (
+const AdultChrome = ({ children, workspace }: { children: React.ReactNode; workspace: LessonWorkspaceContent }) => (
   <div className="min-h-screen bg-[#f4f0e6] text-[#182018]">
     <div className="flex min-h-screen">
       <aside className="hidden w-64 shrink-0 border-r border-[#21482d] bg-[#062a18] text-[#f8f3df] xl:flex xl:flex-col">
@@ -90,17 +85,18 @@ const AdultChrome = ({ children }: { children: React.ReactNode }) => (
         <div className="mt-auto border-t border-white/10 p-4">
           <p className="mb-3 text-xs uppercase tracking-[0.18em] text-[#a8bf91]">Session Spine</p>
           <div className="space-y-1 text-xs">
-            {["S01", "S02", "S03", "S04", "S05", "S06", "S07", "S08"].map((session) => (
-              <div
-                key={session}
+            {lessonWorkspaceSessions.map((session) => (
+              <Link
+                key={session.sessionId}
+                to={`/lesson?session=${session.sessionId}`}
                 className={cn(
                   "flex items-center justify-between rounded px-3 py-2",
-                  session === "S03" ? "bg-[#b9d98d] text-[#12351d]" : "bg-white/5",
+                  session.sessionId === workspace.sessionId ? "bg-[#b9d98d] text-[#12351d]" : "bg-white/5",
                 )}
               >
-                <span>{session}</span>
-                {session === "S03" ? <Circle className="h-3 w-3 fill-current" /> : <CheckCircle2 className="h-3 w-3" />}
-              </div>
+                <span>{session.sessionId}</span>
+                {session.sessionId === workspace.sessionId ? <Circle className="h-3 w-3 fill-current" /> : <CheckCircle2 className="h-3 w-3" />}
+              </Link>
             ))}
           </div>
         </div>
@@ -111,25 +107,25 @@ const AdultChrome = ({ children }: { children: React.ReactNode }) => (
   </div>
 );
 
-const TopCommandBar = () => (
+const TopCommandBar = ({ workspace }: { workspace: LessonWorkspaceContent }) => (
   <header className="sticky top-0 z-30 border-b border-[#d8ceb5] bg-[#f8f3e7]/95 px-4 py-3 backdrop-blur md:px-6">
     <div className="flex flex-wrap items-center gap-3">
       <div className="mr-auto">
         <p className="text-xs uppercase tracking-[0.18em] text-[#456042]">Mentor Console</p>
-        <h1 className="font-display text-xl font-bold md:text-2xl">S03 Track Onboarding</h1>
+        <h1 className="font-display text-xl font-bold md:text-2xl">{workspace.title}</h1>
       </div>
       {[
-        ["Learner Profile", "1-B Mechanist"],
+        ["Session", `Lesson ${workspace.sessionNumber} of ${workspace.totalSessions}`],
+        ["Focus", workspace.shortTitle],
         ["Session Timer", "00:18:34"],
         ["Mode", "Live Instruction"],
-        ["Session Log", "In Progress"],
       ].map(([label, value]) => (
         <div key={label} className="rounded-md border border-[#cfc2a3] bg-white/55 px-4 py-2">
           <p className="text-[10px] uppercase tracking-[0.14em] text-[#6b604c]">{label}</p>
           <p className="text-sm font-semibold">{value}</p>
         </div>
       ))}
-      <Link to="/lesson/student">
+      <Link to={`/lesson/student?session=${workspace.sessionId}`}>
         <Button className="rounded-md bg-[#0d4a28] text-white hover:bg-[#09391e]" size="sm">
           Student View
           <ArrowRight className="ml-2 h-4 w-4" />
@@ -139,9 +135,9 @@ const TopCommandBar = () => (
   </header>
 );
 
-const LessonStepList = () => (
+const LessonStepList = ({ steps }: { steps: LessonWorkspaceContent["adultLessonSteps"] }) => (
   <div className="rounded-md border border-[#d8ceb5] bg-[#fbf7ed]">
-    {adultLessonSteps.map((step, index) => (
+    {steps.map((step, index) => (
       <div
         key={step.id}
         className={cn(
@@ -167,15 +163,15 @@ const LessonStepList = () => (
   </div>
 );
 
-const AdultLessonView = () => (
-  <AdultChrome>
-    <TopCommandBar />
+const AdultLessonView = ({ workspace }: { workspace: LessonWorkspaceContent }) => (
+  <AdultChrome workspace={workspace}>
+    <TopCommandBar workspace={workspace} />
     <main className="grid gap-4 p-4 lg:grid-cols-[220px_minmax(0,1fr)_360px] md:p-6">
       <section className="space-y-4">
-        <LessonStepList />
+        <LessonStepList steps={workspace.adultLessonSteps} />
         <div className="rounded-md border border-[#d8ceb5] bg-[#fbf7ed] p-4">
           <p className="mb-3 text-xs uppercase tracking-[0.16em] text-[#756a55]">Lesson Materials</p>
-          {["Slide Deck (S03)", "World Folder (S03)", "Printable Aids", "Mentor Cheatsheet"].map((item) => (
+          {workspace.materials.map((item) => (
             <div key={item} className="flex items-center justify-between border-t border-[#e6dcc4] py-2 text-sm first:border-t-0">
               <span>{item}</span>
               <FileText className="h-4 w-4 text-[#0d4a28]" />
@@ -189,9 +185,9 @@ const AdultLessonView = () => (
           <div className="mb-5 flex flex-wrap items-start gap-3">
             <div className="mr-auto">
               <p className="text-xs uppercase tracking-[0.16em] text-[#756a55]">Step 3 of 5</p>
-              <h2 className="font-display text-2xl font-bold">Core Quest · Build one starter logic artifact</h2>
+              <h2 className="font-display text-2xl font-bold">Core Quest · {workspace.studentBuildTitle}</h2>
               <p className="mt-1 max-w-2xl text-sm text-[#5b584f]">
-                {lessonWorkspaceRunbook.objective}. Learner builds a working artifact that demonstrates their track pathway.
+                {workspace.runbook.objective}. Learner builds evidence that demonstrates the session pathway.
               </p>
             </div>
             <div className="flex items-center gap-2 rounded-md border border-[#d8ceb5] bg-white/65 px-3 py-2 text-sm font-semibold">
@@ -204,14 +200,14 @@ const AdultLessonView = () => (
             <div className="rounded-md border border-[#e0d5bb] bg-white/55 p-4">
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#756a55]">Mentor Script</p>
               <p className="rounded border border-[#e6dcc4] bg-[#fffaf0] p-4 text-sm leading-6 text-[#4a4437]">
-                Now it is your turn. Build one working logic artifact that shows your track in action. Keep it simple,
-                make it work, and I will help you debug as we go.
+                {workspace.runbook.hook}. Start with {workspace.runbook.coreQuestSteps[0]?.toLowerCase() ?? "the first core step"},
+                keep the scope small, and capture evidence as you go.
               </p>
             </div>
             <div className="rounded-md border border-[#e0d5bb] bg-white/55 p-4">
-              <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#756a55]">Required Materials</p>
+              <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#756a55]">Core Quest Steps</p>
               <ul className="space-y-2 text-sm text-[#4a4437]">
-                {["S03 world pre-loaded", "Track build sheet", "Redstone quick reference", "Stopwatch / timer"].map((item) => (
+                {workspace.runbook.coreQuestSteps.map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <CheckCircle2 className="h-4 w-4 text-[#0d4a28]" />
                     {item}
@@ -222,7 +218,7 @@ const AdultLessonView = () => (
             <div className="rounded-md border border-[#e0d5bb] bg-white/55 p-4">
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#756a55]">Evidence To Collect</p>
               <ul className="space-y-2 text-sm text-[#4a4437]">
-                {evidenceItems.map((item) => (
+                {workspace.evidenceItems.map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <span className="h-4 w-4 rounded-[3px] border border-[#9d9279]" />
                     {item}
@@ -233,7 +229,7 @@ const AdultLessonView = () => (
             <div className="rounded-md border border-[#e0d5bb] bg-white/55 p-4">
               <p className="mb-3 text-xs font-bold uppercase tracking-[0.14em] text-[#756a55]">Common Failure Signs</p>
               <ul className="space-y-2 text-sm text-[#4a4437]">
-                {commonFailureSigns.map((item) => (
+                {workspace.commonFailureSigns.map((item) => (
                   <li key={item} className="flex items-center gap-2">
                     <Zap className="h-4 w-4 text-[#c5523c]" />
                     {item}
@@ -278,12 +274,12 @@ const AdultLessonView = () => (
         <div className="rounded-md border border-[#d8ceb5] bg-[#fbf7ed] p-4">
           <div className="mb-4 flex items-center justify-between">
             <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#756a55]">Live Mastery</p>
-            <Link to="/lesson/student" className="text-xs font-semibold text-[#0d4a28]">
+            <Link to={`/lesson/student?session=${workspace.sessionId}`} className="text-xs font-semibold text-[#0d4a28]">
               What student sees
             </Link>
           </div>
           <div className="grid grid-cols-3 gap-2">
-            {masteryChecks.map((check) => (
+            {workspace.masteryChecks.map((check) => (
               <div key={check.gate} className="rounded-md border border-[#e0d5bb] bg-white/60 p-3">
                 <p className="mb-2 text-center text-xs font-bold uppercase">{check.gate}</p>
                 {["Pass", "Support-Pass", "Fail"].map((state) => (
@@ -311,8 +307,7 @@ const AdultLessonView = () => (
           <div className="rounded-md border border-[#d8ceb5] bg-[#fbf7ed] p-4">
             <p className="mb-2 text-xs font-bold uppercase tracking-[0.16em] text-[#756a55]">Parent Summary Preview</p>
             <p className="text-sm leading-6 text-[#4a4437]">
-              Today Maya built an automatic door using a button and delay circuit. She explained how the signal flows
-              and fixed a timing issue.
+              {workspace.parentSummary}
             </p>
           </div>
         </div>
@@ -366,7 +361,7 @@ const BuildPreview = () => (
   </div>
 );
 
-const StudentLessonView = () => (
+const StudentLessonView = ({ workspace }: { workspace: LessonWorkspaceContent }) => (
   <div className="min-h-screen bg-[#f4f0e6] text-[#182018]">
     <header className="border-b border-[#d8ceb5] bg-[#fbf7ed] px-4 py-4 md:px-8">
       <div className="flex flex-wrap items-center gap-4">
@@ -382,8 +377,10 @@ const StudentLessonView = () => (
           </div>
         </Link>
         <div className="mr-auto border-l border-[#d8ceb5] pl-4">
-          <h1 className="font-display text-xl font-bold">S03 Track Onboarding</h1>
-          <p className="text-sm text-[#5b584f]">Lesson 3 of 8</p>
+          <h1 className="font-display text-xl font-bold">{workspace.title}</h1>
+          <p className="text-sm text-[#5b584f]">
+            Lesson {workspace.sessionNumber} of {workspace.totalSessions}
+          </p>
         </div>
         <div className="flex items-center gap-2 rounded-md border border-[#d8ceb5] bg-white/65 px-4 py-2">
           <TimerReset className="h-5 w-5 text-[#0d4a28]" />
@@ -392,7 +389,7 @@ const StudentLessonView = () => (
             <p className="text-xs text-[#5b584f]">Time Left</p>
           </div>
         </div>
-        <Link to="/lesson">
+        <Link to={`/lesson?session=${workspace.sessionId}`}>
           <Button variant="outline" className="rounded-md border-[#cdbf9b]">
             Adult View
           </Button>
@@ -404,7 +401,7 @@ const StudentLessonView = () => (
       <section className="space-y-5">
         <div className="flex flex-wrap items-center gap-3">
           <span className="rounded-md border border-[#8fb16a] bg-[#e8f1df] px-4 py-2 font-semibold text-[#0d4a28]">
-            My Track: Mechanist
+            My Track: {workspace.runbook.track === "core" ? "Core Path" : workspace.runbook.track}
           </span>
           <div className="ml-auto flex items-center gap-2 rounded-md border border-[#d8ceb5] bg-white/65 px-4 py-2">
             <span className="text-sm">How confident do you feel?</span>
@@ -422,7 +419,7 @@ const StudentLessonView = () => (
             </span>
             <div className="mr-auto">
               <p className="text-xs font-bold uppercase tracking-[0.16em] text-[#0d4a28]">Core Quest</p>
-              <h2 className="font-display text-3xl font-bold md:text-4xl">Build: Automatic Door</h2>
+              <h2 className="font-display text-3xl font-bold md:text-4xl">Core Quest: {workspace.studentBuildTitle}</h2>
             </div>
             <Button className="rounded-md bg-[#0d4a28] text-white hover:bg-[#09391e]">
               Open in Minecraft
@@ -430,13 +427,13 @@ const StudentLessonView = () => (
           </div>
           <p className="mb-5 flex items-center gap-2 text-lg">
             <Flag className="h-5 w-5 text-[#0d4a28]" />
-            <span className="font-bold">Goal:</span> Make a door open with a button and delay.
+            <span className="font-bold">Goal:</span> {workspace.studentGoal}.
           </p>
 
           <div className="grid gap-5 xl:grid-cols-[minmax(0,1fr)_480px]">
             <BuildPreview />
             <div className="space-y-3">
-              {studentLessonActions.map((action, index) => (
+              {workspace.studentLessonActions.map((action, index) => (
                 <div key={action.id} className="flex items-center gap-4 rounded-md border border-[#d8ceb5] bg-white/65 p-4">
                   <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-md bg-[#2f6f3e] font-display text-2xl font-bold text-white">
                     {index + 1}
@@ -455,7 +452,7 @@ const StudentLessonView = () => (
                   <HelpCircle className="h-5 w-5 text-[#756a55]" />
                 </div>
                 <div className="grid gap-2 sm:grid-cols-3">
-                  {fallbackHints.map((hint, index) => (
+                  {workspace.fallbackHints.map((hint, index) => (
                     <button
                       key={hint}
                       className="rounded-md border border-[#d8ceb5] bg-[#fffaf0] p-3 text-left text-sm transition hover:border-[#0d4a28]"
@@ -492,13 +489,13 @@ const StudentLessonView = () => (
             What counts today
           </p>
           <div className="space-y-3">
-            {masteryChecks.map((check, index) => (
+            {workspace.masteryChecks.map((check, index) => (
               <div key={check.gate} className="rounded-md border border-[#e0d5bb] bg-white/65 p-4">
                 <p className="font-display text-lg font-bold text-[#0d4a28]">
                   {check.gate} - {check.student}
                 </p>
                 <p className="text-sm text-[#5b584f]">
-                  {index === 0 ? "Build your automatic door." : index === 1 ? "Tell why your door works." : "Find and fix one problem."}
+                  {workspace.studentChecklist[index] ?? "Capture proof for this mastery check."}
                 </p>
               </div>
             ))}
@@ -508,7 +505,7 @@ const StudentLessonView = () => (
         <div className="rounded-md border border-[#d8ceb5] bg-[#fbf7ed] p-5">
           <p className="mb-3 font-display text-lg font-bold">Core Quest Checklist</p>
           <div className="space-y-2">
-            {studentChecklist.map((item, index) => (
+            {workspace.studentChecklist.map((item, index) => (
               <div key={item} className="flex items-center gap-2 text-sm">
                 <span className={cn("h-4 w-4 rounded-[3px] border", index < 2 ? "border-[#0d4a28] bg-[#0d4a28]" : "border-[#a79a7e]")} />
                 {item}
@@ -523,7 +520,7 @@ const StudentLessonView = () => (
             <span className="rounded-full bg-[#e8f1df] px-3 py-1 text-xs font-semibold text-[#0d4a28]">Hidden</span>
           </div>
           <p className="text-sm leading-6 text-[#5b584f]">
-            A short note for grown-ups about today's focus and how to support at home.
+            {workspace.parentSummary}
           </p>
         </div>
 
@@ -542,7 +539,10 @@ const StudentLessonView = () => (
 );
 
 const LessonWorkspace = ({ mode = "adult" }: LessonWorkspaceProps) => {
-  return mode === "student" ? <StudentLessonView /> : <AdultLessonView />;
+  const [searchParams] = useSearchParams();
+  const workspace = resolveLessonWorkspaceContent(searchParams.get("session") ?? searchParams.get("sessionId"));
+
+  return mode === "student" ? <StudentLessonView workspace={workspace} /> : <AdultLessonView workspace={workspace} />;
 };
 
 export default LessonWorkspace;

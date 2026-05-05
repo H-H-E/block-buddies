@@ -11,6 +11,7 @@ const ForTeens = lazy(() => import("./pages/ForTeens"));
 const ForMentors = lazy(() => import("./pages/ForMentors"));
 const Curriculum = lazy(() => import("./pages/Curriculum"));
 const Resources = lazy(() => import("./pages/Resources"));
+const ResourceHub = lazy(() => import("./pages/ResourceHub"));
 const About = lazy(() => import("./pages/About"));
 const LessonWorkspace = lazy(() => import("./pages/lesson/LessonWorkspace"));
 const MentorApplication = lazy(() => import("./pages/apply/MentorApplication"));
@@ -35,6 +36,7 @@ const App = () => (
             <Route path="/lesson" element={<LessonWorkspace />} />
             <Route path="/lesson/student" element={<LessonWorkspace mode="student" />} />
             <Route path="/resources" element={<Resources />} />
+            <Route path="/resource-hub" element={<ResourceHub />} />
             <Route path="/about" element={<About />} />
             <Route path="/apply/mentor" element={<MentorApplication />} />
             <Route path="/apply/mentee" element={<MenteeApplication />} />
