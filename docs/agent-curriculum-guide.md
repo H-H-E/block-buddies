@@ -2980,3 +2980,707 @@ That gives you a clean runway into the later networking/server stage, where lear
 [5]: https://www.curseforge.com/minecraft/mc-mods/create "Create - Minecraft Mods - CurseForge"
 [6]: https://learn.microsoft.com/en-us/minecraft/creator/documents/behaviorpackfromscratch?view=minecraft-bedrock-stable "Create an Angry Cow: An Introduction To Behavior Packs (from scratch) | Microsoft Learn"
 [7]: https://tweaked.cc/ "CC: Tweaked"
+
+---
+
+## Post-Modpack Curriculum Planning Addendum
+
+Source: `/Users/hhe/Documents/map.rtf`
+
+I would reorder the next phase like this:
+Stage 1: Minecraft Systems Core — already planned.
+Stage 2: Modpack Lab — already planned.
+Stage 3: Server-Pack Bridge & Private Server Lab.
+Stage 4: Networking & Connectivity Lab.
+Stage 5: Secure Server Operations & Community Admin.
+Stage 6: Performance, Reliability & Observability.
+Stage 7: Web Maps, Integrations & Admin Tools.
+Stage 8: Private Cohort Server Capstone.
+The main correction: do not jump straight from modpacks to port forwarding. Put a “server-pack bridge” first. Learners need to understand that a modded server is not just “my Minecraft world but online.” It is a separate running process with its own files, configs, logs, permissions, world state, backups, and compatibility requirements. Then networking becomes concrete: “I have a service running; now how does another machine reach it?”
+Your uploaded networking outline is strong and should become Stage 4. Its core spine should stay: address, port, protocol; TCP vs UDP; IPv4/private/public/NAT/CGNAT; firewalls; services; latency; DNS; and structured troubleshooting.
+**Full post-modpack stage roadmap**
+
+| Stage | Name | Main learner transformation | Recommended session count |
+|---|---|---|---|
+| Stage 3 | Server-Pack Bridge & Private Server Lab | “I can run and manage a controlled Minecraft server locally.” | 9 |
+| Stage 4 | Networking & Connectivity Lab | “I understand how clients reach services across networks.” | 10 |
+| Stage 5 | Secure Server Operations & Community Admin | “I can keep a private server safe, fair, and recoverable.” | 8 |
+| Stage 6 | Performance, Reliability & Observability | “I can tell network lag from server lag and improve reliability.” | 8 |
+| Stage 7 | Web Maps, Integrations & Admin Tools | “I can connect supporting services without exposing dangerous admin surfaces.” | 7 |
+| Stage 8 | Private Cohort Server Capstone | “I can help design, test, launch, and support a private server experience.” | 6 |
+
+That is 48 sessions after Stage 2. For an MVP pilot, I would not run all 48. The best pilot cut is Stage 3 + Stage 4 + the first half of Stage 5: roughly 23–25 sessions. That gets learners from modpacks to safe private connectivity without pretending they are suddenly junior DevOps engineers with snack breaks.
+
+**Stage 3 — Server-Pack Bridge & Private Server Lab**
+Stage purpose
+This stage turns modpack users into server operators. The learner sees that a server is a running program, not a mystical cloud altar. They learn the difference between client files, server files, world files, configs, logs, permissions, plugins, mods, and backups.
+Paper’s docs frame a Minecraft server as a runnable server JAR with startup commands and separate configuration files; that is exactly the kind of concrete artifact learners should inspect before touching networking. (<u>[PaperMC Docs](https://docs.papermc.io/paper/getting-started/)</u>)
+**Mentor setup**
+Use a prepared local server folder with:
+
+- Known-good server profile.
+- Matching client modpack.
+- Reset zip.
+- Test world.
+- Broken server examples.
+- Logs folder.
+- `server.properties`.
+- Whitelist file.
+- Permissions examples.
+- Backup folder.
+- Simple start/stop scripts.
+
+Do not ask learners to download random server jars during sessions. The mentor should provide the safe lab environment.
+
+**S17 — Client, Server, or Both?**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand that some mods run on the client, some on the server, and some must match on both sides. |
+| Early win | Sort mod cards into “client,” “server,” and “both.” |
+| Core quest | Compare a client modpack and server pack. Identify which files belong where. |
+| Minecraft-native examples | Minimap/client UI mod, server-side plugin, shared content mod, voice chat needing special server setup. |
+| Do | Learner sorts at least six approved mods correctly or with support. |
+| Explain | Learner can say why a client-only UI mod is different from a gameplay-changing mod. |
+| Debug | Learner diagnoses a prepared mismatch: “client has the mod, server does not” or “wrong version.” |
+| Exit ticket | “One mod that belongs on the client is ___. One mod that belongs on the server is ___.” |
+
+**S18 — Build the Server Pack**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand that a server pack is a controlled set of compatible files, not a random folder dump. |
+| Early win | Open a prepared server pack folder and identify `mods`, `config`, `world`, and `logs`. |
+| Core quest | Create or inspect a small approved server pack matching the Stage 2 modpack. |
+| Do | Learner identifies the main server folder parts. |
+| Explain | Learner explains why client and server versions must match. |
+| Debug | Learner finds one missing or extra file in a prepared broken server pack. |
+| Exit ticket | “A server pack needs \_\_\_ because \_\_\_.” |
+
+**S19 — Run a Local Dedicated Server**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand a server as a process that starts, runs, logs, accepts connections, and stops. |
+| Early win | Start a prepared server and see “Done” or equivalent ready message in console/log. |
+| Core quest | Connect from a local client using `localhost` or LAN address. |
+| Do | Learner starts the server and connects locally. |
+| Explain | Learner explains the difference between single-player world and dedicated server. |
+| Debug | Learner checks whether the server is actually running before blaming the network. |
+| Exit ticket | “Before anyone can connect, the server must be \_\_\_.” |
+
+**S20 — Server Files, World State, and Configs**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand that server behavior and world state live in files. |
+| Early win | Change a harmless setting, restart/reload, and observe the result. |
+| Core quest | Map the server folder: world, configs, logs, properties, backups. |
+| Do | Learner locates key files/folders. |
+| Explain | Learner explains which files affect rules versus world state. |
+| Debug | Learner identifies whether a problem is likely in config, world, mod list, or logs. |
+| Exit ticket | “The world data lives in \_\_\_. The server settings live in \_\_\_.” |
+
+**S21 — Whitelist, Operators, and Player Access**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Learn safe access control: who can join, who can use admin powers, and why least privilege matters. |
+| Early win | Add a test player to a whitelist in a prepared environment. |
+| Core quest | Create a simple access model: visitor, builder, mentor/admin. |
+| Do | Learner applies or explains a whitelist/role setup. |
+| Explain | Learner explains why not everyone should be operator. |
+| Debug | Learner diagnoses “player cannot join” using whitelist, version, and server status checks. |
+| Exit ticket | “Operator powers should be limited because \_\_\_.” |
+
+**S22 — Plugins, Mods, and Server Services**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Distinguish mods, plugins, and supporting services. |
+| Early win | Enable one approved plugin/mod and see a visible server-side change. |
+| Core quest | Install or configure a small server-side feature in a prepared folder. |
+| Do | Learner identifies whether a feature is a mod, plugin, or service. |
+| Explain | Learner explains why a plugin can affect all players without being installed on each client. |
+| Debug | Learner checks plugin folder, version, startup log, and config. |
+| Exit ticket | “A plugin is useful when \_\_\_.” |
+
+**S23 — Console and Logs: The Server Talks Back**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Read logs as evidence instead of scary computer confetti. |
+| Early win | Find a normal startup line and a warning line. |
+| Core quest | Use logs to solve a prepared issue: missing file, wrong version, failed plugin load, or denied player. |
+| Do | Learner finds relevant log lines. |
+| Explain | Learner states what the log is reporting in plain language. |
+| Debug | Learner uses log evidence before changing files. |
+| Exit ticket | “The log helped me find \_\_\_.” |
+
+**S24 — Backup and Restore Drill**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand backups as safety systems, not optional nerd hygiene. |
+| Early win | Make a backup of a tiny test world. |
+| Core quest | Break or change something in the world, then restore from backup. |
+| Do | Learner creates or identifies a backup. |
+| Explain | Learner explains when to back up: before updates, before config changes, before events. |
+| Debug | Learner restores a known-good copy. |
+| Exit ticket | “Before a risky change, I should \_\_\_.” |
+
+**S25 — Private Server Lab Capstone**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Run a controlled local/private server session from setup to shutdown. |
+| Early win | Start server, connect, and verify the right world loaded. |
+| Core quest | Host a tiny private build challenge for mentor/peer testers. |
+| Do | Learner starts, tests, and stops the server safely. |
+| Explain | Learner explains server process, files, players, and backup. |
+| Debug | Learner fixes or documents one issue. |
+| Exit ticket | “My server worked because \_\_\_. One issue I checked was \_\_\_.” |
+
+
+**Stage 4 — Networking & Connectivity Lab**
+Stage purpose
+This is where your uploaded networking outline becomes the curriculum spine. The learner learns the model:
+Machine or network = address.
+Service = port.
+Language = protocol.
+Then they apply it to Minecraft game traffic, voice chat, web maps, and admin-only tools. Your outline correctly distinguishes Minecraft Java traffic, Simple Voice Chat UDP traffic, HTTP web-map traffic, and RCON/admin traffic.
+Minecraft’s own Java server setup guide warns that running a reachable server may require changing home network configuration, so this stage should be treated as a controlled lab, not “everyone go open ports on your parents’ router.” (<u>[Minecraft.net](https://help.minecraft.net/hc/en-us/articles/360058525452-How-to-Setup-a-Minecraft-Java-Edition-Server?utm_source=chatgpt.com)</u>)
+**S26 — Address, Port, Protocol**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand the core network model: address, port, protocol. |
+| Early win | Match service cards to address/port/protocol cards. |
+| Core quest | Create a “server service map” for Minecraft, voice chat, web map, and admin console. |
+| Do | Learner labels address, port, and protocol for at least three services. |
+| Explain | Learner explains “ports are doors; protocols are languages.” |
+| Debug | Learner identifies why a browser cannot speak Minecraft protocol. |
+| Exit ticket | “An IP tells us \_\_\_. A port tells us \_\_\_. A protocol tells us \_\_\_.” |
+
+**S27 — TCP vs UDP**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand why different services use different transport assumptions. |
+| Early win | Play a tiny “reliable mail vs live walkie-talkie” activity. |
+| Core quest | Compare Minecraft gameplay traffic with voice chat traffic. |
+| Minecraft-native examples | Minecraft Java gameplay on TCP 25565; Simple Voice Chat using a UDP port, with 24454 shown as the common/default example in your outline and the plugin docs. (<u>[ModRepo](https://modrepo.de/minecraft/voicechat/wiki/server_setup)</u>) |
+| Do | Learner sorts services into TCP-like or UDP-like needs. |
+| Explain | Learner explains why late voice data may be worse than missing voice data. |
+| Debug | Learner spots “opened TCP but not UDP” as a possible voice chat failure. |
+| Exit ticket | “TCP cares about \_\_\_. UDP cares more about \_\_\_.” |
+
+**S28 — Localhost, LAN, and Private IPs**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand `localhost`, LAN addresses, and private IP ranges. |
+| Early win | Connect to local server using `localhost`. |
+| Core quest | Draw the local network: learner machine, server machine, router. |
+| Do | Learner identifies local machine vs another LAN machine. |
+| Explain | Learner explains why `127.0.0.1` points back to the same machine. |
+| Debug | Learner diagnoses “I used localhost from the wrong computer.” |
+| Exit ticket | “Localhost means \_\_\_.” |
+
+**S29 — Public IP, Private IP, NAT, and CGNAT**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand why many home devices share one public-facing connection. |
+| Early win | Sort sample IPs into private, public-looking, and special/reserved categories. |
+| Core quest | Use a diagram to trace player → internet → router → server machine. |
+| Do | Learner identifies private LAN IP versus public IP. |
+| Explain | Learner explains NAT as many private devices sharing one public route. |
+| Debug | Learner recognizes CGNAT as a reason port forwarding may not work. |
+| Exit ticket | “A private IP works inside \_\_\_. A public IP can be reached from \_\_\_.” |
+
+**S30 — Firewalls and Port Forwarding**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand router firewall, machine firewall, and port forwarding as separate gates. |
+| Early win | Use a physical “three doors” model: internet door, router door, server door. |
+| Core quest | Diagnose a prepared connection failure where one gate is closed. |
+| Do | Learner identifies router forwarding versus server firewall. |
+| Explain | Learner explains why forwarding a port does not mean the server accepts it. |
+| Debug | Learner checks service running, server firewall, router forwarding, and protocol. |
+| Exit ticket | “Forwarding a port is not enough because \_\_\_.” |
+
+**S31 — Services: Public, Private, Admin-Only**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Decide which services should be reachable by players and which should stay private. |
+| Early win | Sort Minecraft, voice chat, map, and RCON into exposure categories. |
+| Core quest | Build a service exposure policy for a private learner server. |
+| Minecraft-native examples | Game server may be public/private depending on event; voice chat needs its own setup; web map uses HTTP; RCON/admin access must not be exposed publicly. Your outline flags RCON as “Do not expose publicly,” which should become a hard rule in the curriculum. |
+| Do | Learner sorts services by exposure level. |
+| Explain | Learner explains why admin tools are more dangerous than player connection ports. |
+| Debug | Learner identifies unsafe exposure in a fake service map. |
+| Exit ticket | “One service players may need is \_\_\_. One service they should not access is \_\_\_.” |
+
+**S32 — DNS: Names Are Not Magic**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand that DNS maps names to addresses or service targets, but does not open ports or fix dead servers. |
+| Early win | Match `play.example.com` to an IP in a simple diagram. |
+| Core quest | Create a fake DNS plan using A, CNAME, and SRV cards. |
+| Do | Learner maps a domain to a server address in a diagram. |
+| Explain | Learner explains that DNS is not a firewall and not port forwarding. |
+| Debug | Learner diagnoses “DNS points correctly, but server is offline.” |
+| Exit ticket | “DNS helps players remember \_\_\_, but it does not \_\_\_.” |
+
+**S33 — Latency, Ping, and TPS**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Separate network delay from server simulation health. |
+| Early win | Compare two scenarios: high ping but good TPS; low ping but bad TPS. |
+| Core quest | Diagnose sample complaints: rubber-banding, delayed chat, block lag, low TPS, Wi-Fi issue. |
+| Do | Learner sorts symptoms into network lag or server lag. |
+| Explain | Learner explains ping versus TPS. |
+| Debug | Learner chooses the right first test: ping/client route versus server performance/logs. |
+| Exit ticket | “Ping means \_\_\_. TPS means \_\_\_.” |
+
+**S34 — Server Busted, Please Fix**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Use a structured network troubleshooting ladder. |
+| Early win | Solve a one-step failure: server is simply off. |
+| Core quest | Work through a prepared failure: wrong port, wrong protocol, closed firewall, wrong DNS, CGNAT, or dead service. |
+| Do | Learner follows the checklist. |
+| Explain | Learner states expected versus actual at each layer. |
+| Debug | Learner identifies the layer where connection fails. |
+| Exit ticket | “The first thing I check is \_\_\_. The next thing I check is \_\_\_.” |
+
+**S35 — No Port Forward? Private Tunnels and Safer Access**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand alternatives when port forwarding is unavailable or unsafe. |
+| Early win | See a private network diagram using Tailscale-style device addresses. |
+| Core quest | Compare three access models: LAN-only, public port forwarding, private tunnel. |
+| Minecraft-native examples | Tailscale’s Minecraft guide frames private access as a way to reach a server without opening firewall ports broadly, sharing it only with intended people. (<u>[Tailscale](https://tailscale.com/docs/solutions/set-up-minecraft)</u>) |
+| Do | Learner chooses an access model for a scenario. |
+| Explain | Learner explains why CGNAT or safety needs may push you toward a private tunnel. |
+| Debug | Learner identifies when port forwarding is not the right solution. |
+| Exit ticket | “A private tunnel is useful when \_\_\_.” |
+
+
+**Stage 5 — Secure Server Operations & Community Admin**
+Stage purpose
+This stage teaches learners that “server admin” is not just power. It is responsibility, restraint, documentation, and protecting people’s work.
+This should come after networking basics but before any real public-facing server. Otherwise the learner learns how to expose things before learning what should never be exposed. That is how a curriculum becomes a slow-motion facepalm.
+**S36 — Least Privilege and Roles**
+
+|               |                                                         |
+|---------------|---------------------------------------------------------|
+| Field         | Plan                                                    |
+| Learning goal | Give people only the access they need.                  |
+| Core quest    | Design roles: visitor, builder, mentor, admin.          |
+| Do            | Learner assigns permissions to roles.                   |
+| Explain       | Learner explains why fewer operator accounts are safer. |
+| Debug         | Learner fixes a role with too much power.               |
+|               |                                                         |
+
+**S37 — Admin Surfaces: Console, RCON, and “Absolutely Not Public”**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand the difference between player access and admin access. |
+| Core quest | Compare console, in-game op commands, and RCON in a controlled demo. |
+| Do | Learner identifies admin-only surfaces. |
+| Explain | Learner explains why RCON should not be exposed publicly. |
+| Debug | Learner spots unsafe admin exposure in a fake configuration. |
+
+Paper’s server properties include `enable-rcon` for remote console access, so the product should treat RCON as an advanced/admin-only topic, not a learner playground. (<u>[PaperMC Docs](https://docs.papermc.io/paper/reference/server-properties/)</u>)
+**S38 — Whitelist, Identity, and Onboarding**
+
+|               |                                                          |
+|---------------|----------------------------------------------------------|
+| Field         | Plan                                                     |
+| Learning goal | Understand controlled access and player identity.        |
+| Core quest    | Create a safe onboarding checklist for a private server. |
+| Do            | Learner adds/removes test identities from access list.   |
+| Explain       | Learner explains why invite-only access matters.         |
+| Debug         | Learner diagnoses “approved player cannot join.”         |
+|               |                                                          |
+
+**S39 — Griefing, Rollback, and Repair**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Respond to damage without panic or blame spirals. |
+| Core quest | Simulate a damaged build, inspect evidence, restore safely. |
+| Do | Learner restores or repairs from a safe point. |
+| Explain | Learner explains difference between accident, bug, and rule-breaking. |
+| Debug | Learner writes a short incident note. |
+
+**S40 — Privacy, Screenshots, and Parent-Safe Evidence**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Handle learner evidence safely. |
+| Core quest | Decide what can appear in parent summaries, teacher notes, and private mentor notes. |
+| Do | Learner or mentor tags evidence as shareable/private. |
+| Explain | Learner explains why screenshots and logs may contain personal information. |
+| Debug | Learner removes unnecessary sensitive detail from a sample report. |
+
+**S41 — Updates, Versions, and Change Windows**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Update safely instead of YOLO-clicking the server into soup. |
+| Core quest | Plan a staged update: backup, test copy, version check, rollback plan. |
+| Do | Learner completes an update checklist in a prepared lab. |
+| Explain | Learner explains why not to update right before a session. |
+| Debug | Learner rolls back from a bad update. |
+
+**S42 — Incident Response**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Use a calm protocol when something goes wrong. |
+| Core quest | Respond to one incident: server down, bad config, griefed build, incompatible mod, unsafe permission. |
+| Do | Learner follows incident steps. |
+| Explain | Learner states impact, cause, fix, prevention. |
+| Debug | Learner creates a “next time” improvement. |
+
+**S43 — Secure Ops Capstone**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Operate a private server session safely. |
+| Core quest | Run a controlled server event with whitelist, backup, rules, and incident plan. |
+| Do | Learner supports setup and shutdown. |
+| Explain | Learner explains access, backups, and roles. |
+| Debug | Learner handles or documents one operational issue. |
+
+
+**Stage 6 — Performance, Reliability & Observability**
+Stage purpose
+This stage separates “the internet is bad” from “the server is choking on 400 entities and a cursed chunk loader.” Learners learn to diagnose performance through symptoms, measurements, logs, and controlled changes.
+This should come after networking because Stage 4 introduces ping versus TPS. Stage 6 turns that distinction into real operations skill.
+**S44 — Ping vs TPS Deep Lab**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Distinguish network latency from server tick health. |
+| Core quest | Diagnose three fake complaints: high ping, low TPS, client FPS issue. |
+| Do | Learner classifies lag type. |
+| Explain | Learner explains why a fast server can still feel delayed to a faraway player. |
+| Debug | Learner chooses the correct first test. |
+
+**S45 — Hardware Basics: CPU, RAM, Disk**
+
+|               |                                                            |
+|---------------|------------------------------------------------------------|
+| Field         | Plan                                                       |
+| Learning goal | Understand basic resource limits.                          |
+| Core quest    | Match symptoms to resource bottlenecks.                    |
+| Do            | Learner identifies likely bottleneck from clues.           |
+| Explain       | Learner explains why more RAM is not always the fix.       |
+| Debug         | Learner avoids changing five performance settings at once. |
+|               |                                                            |
+
+**S46 — Chunks, Entities, View Distance**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand Minecraft-specific load. |
+| Core quest | Compare performance impact of mobs, farms, redstone, chunks, and view distance. |
+| Do | Learner identifies heavy areas in a test world. |
+| Explain | Learner explains why loaded chunks matter. |
+| Debug | Learner improves one bottleneck safely. |
+
+**S47 — Modpack Performance**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand that mods can affect client load, server load, or both. |
+| Core quest | Compare a light pack and heavier pack using symptoms and logs. |
+| Do | Learner identifies likely client-side versus server-side pressure. |
+| Explain | Learner explains why a modded server needs testing after changes. |
+| Debug | Learner removes or disables one prepared problem mod in a test copy. |
+
+**S48 — Observability: Logs, Metrics, and Dashboards**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Make server health visible. |
+| Core quest | Build a simple server health board: online/offline, players, TPS, recent errors, backup status. |
+| Do | Learner reads a basic metric or log signal. |
+| Explain | Learner explains what the signal tells them. |
+| Debug | Learner uses evidence instead of vibes. |
+
+**S49 — Maintenance Windows and Automated Backups**
+
+|               |                                                       |
+|---------------|-------------------------------------------------------|
+| Field         | Plan                                                  |
+| Learning goal | Plan maintenance without disrupting players.          |
+| Core quest    | Create a maintenance checklist and backup schedule.   |
+| Do            | Learner runs or simulates backup before maintenance.  |
+| Explain       | Learner explains why maintenance should be announced. |
+| Debug         | Learner restores after a failed maintenance change.   |
+|               |                                                       |
+
+**S50 — Load Testing and Capacity Planning**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Estimate how many players/features a server can handle. |
+| Core quest | Use a fake or controlled test to compare 2, 5, 10, 20 player load scenarios. |
+| Do | Learner fills a capacity table. |
+| Explain | Learner explains why capacity depends on world activity, not just player count. |
+| Debug | Learner suggests one capacity mitigation. |
+
+**S51 — Reliability Capstone**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Diagnose and improve a server reliability problem. |
+| Core quest | Given a laggy/unreliable prepared server, find one cause and improve it. |
+| Do | Learner completes diagnosis. |
+| Explain | Learner explains evidence. |
+| Debug | Learner documents fix and prevention. |
+
+
+**Stage 7 — Web Maps, Integrations & Admin Tools**
+Stage purpose
+This stage introduces supporting services around the Minecraft server: maps, web pages, status info, notifications, and admin automation. This is where HTTP becomes concrete.
+Your networking outline already names web-map services such as squaremap and BlueMap as separate HTTP services. BlueMap’s docs describe it as a plugin/mod that renders a map and hosts a small webserver, requiring an additional port beyond the Minecraft server port. (<u>[BlueMap](https://bluemap.bluecolored.de/wiki/getting-started/Installation.html)</u>)
+**S52 — HTTP Is a Different Service**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Understand web traffic as separate from Minecraft game traffic. |
+| Core quest | Compare Minecraft connection and browser map connection. |
+| Do | Learner identifies HTTP service address and port. |
+| Explain | Learner explains why a browser can view a map but not join Minecraft. |
+| Debug | Learner diagnoses “game works, map does not.” |
+
+**S53 — Web Map Lab**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Set up or inspect a web map as a separate service. |
+| Core quest | View a prepared squaremap/BlueMap-style web map and trace how it connects to server/world data. |
+| Do | Learner opens map and identifies web address/port. |
+| Explain | Learner explains how the map is different from the game client. |
+| Debug | Learner checks webserver enabled, port, firewall, and render status. |
+
+BlueMap’s webserver config lists an enabled webserver and a default listening port of 8100; squaremap also describes itself as a live world map viewer available in a browser. (<u>[BlueMap](https://bluemap.bluecolored.de/wiki/configs/Webserver.html)</u>)
+**S54 — Public, Private, or Staff-Only Web Tools**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Decide who should see supporting services. |
+| Core quest | Sort map, status page, admin panel, logs, and backups into exposure categories. |
+| Do | Learner labels services safely. |
+| Explain | Learner explains why logs and admin panels are not player-facing. |
+| Debug | Learner spots unsafe service exposure. |
+
+**S55 — Player Docs and Status Page**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Build clear player-facing information. |
+| Core quest | Create a one-page player guide: how to join, rules, known issues, help steps. |
+| Do | Learner writes or helps build a guide. |
+| Explain | Learner explains what a new player needs before joining. |
+| Debug | Learner fixes confusing instructions after a tester gets stuck. |
+
+**S56 — Safe Notifications and Event Updates**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Use notifications without leaking private info or creating spam. |
+| Core quest | Design safe status messages: server open, maintenance, event start, issue resolved. |
+| Do | Learner drafts safe messages. |
+| Explain | Learner explains what should not be included. |
+| Debug | Learner edits a bad notification. |
+
+**S57 — Admin Automation Without Chaos**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Automate safe repeated tasks. |
+| Core quest | Use or inspect scripts for start, stop, backup, restart, status check. |
+| Do | Learner follows a safe automation checklist. |
+| Explain | Learner explains what the script does before running it. |
+| Debug | Learner checks logs after a failed script. |
+
+**S58 — Integration Capstone**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Combine server, map, docs, and maintenance workflow. |
+| Core quest | Run a private test server with a supporting map or status guide. |
+| Do | Learner verifies each service. |
+| Explain | Learner explains which service uses which port/protocol. |
+| Debug | Learner fixes or documents one integration issue. |
+
+
+**Stage 8 — Private Cohort Server Capstone**
+Stage purpose
+This is the product-style capstone. Learners help design and operate a real private server experience for a small, known group. It is not public. It is not “go viral.” It is a controlled launch with planning, testing, safety, evidence, and a postmortem.
+**S59 — Server Experience Design Brief**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Design a server around player needs and constraints. |
+| Core quest | Choose server theme, rules, mods/plugins, player count, safety model, and success criteria. |
+| Do | Learner contributes to a design brief. |
+| Explain | Learner explains who the server is for. |
+| Debug | Learner identifies one risk before launch. |
+
+**S60 — Build and Configure**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Turn the design into a working server setup. |
+| Core quest | Prepare world, server pack, whitelist, roles, backup, spawn area, docs. |
+| Do | Learner completes assigned setup task. |
+| Explain | Learner explains how their task supports players. |
+| Debug | Learner catches one setup issue. |
+
+**S61 — Test Night**
+
+|               |                                                         |
+|---------------|---------------------------------------------------------|
+| Field         | Plan                                                    |
+| Learning goal | Test with real users before launch.                     |
+| Core quest    | Run a small test with mentors/peers and collect issues. |
+| Do            | Learner participates in test plan.                      |
+| Explain       | Learner reports expected versus actual.                 |
+| Debug         | Learner documents or fixes one issue.                   |
+|               |                                                         |
+
+**S62 — Launch Event**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Operate a private server session live. |
+| Core quest | Run the server event with support roles: greeter, tester, builder support, log watcher, backup checker. |
+| Do | Learner performs a launch role. |
+| Explain | Learner explains their role. |
+| Debug | Learner escalates or solves one real-time issue. |
+
+**S63 — Support Desk and Incident Notes**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Handle player issues calmly and usefully. |
+| Core quest | Convert player complaints into support tickets: symptom, expected, actual, likely layer, next step. |
+| Do | Learner writes or completes a support note. |
+| Explain | Learner explains what evidence is needed. |
+| Debug | Learner avoids blaming the wrong layer too early. |
+
+**S64 — Postmortem and Portfolio Artifact**
+
+| Field | Plan |
+|---|---|
+| Learning goal | Reflect on the launch as a technical and social system. |
+| Core quest | Create a final artifact: diagram, screenshot set, service map, issue report, or server guide. |
+| Do | Learner presents one concrete contribution. |
+| Explain | Learner explains what worked and what they would improve. |
+| Debug | Learner names one prevention for a future issue. |
+
+
+**What is missing from the current outline**
+The networking outline is good, but the full program needs these extra pieces around it.
+**1. Client/server mod compatibility**
+Before networking, learners need to know why a modded client can fail to join a modded server. This belongs in Stage 3. Without it, they will misdiagnose mod mismatch as a network failure.
+**2. Server lifecycle**
+Start, stop, restart, save, backup, restore. Boring? Yes. Foundational? Also yes. This is the broccoli of server education.
+**3. Permissions and least privilege**
+Learners need a clear model for player, builder, moderator, mentor, and admin. Do this before real server events.
+**4. Backups and rollback**
+Backups should appear before launch, before updates, and before networking. A backup is the curriculum’s seatbelt.
+**5. Logs and evidence**
+Troubleshooting only works if learners can read evidence. Logs should start in Stage 3 and continue through every later stage.
+**6. Privacy and parent-safe evidence**
+Because this is a youth program, the product needs strict separation between:
+
+- Student-facing achievements.
+
+- Parent-safe summaries.
+
+- Mentor observations.
+
+- Coordinator-only notes.
+
+- Technical logs.
+
+Do not casually expose chat logs, IPs, usernames, screenshots, or behavioral notes.
+
+**7. Performance as its own stage**
+  Ping versus TPS is in your network outline, correctly. But it deserves its own later stage because learners will constantly say “lag” for five different problems. Stage 6 teaches them to stop treating “lag” like a diagnosis.
+  **8. Service exposure policy**
+  Every service should be labeled:
+
+<!-- -->
+
+- Player-facing.
+
+- Private group only.
+
+- Mentor/admin only.
+
+- Localhost only.
+
+- Never exposed.
+
+RCON/admin belongs in the danger bucket unless tightly controlled.
+
+**9. Launch operations**
+  Eventually learners should run a real private event. That requires planning, testing, launch roles, issue handling, and postmortem. That is where the whole program becomes more than Minecraft trivia.
+
+  **Recommended MVP cut**
+  For the next pilot after Modpack Lab, I would run this sequence:
+  **MVP Block A — Server-Pack Bridge**
+  Run S17–S25.
+  Goal: learners can run and understand a local/private server.
+  **MVP Block B — Networking & Connectivity**
+  Run S26–S35.
+  Goal: learners understand address, port, protocol, TCP/UDP, private/public IPs, firewalls, DNS, latency, and troubleshooting.
+  **MVP Block C — Safety Mini-Module**
+  Run S36, S37, S38, S41, S42, S43.
+  Goal: learners understand roles, admin surfaces, safe access, updates, incident response, and secure operations.
+  That gives a strong 25-session post-modpack program:
+
+- 9 server-pack/private server sessions.
+- 10 networking sessions.
+- 6 safety/ops sessions.
+
+Keep Stages 6–8 as advanced or second-cohort material unless you are actively preparing to run a real private server event.
+
+**Topics to keep out of the MVP**
+
+Your uploaded outline explicitly excludes IPv6, TLS/HTTPS/encryption, Docker networking, and dynamic DNS for this module. I agree with that call. Those topics matter, but they belong later, after learners can already reason about one server, one port, one protocol, and one service map.
+
+Put these in the advanced lane:
+
+| Topic | Better placement |
+|---|---|
+| IPv6 | Advanced Networking |
+| TLS/HTTPS | Security & Web Services |
+| Docker networking | DevOps / Deployment Lab |
+| Dynamic DNS | Hosting Lab |
+| Cloud/VPS hosting | Advanced Hosting |
+| Velocity/Bungee networks | Multi-Server Architecture |
+| Databases | Advanced Plugins / Data Systems |
+| Full plugin development | Programming Track |
+| Public server operations | Only after safety, moderation, backups, and parent/coordinator policies are mature |
+
+The clean path is:
+Modpack user → server operator → network troubleshooter → safe admin → reliability thinker → integration builder → private launch contributor.
+That sequence teaches real computing without making the learner eat the entire SysAdmin Cinematic Universe in one sitting.
