@@ -32,6 +32,89 @@ export interface SessionRunbook {
   masteryGateIds: string[];
 }
 
+export type CurriculumStage = "core-v2" | "modpack-lab";
+export type EvidenceItemType = "screenshot" | "text" | "mentorNote" | "artifact" | "diff";
+export type TechnicalRiskLevel = "low" | "medium" | "high";
+
+export interface StructuredQuest {
+  title: string;
+  steps: string[];
+  successCriteria: string;
+}
+
+export interface StructuredTrackExample {
+  label: string;
+  example: string;
+  debugTarget: string;
+}
+
+export interface StructuredMasteryGate {
+  criteria: string;
+  evidence: string;
+  levels: Array<"notYet" | "withSupport" | "independent">;
+}
+
+export interface StructuredMasteryGates {
+  do: StructuredMasteryGate;
+  explain: StructuredMasteryGate;
+  debug: StructuredMasteryGate;
+}
+
+export interface EvidenceItem {
+  type: EvidenceItemType;
+  label: string;
+  gate?: "do" | "explain" | "debug";
+}
+
+export interface ModpackLabMetadata {
+  requiredProfile: string;
+  minecraftVersion: string;
+  loader: string;
+  packVersion: string;
+  approvedMods: string[];
+  requiredFiles: string[];
+  knownGoodTest: string;
+  knownBrokenState: string;
+  resetInstructions: string;
+  technicalRiskLevel: TechnicalRiskLevel;
+  deviceRequirements: string;
+  doNotTroubleshootBeyond: string;
+  packReadinessChecks: string[];
+}
+
+export interface StageTwoModpackSession {
+  sessionId: string;
+  stage: "modpack-lab";
+  sequenceNumber: number;
+  title: string;
+  shortTitle: string;
+  estimatedMinutes: number;
+  coreConcept: string;
+  objective: string;
+  studentMissionText: string;
+  mentorFraming: string;
+  earlyWin: StructuredQuest;
+  coreQuest: StructuredQuest;
+  trackExamples: {
+    visualist: StructuredTrackExample;
+    mechanist: StructuredTrackExample;
+    operator: StructuredTrackExample;
+  };
+  sideQuests: SideQuest[];
+  masteryGates: StructuredMasteryGates;
+  commonFailurePoints: string[];
+  fallbackSteps: string[];
+  hintLadder: string[];
+  exitTicket: {
+    prompt: string;
+    acceptedFormats: string[];
+  };
+  evidenceItems: EvidenceItem[];
+  parentSummaryTemplate: string;
+  studentChecklist: string[];
+  modpackLab: ModpackLabMetadata;
+}
+
 export interface CurriculumPhase {
   phase: number;
   title: string;

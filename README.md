@@ -35,6 +35,8 @@ Program spine: 8 sessions with runbooks in [`docs/runbooks`](./docs/runbooks/ses
 - [Curriculum Matrix](./docs/curriculum.md)
 - [Curriculum Session Playbook](./docs/curriculum-session-playbook.md)
 - [Post-S08 Advanced Labs](./docs/lessons/post-s08-advanced-labs.md)
+- [Stage 2 Modpack Lab](./docs/stage-2-modpack-lab.md)
+- [Curriculum Continuity](./docs/curriculum-continuity.md)
 - [Diagnostic Protocol](./docs/diagnostic-protocol.md)
 - [Mentor Pedagogy](./docs/mentor-pedagogy.md)
 - [Troubleshooting Framework](./docs/troubleshooting-framework.md)

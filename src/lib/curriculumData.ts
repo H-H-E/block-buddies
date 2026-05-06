@@ -385,3 +385,5 @@ export const sessionRunbooks: SessionRunbook[] = [
     masteryGateIds: ["MG-S08-DO", "MG-S08-EXPLAIN", "MG-S08-DEBUG"],
   },
 ];
+
+export { stageTwoModpackSessions } from "@/lib/stageTwoCurriculumData";
