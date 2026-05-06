@@ -12,10 +12,10 @@ Protect canonical alignment across docs and app surfaces so all changes follow P
 ## Workflow
 
 1. Load canonical sources first:
-   - `/Users/hhe/Documents/block-buddies/docs/pedagogy/engine-v2.md`
-   - `/Users/hhe/Documents/block-buddies/docs/pedagogy/session-template.md`
-   - `/Users/hhe/Documents/block-buddies/docs/pedagogy/mastery-gate-rubric.md`
-   - `/Users/hhe/Documents/block-buddies/docs/pedagogy/faq-language-guide.md`
+   - `docs/pedagogy/engine-v2.md`
+   - `docs/pedagogy/session-template.md`
+   - `docs/pedagogy/mastery-gate-rubric.md`
+   - `docs/pedagogy/faq-language-guide.md`
 2. Identify changed surfaces and classify each change:
    - rule conflict
    - terminology conflict

@@ -12,11 +12,11 @@ Keep profile-code behavior (`fluency-archetype`) decision-complete and consisten
 ## Workflow
 
 1. Load routing references:
-   - `/Users/hhe/Documents/block-buddies/docs/diagnostic-protocol.md`
-   - `/Users/hhe/Documents/block-buddies/src/lib/pedagogyEngine.ts`
-   - `/Users/hhe/Documents/block-buddies/src/lib/curriculumModel.ts`
-   - `/Users/hhe/Documents/block-buddies/src/pages/apply/MenteeApplication.tsx`
-   - `/Users/hhe/Documents/block-buddies/src/pages/apply/MentorApplication.tsx`
+   - `docs/diagnostic-protocol.md`
+   - `src/lib/pedagogyEngine.ts`
+   - `src/lib/curriculumModel.ts`
+   - `src/pages/apply/MenteeApplication.tsx`
+   - `src/pages/apply/MentorApplication.tsx`
 2. Verify shared vocabulary for:
    - fluency levels (`0/1/2`)
    - archetypes (`A/B/C`)

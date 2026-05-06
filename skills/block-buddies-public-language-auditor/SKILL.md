@@ -12,13 +12,13 @@ Keep external messaging clear, respectful, and aligned with V2 language policy w
 ## Workflow
 
 1. Load language policy:
-   - `/Users/hhe/Documents/block-buddies/docs/pedagogy/faq-language-guide.md`
+   - `docs/pedagogy/faq-language-guide.md`
 2. Audit public pages first:
-   - `/Users/hhe/Documents/block-buddies/src/pages/About.tsx`
-   - `/Users/hhe/Documents/block-buddies/src/pages/ForParents.tsx`
-   - `/Users/hhe/Documents/block-buddies/src/pages/ForTeens.tsx`
-   - `/Users/hhe/Documents/block-buddies/src/pages/ForMentors.tsx`
-   - `/Users/hhe/Documents/block-buddies/src/pages/Resources.tsx`
+   - `src/pages/About.tsx`
+   - `src/pages/ForParents.tsx`
+   - `src/pages/ForTeens.tsx`
+   - `src/pages/ForMentors.tsx`
+   - `src/pages/Resources.tsx`
 3. Flag or replace restricted phrasing.
 4. Ensure pedagogical meaning is retained in family-friendly terms.
 

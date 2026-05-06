@@ -15,8 +15,8 @@ Keep forms complete enough for deterministic matching, routing, and session plan
    - mentee: fluency, archetype preference, goals, availability, accessibility notes
    - mentor: preferred track, supported fluency levels, availability, safety/commitment agreements, mastery logging agreement
 2. Update form state and validators in:
-   - `/Users/hhe/Documents/block-buddies/src/pages/apply/MenteeApplication.tsx`
-   - `/Users/hhe/Documents/block-buddies/src/pages/apply/MentorApplication.tsx`
+   - `src/pages/apply/MenteeApplication.tsx`
+   - `src/pages/apply/MentorApplication.tsx`
 3. Ensure `canProceed` logic matches required fields.
 4. Ensure profile-code preview/derivation remains consistent.
 5. Run tests/build.
