@@ -69,6 +69,12 @@ Expected output:
 | Core + stretch | 5 | 5 | 20 | 10 | 5 | 45 |
 | Core + expert | 5 | 5 | 18 | 12 | 5 | 45 |
 
+## Common Failure Points
+- Learner treats the diagnostic like a test instead of a setup mission.
+- Learner cannot find the Minecraft folder without wandering through unrelated folders.
+- Learner gives self-report confidence that does not match observed behavior.
+- Learner gets stuck on typing or file naming instead of the underlying navigation idea.
+
 ## Fallback Path
 Trigger when blocked >= 7 total minutes on one task or after two repeated wrong edits.
 
@@ -80,6 +86,13 @@ Recovery ladder order (fixed):
 
 Fallback mini-win target:
 - Learner navigates to the correct folder once and records profile code before exit ticket.
+
+## Hint Ladder
+1. What are we trying to find or create right now?
+2. Which folder or filename gives us the strongest clue?
+3. Compare this path to the mentor example. What is different?
+4. Use the prepared path card; read one folder at a time.
+5. Mentor models one safe navigation step; learner repeats the next step.
 
 ## Mastery Gates
 - Do: completes file task and profile capture with evidence.
@@ -95,6 +108,24 @@ Fallback mini-win target:
 - [ ] Confidence rating (`high/medium/low`) recorded.
 - [ ] One evidence note for fluency and one for archetype recorded.
 - [ ] Exit ticket statement captured ("my profile is __ because __").
+
+## Evidence Items
+- Screenshot or file proof that `S01_first_win.txt` exists and opens.
+- Profile code (`fluency-archetype`) plus confidence rating.
+- Mentor note with one observed fluency behavior and one observed archetype behavior.
+
+## Exit Ticket
+My profile is __ because __. One thing I can do next time is __.
+
+## Parent-Safe Summary
+Today your child completed a confidence-first diagnostic session. They created a visible first-win artifact, practiced safe file navigation, and helped the mentor identify the right level of support and project pathway for future sessions.
+
+## Student Checklist
+- I made my first-win file.
+- I found or followed the correct folder path.
+- I shared what kind of Minecraft task feels most interesting to me.
+- I fixed or checked one small mistake.
+- I know what my next session starts with.
 
 ## Accessibility Notes
 - Hook: learner may use visual cue cards instead of verbal response.
@@ -121,3 +152,8 @@ Reassessment trigger flags for S02 planning:
 - Profile confidence is `low`.
 - Learner behavior conflicts with chosen archetype in two or more tasks.
 - `Do` passes but both `Explain` and `Debug` need heavy prompting.
+
+## Canonical References
+- [Curriculum Matrix](../curriculum.md)
+- [Pedagogy Engine V2](../pedagogy/engine-v2.md)
+- [Session Runbook Template](../pedagogy/session-template.md)

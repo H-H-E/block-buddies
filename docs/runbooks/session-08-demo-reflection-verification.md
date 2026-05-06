@@ -59,6 +59,12 @@ Expected output: complete demo narrative with working artifact evidence.
 | Core + stretch | 3 | 5 | 20 | 12 | 5 | 45 |
 | Core + expert | 3 | 5 | 18 | 14 | 5 | 45 |
 
+## Common Failure Points
+- Learner has a working artifact but struggles to explain the process.
+- Presentation anxiety hides evidence of actual understanding.
+- Learner lists features but not the problem/fix story.
+- Final reflection becomes too vague to guide continuation.
+
 ## Fallback Path
 Trigger when blocked >= 7 total minutes in live demo or reflection.
 
@@ -69,6 +75,13 @@ Recovery ladder order:
 4. Fallback mini-win.
 
 Fallback mini-win: use mentor-curated demo script prompts and complete reflection checklist.
+
+## Hint Ladder
+1. What did you build?
+2. What problem did you face?
+3. What did you change to fix it?
+4. What skill from this project can move to a new project?
+5. Mentor asks one prompt at a time; learner completes the demo card.
 
 ## Mastery Gates
 - Do: learner delivers working demo.
@@ -83,6 +96,24 @@ Fallback mini-win: use mentor-curated demo script prompts and complete reflectio
 - [ ] Live debug or change-response note captured.
 - [ ] Independent continuation plan captured.
 
+## Evidence Items
+- Working artifact proof from the final demo.
+- Demo transcript or checklist covering goal, steps, problem, fix, and output.
+- Concept-transfer reflection and independent next-project plan.
+
+## Exit Ticket
+I built __. I debugged __. I can use this skill next by __.
+
+## Parent-Safe Summary
+Today your child completed their Stage 1 demo and reflection. They showed a working project, explained a problem they solved, and identified a next step for continued Minecraft-powered technology learning.
+
+## Student Checklist
+- I showed my working artifact.
+- I explained the goal.
+- I shared one problem I faced.
+- I described how I fixed or would fix it.
+- I chose a next project direction.
+
 ## Accessibility Notes
 - Visual demo cards and sentence starters are allowed.
 - Oral presentation in place of long written reflection is valid.
@@ -94,3 +125,8 @@ Fallback mini-win: use mentor-curated demo script prompts and complete reflectio
 - Intervention/fallback events.
 - Accessibility supports used.
 - Independent next-project plan and risks.
+
+## Canonical References
+- [Curriculum Matrix](../curriculum.md)
+- [Pedagogy Engine V2](../pedagogy/engine-v2.md)
+- [Session Runbook Template](../pedagogy/session-template.md)

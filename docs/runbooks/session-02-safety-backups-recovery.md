@@ -60,6 +60,12 @@ Expected output:
 | Core + stretch | 4 | 6 | 20 | 10 | 5 | 45 |
 | Core + expert | 4 | 6 | 18 | 12 | 5 | 45 |
 
+## Common Failure Points
+- Learner creates a backup but does not verify it opens.
+- Backup names are vague, duplicated, or hard to connect to the change.
+- Learner wants to keep editing after a mistake instead of restoring safely.
+- Learner confuses backup creation with actual rollback.
+
 ## Fallback Path
 Trigger when blocked >= 7 total minutes on one backup/restore task.
 
@@ -70,6 +76,13 @@ Recovery ladder order:
 4. Fallback mini-win.
 
 Fallback mini-win: complete one full backup+restore loop in prepared sandbox folder.
+
+## Hint Ladder
+1. Where is the safe copy?
+2. What name would help Future You understand this backup?
+3. Can we open the archive before trusting it?
+4. What changed after the controlled failure?
+5. Mentor models one restore step; learner completes the verification step.
 
 ## Mastery Gates
 - Do: creates and restores backup.
@@ -86,6 +99,25 @@ Fallback mini-win: complete one full backup+restore loop in prepared sandbox fol
 - [ ] Debug failure/fix pair logged.
 - [ ] S03 start condition set.
 
+## Evidence Items
+- Named backup archive proof.
+- Restore verification note or screenshot.
+- Learner explanation of why backup naming and verification matter.
+- Debug note for a misnamed, missing, or invalid backup.
+
+## Exit Ticket
+I backed up __. I tested the backup by __. I restored it when __.
+
+## Parent-Safe Summary
+Today your child practiced safe technology habits by creating, checking, and restoring from a backup. They learned that good builders do not avoid mistakes; they prepare a safe recovery path before making changes.
+
+## Student Checklist
+- I made a named backup.
+- I checked that the backup opens.
+- I made one controlled change.
+- I restored the safe version.
+- I explained why backups matter.
+
 ## Accessibility Notes
 - GUI compression is allowed and logged.
 - Reduced typing templates for naming are allowed.
@@ -97,3 +129,8 @@ Fallback mini-win: complete one full backup+restore loop in prepared sandbox fol
 - Recovery ladder steps used and hard-cap events.
 - Accessibility supports used.
 - S03 start condition (`normal`, `debug retrieval`, `repeat theme`).
+
+## Canonical References
+- [Curriculum Matrix](../curriculum.md)
+- [Pedagogy Engine V2](../pedagogy/engine-v2.md)
+- [Session Runbook Template](../pedagogy/session-template.md)

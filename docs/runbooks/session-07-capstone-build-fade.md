@@ -54,6 +54,12 @@ Expected output: one demonstrable slice + proof of function.
 | Core + stretch | 4 | 4 | 24 | 8 | 5 | 45 |
 | Core + expert | 4 | 4 | 22 | 10 | 5 | 45 |
 
+## Common Failure Points
+- Capstone scope grows beyond the session budget.
+- Learner waits for mentor approval before every step despite readiness.
+- Core function is unfinished because decoration or polish came first.
+- Learner struggles to turn a working build into a clear demo story.
+
 ## Fallback Path
 Trigger when blocked >= 7 total minutes or scope exceeds session budget.
 
@@ -64,6 +70,13 @@ Recovery ladder order:
 4. Fallback mini-win.
 
 Fallback mini-win: reduce to one core capstone slice that can be demonstrated end-to-end.
+
+## Hint Ladder
+1. What is the smallest complete slice?
+2. What must work before anything gets fancy?
+3. Which step can you own without mentor help?
+4. What proof will show this slice works?
+5. Mentor helps cut scope once; learner completes the reduced slice.
 
 ## Mastery Gates
 - Do: capstone slice works.
@@ -80,6 +93,24 @@ Fallback mini-win: reduce to one core capstone slice that can be demonstrated en
 - [ ] Live debug/fix note captured.
 - [ ] S08 start condition set.
 
+## Evidence Items
+- Scoped capstone target statement.
+- Working slice screenshot, clip, or state proof.
+- Architecture explanation and live bug/fix note.
+
+## Exit Ticket
+My capstone slice is __. It works by __. The next thing to test is __.
+
+## Parent-Safe Summary
+Today your child began turning their skills into a small capstone project. They scoped a finishable slice, built evidence that it worked, and practiced taking more ownership while the mentor reduced support.
+
+## Student Checklist
+- I chose a small capstone slice.
+- I built the core function first.
+- I tested that it works.
+- I explained one design choice.
+- I fixed or noted one live issue.
+
 ## Accessibility Notes
 - Planning cards/checklists are allowed.
 - Reduced writing load via checklist responses is allowed.
@@ -91,3 +122,8 @@ Fallback mini-win: reduce to one core capstone slice that can be demonstrated en
 - Intervention/fallback events.
 - Accessibility supports used.
 - S08 start condition.
+
+## Canonical References
+- [Curriculum Matrix](../curriculum.md)
+- [Pedagogy Engine V2](../pedagogy/engine-v2.md)
+- [Session Runbook Template](../pedagogy/session-template.md)

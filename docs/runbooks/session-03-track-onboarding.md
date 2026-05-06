@@ -77,6 +77,12 @@ Complete one starter artifact by archetype:
 | Core + stretch | 5 | 7 | 18 | 10 | 5 | 45 |
 | Core + expert | 5 | 7 | 16 | 12 | 5 | 45 |
 
+## Common Failure Points
+- Learner picks a track because it sounds cool but struggles with the task style.
+- Learner copies the starter artifact without noticing the cause/effect rule.
+- Track-specific tools introduce typing, path, wiring, or restart friction.
+- Learner treats the first failed verification as proof they chose the wrong track.
+
 ## Fallback Path
 Trigger when blocked >= 7 total minutes on a single task or when two verification attempts fail.
 
@@ -90,6 +96,13 @@ Fallback mini-win by archetype:
 - `A`: swap one texture file and confirm one visual change.
 - `B`: repair one missing redstone connection and verify output.
 - `C`: correct one broken key/value and verify server load.
+
+## Hint Ladder
+1. Which path are you trying today: Visualist, Mechanist, or Operator?
+2. What is the smallest thing that should change when this works?
+3. Where does your artifact match the example? Where is it different?
+4. Use the starter artifact and change one safe part only.
+5. Mentor models the first verification step; learner runs the next test.
 
 ## Mastery Gates
 - Do: starter build works.
@@ -106,6 +119,24 @@ Fallback mini-win by archetype:
 - [ ] One debug seed and fix result logged.
 - [ ] Next-session start condition set (`normal`, `debug retrieval`, or `repeat theme`).
 
+## Evidence Items
+- Screenshot, state table, or config proof for the chosen starter artifact.
+- Learner cause/effect explanation in their own words.
+- Seeded mistake and fix result for path, wiring, or property value.
+
+## Exit Ticket
+My track today was __. My artifact worked when __. One cause/effect rule is __.
+
+## Parent-Safe Summary
+Today your child tried a personalized Block Buddies pathway and completed a small starter project. They practiced noticing cause and effect in a visual, mechanical, or operator-style task, then fixed one guided mistake.
+
+## Student Checklist
+- I chose a starter path.
+- I completed one starter artifact.
+- I tested the artifact.
+- I explained one cause/effect rule.
+- I fixed one seeded mistake.
+
 ## Accessibility Notes
 - Hook: show artifact screenshots/video if verbal framing is insufficient.
 - Worked Example: provide zoomed or slowed demonstration; replay allowed.
@@ -121,3 +152,8 @@ Fallback mini-win by archetype:
 - Intervention events (fluency-limit triggers, hard-cap trigger, fallback use).
 - Accessibility supports used.
 - S04 start condition (`debug retrieval needed` or `normal start`).
+
+## Canonical References
+- [Curriculum Matrix](../curriculum.md)
+- [Pedagogy Engine V2](../pedagogy/engine-v2.md)
+- [Session Runbook Template](../pedagogy/session-template.md)

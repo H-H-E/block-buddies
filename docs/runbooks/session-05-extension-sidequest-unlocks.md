@@ -57,6 +57,12 @@ Expected output: extension is verified in one live test cycle.
 | Core + stretch | 5 | 5 | 20 | 10 | 5 | 45 |
 | Core + expert | 5 | 5 | 18 | 12 | 5 | 45 |
 
+## Common Failure Points
+- Learner expands scope before the first extension works.
+- Learner skips prediction and only reports what happened afterward.
+- Extension affects a hidden dependency from the prior build.
+- Learner resists reverting an unsafe or broken change.
+
 ## Fallback Path
 Trigger when blocked >= 7 total minutes or extension fails verification twice.
 
@@ -67,6 +73,13 @@ Recovery ladder order:
 4. Fallback mini-win.
 
 Fallback mini-win: single variable change + immediate verification.
+
+## Hint Ladder
+1. What is the one feature we are adding?
+2. Before changing it, what do you predict will happen?
+3. What stayed the same and what changed?
+4. Can we return to the last working version?
+5. Mentor models one safe revert; learner verifies the restored state.
 
 ## Mastery Gates
 - Do: extension works in live test.
@@ -83,6 +96,24 @@ Fallback mini-win: single variable change + immediate verification.
 - [ ] One debug/fix cycle logged.
 - [ ] S06 start condition set.
 
+## Evidence Items
+- Extension change note and live test proof.
+- Prediction versus outcome comparison.
+- Revert or repair evidence when the extension fails.
+
+## Exit Ticket
+I extended __ by changing __. I predicted __. The result was __.
+
+## Parent-Safe Summary
+Today your child upgraded a prior project with one new feature. They practiced making a prediction, testing the result, and restoring a working state when a change was unsafe or did not behave as expected.
+
+## Student Checklist
+- I chose one extension.
+- I predicted what it would do.
+- I tested the extension.
+- I compared prediction to result.
+- I restored or fixed the build if needed.
+
 ## Accessibility Notes
 - Prefilled templates/snippets are allowed.
 - Motor-load reduction allowed via prepared blocks or values.
@@ -94,3 +125,8 @@ Fallback mini-win: single variable change + immediate verification.
 - Hard-cap/fallback events.
 - Accessibility supports used.
 - S06 start condition.
+
+## Canonical References
+- [Curriculum Matrix](../curriculum.md)
+- [Pedagogy Engine V2](../pedagogy/engine-v2.md)
+- [Session Runbook Template](../pedagogy/session-template.md)

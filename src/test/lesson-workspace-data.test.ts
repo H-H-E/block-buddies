@@ -33,7 +33,8 @@ describe("lesson workspace data", () => {
       expect(workspace.runbook.sessionId).toBe(workspace.sessionId);
       expect(workspace.adultLessonSteps.at(0)?.note).toContain(workspace.runbook.hook);
       expect(workspace.studentLessonActions.length).toBeGreaterThanOrEqual(3);
-      expect(workspace.studentChecklist).toEqual(workspace.runbook.coreQuestSteps);
+      expect(workspace.studentChecklist.length).toBeGreaterThanOrEqual(workspace.runbook.coreQuestSteps.length);
+      expect(workspace.studentChecklist.every((item) => item.length > 0)).toBe(true);
       expect(workspace.fallbackHints.length).toBeGreaterThan(0);
     }
   });

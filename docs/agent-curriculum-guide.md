@@ -2985,7 +2985,7 @@ That gives you a clean runway into the later networking/server stage, where lear
 
 ## Post-Modpack Curriculum Planning Addendum
 
-Source: `/Users/hhe/Documents/map.rtf`
+Source: local planning note `map.rtf` (original authoring note; not required at runtime)
 
 I would reorder the next phase like this:
 Stage 1: Minecraft Systems Core — already planned.

@@ -77,7 +77,9 @@ Every session log must include:
 
 ## Runbook Index
 
-Canonical runbooks are in [`docs/runbooks`](./runbooks/session-01-diagnostic-trust-win.md).
+Canonical Stage 1 runbooks are in [`docs/runbooks`](./runbooks/session-01-diagnostic-trust-win.md).
+Stage 2 Modpack Lab runbooks are in [`docs/runbooks/stage-2`](./runbooks/stage-2/session-09-welcome-to-modded-minecraft.md).
+Stage 3 Server-Pack Bridge runbooks are in [`docs/runbooks/stage-3`](./runbooks/stage-3/session-17-client-server-or-both.md).
 Mentor quick-reference companion: [Curriculum Session Playbook](./curriculum-session-playbook.md).
 Optional extension set: [Post-S08 Advanced Labs](./lessons/post-s08-advanced-labs.md).
 

@@ -100,7 +100,7 @@
 
 ### Session Structure
 
-- **Platform**: [TBD - Zoom? Google Meet? Something with recording?]
+- **Platform**: Mentor-approved video workspace with guardian-visible scheduling, recording enabled when required, and no unsupervised direct messaging
 - **Duration**: 30-45 minutes recommended
 - **Frequency**: Weekly, same time each week
 - **Recording**: All sessions recorded and stored for 30 days
@@ -156,7 +156,7 @@ A: Contact us and we'll help reschedule or find a new match.
 A: Only at official Block Buddies events with all proper supervision in place.
 
 **Q: What training do teen mentors receive?**
-A: [TBD - develop this curriculum]
+A: Teen mentors complete training on the Block Buddies session loop, Do/Explain/Debug mastery gates, fallback and 7-minute hard-cap rules, parent-safe language, privacy boundaries, incident escalation, and how to use the prepared runbooks without improvising unsafe technical steps.
 
 ---
 

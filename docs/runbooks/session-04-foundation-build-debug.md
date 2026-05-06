@@ -77,6 +77,12 @@ Build and verify one foundation artifact by archetype:
 | Core + stretch | 4 | 6 | 20 | 10 | 5 | 45 |
 | Core + expert | 4 | 6 | 18 | 12 | 5 | 45 |
 
+## Common Failure Points
+- Learner changes several parts at once and loses the root cause.
+- The foundation build works once but not repeatably.
+- Learner can make the artifact work but cannot name the dependency relationship.
+- Debugging turns into guessing instead of testing one difference.
+
 ## Fallback Path
 Trigger when blocked >= 7 total minutes on one build/debug task or when the same failed fix repeats twice.
 
@@ -91,6 +97,13 @@ Fallback mini-win targets:
 - `A`: fix one metadata syntax error and verify pack load.
 - `B`: fix one connection gap and show correct output once.
 - `C`: fix one config value and confirm reconnect.
+
+## Hint Ladder
+1. What is the expected output?
+2. Which dependency has to be correct before this can work?
+3. What is the first part that still works?
+4. Change one thing, then test again.
+5. Mentor fixes one comparable example; learner fixes the matching issue in their build.
 
 ## Mastery Gates
 - Do: foundational build functions.
@@ -107,6 +120,24 @@ Fallback mini-win targets:
 - [ ] One test evidence item is recorded (screenshot, state table, or connection proof).
 - [ ] S05 start condition is set (`normal`, `debug retrieval`, or `repeat theme`).
 
+## Evidence Items
+- Foundation artifact proof for the selected archetype.
+- Dependency explanation in learner language.
+- Seeded failure, smallest tested fix, and final verification evidence.
+
+## Exit Ticket
+My build depends on __. The bug was __. I fixed it by __.
+
+## Parent-Safe Summary
+Today your child built a foundational Minecraft technology artifact and practiced debugging it one step at a time. They learned to connect a working result to the parts it depends on, then repaired a seeded issue with mentor support as needed.
+
+## Student Checklist
+- I built my foundation artifact.
+- I tested that it works.
+- I found one dependency.
+- I fixed one seeded bug.
+- I recorded proof that the fix worked.
+
 ## Accessibility Notes
 - Hook: use visual storyboard instead of verbal-only framing when needed.
 - Worked Example: provide slowed walkthrough and highlight cursor focus areas.
@@ -122,3 +153,8 @@ Fallback mini-win targets:
 - Intervention events (fluency triggers, 7-minute hard cap, fallback usage).
 - Accessibility accommodations used.
 - S05 start condition (`debug retrieval`, `repeat theme`, or `normal`).
+
+## Canonical References
+- [Curriculum Matrix](../curriculum.md)
+- [Pedagogy Engine V2](../pedagogy/engine-v2.md)
+- [Session Runbook Template](../pedagogy/session-template.md)

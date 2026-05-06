@@ -54,6 +54,12 @@ Expected output: issue resolved plus root-cause statement.
 | Core + stretch | 3 | 7 | 20 | 10 | 5 | 45 |
 | Core + expert | 3 | 7 | 18 | 12 | 5 | 45 |
 
+## Common Failure Points
+- Learner jumps to fixes before describing the symptom.
+- Learner treats the first clue as the confirmed root cause.
+- Open troubleshooting creates too many possible causes.
+- Learner cannot reproduce the failure after fixing it once.
+
 ## Fallback Path
 Trigger when blocked >= 7 total minutes in open troubleshooting.
 
@@ -64,6 +70,13 @@ Recovery ladder order:
 4. Fallback mini-win.
 
 Fallback mini-win: curated scenario with only two candidate causes and guided elimination.
+
+## Hint Ladder
+1. What should happen? What actually happened?
+2. Which clue is evidence and which is a guess?
+3. Can we eliminate one false cause?
+4. Can you reproduce the problem before fixing it again?
+5. Mentor models one diagnosis step; learner chooses the next evidence check.
 
 ## Mastery Gates
 - Do: issue resolved to working state.
@@ -80,6 +93,24 @@ Fallback mini-win: curated scenario with only two candidate causes and guided el
 - [ ] Repro/re-fix check recorded.
 - [ ] S07 start condition set.
 
+## Evidence Items
+- Fault scenario, root-cause statement, and fix proof.
+- One eliminated false-cause note.
+- Reproduce-and-re-fix evidence or mentor transcript.
+
+## Exit Ticket
+Expected: __. Actual: __. Cause: __. Fix: __.
+
+## Parent-Safe Summary
+Today your child practiced structured troubleshooting. They compared expected behavior to actual behavior, used evidence to identify a root cause, and explained why their fix worked.
+
+## Student Checklist
+- I described the problem before fixing it.
+- I checked evidence.
+- I eliminated one false cause.
+- I fixed the issue.
+- I explained why the fix worked.
+
 ## Accessibility Notes
 - Read-aloud error text and simplified clue cards are allowed.
 - Reduced-option diagnosis cards are allowed.
@@ -91,3 +122,8 @@ Fallback mini-win: curated scenario with only two candidate causes and guided el
 - Intervention and fallback events.
 - Accessibility supports used.
 - S07 start condition.
+
+## Canonical References
+- [Curriculum Matrix](../curriculum.md)
+- [Pedagogy Engine V2](../pedagogy/engine-v2.md)
+- [Session Runbook Template](../pedagogy/session-template.md)
