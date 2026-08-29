@@ -1,0 +1,36 @@
+{
+  "interests": [
+    {
+      "id": "building-creative",
+      "label": "Building & creative"
+    },
+    {
+      "id": "survival-adventure",
+      "label": "Survival & adventure"
+    },
+    {
+      "id": "animals",
+      "label": "Animals & pets"
+    },
+    {
+      "id": "redstone-machines",
+      "label": "Machines & gadgets"
+    },
+    {
+      "id": "storytelling-roleplay",
+      "label": "Stories & role-play"
+    },
+    {
+      "id": "exploring-caves",
+      "label": "Exploring & caves"
+    },
+    {
+      "id": "farming-growing",
+      "label": "Farming & growing"
+    },
+    {
+      "id": "customizing-looking-cool",
+      "label": "Customizing & style"
+    }
+  ]
+}

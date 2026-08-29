@@ -1,0 +1,48 @@
+{
+  "name": "Block Buddies",
+  "canonVersion": "3.0.0",
+  "description": "Cross-age Minecraft mentorship: teen mentors (14-18) help children starting around age 7 feel at home in Minecraft through relationship-first, Bedrock-first sessions.",
+  "priorityHierarchy": [
+    "safety-trust",
+    "relationship",
+    "enjoyment-agency",
+    "minecraft-competence",
+    "tutorial-independence",
+    "mentor-growth",
+    "optional-concepts"
+  ],
+  "pilot": {
+    "foundationModules": [
+      "join-move-look-talk",
+      "hotbar-inventory-tools",
+      "tiny-tutorial-remix"
+    ],
+    "projectModules": [
+      "dream-house-build",
+      "animal-farm-started",
+      "story-stage-build"
+    ]
+  },
+  "sessionRhythm": [
+    "reconnect",
+    "choose-goal",
+    "quick-win",
+    "watch-or-model",
+    "predict-and-try",
+    "build-together",
+    "remix",
+    "show-celebrate",
+    "choose-next"
+  ],
+  "ageBands": {
+    "beginner": {
+      "min": 6,
+      "max": 8,
+      "target": 7
+    },
+    "mentors": {
+      "min": 14,
+      "max": 18
+    }
+  }
+}

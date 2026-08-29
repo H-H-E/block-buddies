@@ -1,0 +1,260 @@
+{
+  "id": "story-stage-build",
+  "revision": 1,
+  "status": "needs-review",
+  "title": "Build a Story Stage and Act Out a Tale",
+  "shortChildTitle": "My Story Show",
+  "ageBand": {
+    "min": 6,
+    "max": 8,
+    "target": 7
+  },
+  "durationMinutes": {
+    "min": 30,
+    "max": 45
+  },
+  "outcome": "Child builds a simple stage or scene (castle, forest clearing, puppet show booth), sets up characters/props, and acts out or tells a short story of their own invention with the mentor playing a supporting role.",
+  "optionalConnections": [
+    "narrative-sequencing",
+    "vocabulary-through-play"
+  ],
+  "editions": [
+    "bedrock"
+  ],
+  "platforms": [
+    "windows-pc-touch-mouse",
+    "tablet-ios",
+    "tablet-android",
+    "xbox",
+    "playstation",
+    "switch"
+  ],
+  "inputMethods": [
+    "touch",
+    "controller",
+    "keyboard-mouse"
+  ],
+  "testedVersions": [
+    "1.21.x (Bedrock)"
+  ],
+  "deliveryModes": [
+    "solo_guided",
+    "shared_world"
+  ],
+  "multiplayerRequirements": "Shared-world variant on adult-owned Realm; mentor takes director/support role only.",
+  "knownIncompatibilities": [
+    "Armor stand posing is limited on Bedrock vs Java - keep poses simple"
+  ],
+  "prerequisites": [
+    "join-move-look-talk",
+    "hotbar-inventory-tools"
+  ],
+  "interests": [
+    "storytelling-roleplay",
+    "building-creative",
+    "customizing-looking-cool"
+  ],
+  "setup": {
+    "guardianSteps": [
+      "Standard setup"
+    ],
+    "mentorPreflight": [
+      "Stage plot reserved near spawn; armor stands and props available in creative inventory",
+      "Have 2-3 story-starter cards ready in case child needs inspiration"
+    ]
+  },
+  "flow": [
+    {
+      "phase": "Reconnect",
+      "minutes": "3",
+      "mentorMoves": [
+        "Ask about their farm or house from previous sessions"
+      ],
+      "childAction": "Shares"
+    },
+    {
+      "phase": "Choose goal",
+      "minutes": "4",
+      "mentorMoves": [
+        "Offer stage settings: castle, forest, puppet booth"
+      ],
+      "childAction": "Picks setting"
+    },
+    {
+      "phase": "Quick win",
+      "minutes": "5",
+      "mentorMoves": [
+        "Guide placing the 'stage floor' - instant set!"
+      ],
+      "childAction": "Places stage platform"
+    },
+    {
+      "phase": "Watch or model",
+      "minutes": "4",
+      "mentorMoves": [
+        "Demo one prop trick: armor stand character OR item frame picture"
+      ],
+      "childAction": "Watches"
+    },
+    {
+      "phase": "Predict and try",
+      "minutes": "8",
+      "mentorMoves": [
+        "Ask who the characters are before building their spots"
+      ],
+      "childAction": "Places characters and props"
+    },
+    {
+      "phase": "Build together",
+      "minutes": "10",
+      "mentorMoves": [
+        "Build only assigned support parts (backdrop, seats for audience)",
+        "Ask story questions"
+      ],
+      "childAction": "Decorates set, arranges characters"
+    },
+    {
+      "phase": "Story time!",
+      "minutes": "8",
+      "mentorMoves": [
+        "Take a supporting character role if invited",
+        "Ask 'what happens next?' at key moments"
+      ],
+      "childAction": "Acts out or narrates their story"
+    },
+    {
+      "phase": "Show and celebrate",
+      "minutes": "4",
+      "mentorMoves": [
+        "Screenshot the scene mid-story",
+        "Applaud! Ask for the story's title"
+      ],
+      "childAction": "Titles their tale"
+    },
+    {
+      "phase": "Choose next",
+      "minutes": "2",
+      "mentorMoves": [
+        "Record next chapter idea or new setting"
+      ],
+      "childAction": "Chooses"
+    }
+  ],
+  "mentorScript": {
+    "openingLines": [
+      "Today your world becomes a STORY! What kind of place should we build?",
+      "Ready to be the director of your own show?"
+    ],
+    "keyPhrases": [
+      "Who lives in this castle?",
+      "And then what happened?!",
+      "You're the boss of this story."
+    ]
+  },
+  "learnerCues": [
+    {
+      "cueText": "Build your stage floor!",
+      "action": "Place platform",
+      "iconHint": "stage/deck icon"
+    },
+    {
+      "cueText": "Who's your main character?",
+      "action": "Place character",
+      "iconHint": "person icon"
+    },
+    {
+      "cueText": "Tell me what happens!",
+      "action": "Start story",
+      "iconHint": "speech-bubble icon"
+    },
+    {
+      "cueText": "The end... or is it?",
+      "action": "Finish story",
+      "iconHint": "star-finish icon"
+    }
+  ],
+  "mediaReferences": [],
+  "sharedRoles": {
+    "childRole": "Director & Storyteller",
+    "mentorRole": "Supporting Actor & Stagehand - plays minor characters ONLY when invited; builds backdrop on request",
+    "rotationNotes": "Small groups: audience roles rotate; each child gets a turn as storyteller while others act assigned parts"
+  },
+  "childChoicePoints": [
+    {
+      "prompt": "Where does your story happen?",
+      "options": [
+        "Castle",
+        "Forest clearing",
+        "Puppet show booth"
+      ]
+    },
+    {
+      "prompt": "Who is the hero?",
+      "options": [
+        "A knight",
+        "A magical animal",
+        "Yourself as a Minecraft character"
+      ]
+    },
+    {
+      "prompt": "Happy ending or silly ending?",
+      "options": [
+        "Happy",
+        "Silly",
+        "Both"
+      ]
+    }
+  ],
+  "commonProblems": [
+    {
+      "problem": "Child freezes when asked to tell a story",
+      "fix": "Mentor starts: 'Once there was a knight who...' and hands over mid-sentence; bounded choices help"
+    },
+    {
+      "problem": "Props look confusing to others",
+      "fix": "Ask child to explain - THEIR explanation is the story; no 'correct' look needed"
+    },
+    {
+      "problem": "Two children want same role in small group",
+      "fix": "Rotate storyteller turns per scene; co-directors can share narration"
+    }
+  ],
+  "hintLadder": [
+    "What does your hero want more than anything?",
+    "Should something surprising happen? Like what?",
+    "How does it end? You pick!"
+  ],
+  "resetPath": "Creative mode: stage rebuilds instantly from backup copy. Stories are never lost - they live with the child.",
+  "soloFallback": "Fully works solo-guided: mentor listens/reacts by voice while child performs in their own world.",
+  "evidenceOptions": [
+    "screenshot",
+    "spoken-description",
+    "demonstration",
+    "artifact-photo"
+  ],
+  "accessibilityOptions": [
+    "Pointing at characters instead of naming them counts",
+    "Non-speaking children can act out story through character movement while mentor narrates what they see",
+    "Simple 3-part stories welcome: beginning/middle/end"
+  ],
+  "safetyRequirements": [
+    "Private world or adult-owned Realm; no public servers",
+    "Stories stay age-appropriate (mentor redirects gently if scary/violent themes escalate)",
+    "No DMs outside guardian-visible channels"
+  ],
+  "parentSummaryTemplate": "{child} built a story stage today and told an original tale called '{storyTitle}'! Ask them to retell it - they were so proud.",
+  "nextModules": [
+    "dream-house-build",
+    "animal-farm-started"
+  ],
+  "review": {
+    "playtested": false,
+    "lastReviewed": "2026-08-23",
+    "notes": "Needs playtest: verify armor stand placement UX on touch devices."
+  },
+  "worldSpecification": {
+    "mode": "flat-creative",
+    "description": "BB Starter Plains with a marked 10x10 stage plot near spawn; starter chest contains armor stands, item frames, wool colors, lanterns."
+  },
+  "$schema": "./module.schema.json"
+}

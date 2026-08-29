@@ -4,16 +4,12 @@ import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { 
   GraduationCap, 
-  Clock, 
-  Award,
   FileText,
   Heart,
   Users,
-  MessageCircle,
   ArrowRight,
   CheckCircle2,
   Sparkles,
-  BookOpen,
   Video,
   Laptop,
   Wifi,
@@ -23,53 +19,43 @@ import {
 const benefits = [
   {
     icon: FileText,
-    title: 'Resume Material',
-    description: 'Unique leadership experience that colleges and employers love to see.',
+    title: 'Mentorship Practice',
+    description: 'Practice listening, patience, and leadership by helping a younger learner feel at home in Minecraft.',
   },
   {
-    icon: Clock,
-    title: 'Service Hours',
-    description: 'Earn verified community service hours for school requirements.',
+    icon: Video,
+    title: 'Minecraft-First Role',
+    description: 'Use a game you know to guide a child through making, showing, telling, trying, and fixing.',
   },
   {
     icon: Users,
     title: 'Teaching Skills',
-    description: 'Develop communication and patience—skills that last a lifetime.',
+    description: 'Practice communication and patience while supporting a younger learner.',
   },
   {
-    icon: Award,
-    title: 'Recommendations',
-    description: 'Eligible for letters of recommendation from program coordinators.',
-  },
-  {
-    icon: BookOpen,
-    title: 'Runbook-Based Lessons',
-    description: 'You get structured session runbooks with fallback paths and mastery checks.',
-  },
-  {
-    icon: MessageCircle,
-    title: 'Mentor Community',
-    description: 'Connect with other teen mentors for support and idea sharing.',
+    icon: FileText,
+    title: 'Pilot Materials',
+    description: 'Use structured module run sheets and clear safety guidance as the pilot materials are made ready.',
   },
 ];
 
 const responsibilities = [
-  'Lead weekly 45-minute video call sessions with your mentee',
-  'Prepare with the assigned session runbook (15-20 min)',
+  'Meet regularly with your mentee according to the pilot plan',
+  'Prepare with the assigned session guide',
   'Track progress and celebrate your mentee\'s achievements',
-  'Record Do/Explain/Debug mastery outcomes each session',
+  'Share a short summary with parents after each session',
   'Communicate with parents/guardians as needed',
   'Follow our safety guidelines and code of conduct',
-  'Flag reassessment triggers or mentor mismatch risks within 24-48 hours',
+  'Raise any safety or fit concerns promptly through the documented route',
 ];
 
 const requirements = [
-  { icon: UserCheck, text: 'Ages 14-17' },
-  { icon: Laptop, text: 'Minecraft modding experience' },
+  { icon: UserCheck, text: 'Ages 14-18' },
+  { icon: Laptop, text: 'Confident Minecraft player' },
   { icon: Video, text: 'Computer with webcam' },
   { icon: Wifi, text: 'Reliable internet' },
   { icon: Users, text: 'Parent/guardian approval' },
-  { icon: Clock, text: '8-week minimum commitment' },
+  { icon: Users, text: 'Pilot commitment discussed at intake' },
 ];
 
 const ForMentors = () => {
@@ -96,7 +82,7 @@ const ForMentors = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Share your Minecraft knowledge with the next generation. Build leadership skills, earn service hours, and make a real difference.
+              Share your Minecraft knowledge with a younger learner. Practice patient coaching and help make the game feel welcoming.
             </p>
 
             <Link to="/apply/mentor">
@@ -160,8 +146,8 @@ const ForMentors = () => {
                 What You'll <span className="gradient-text">Do</span>
               </h2>
               <p className="text-muted-foreground mb-8">
-                As a Block Buddy mentor, you'll guide a pre-teen through our curriculum using Minecraft as the teaching platform.
-                Each session follows a clear loop: hook, worked example, core quest, side quest or fallback, and exit ticket.
+              As a Block Buddy mentor, you'll guide a younger learner starting around age 7 through a Minecraft-first pilot module.
+                 Each session is designed around making, showing, telling, trying, fixing, and choosing what comes next.
               </p>
               
               <ul className="space-y-4">
@@ -217,16 +203,16 @@ const ForMentors = () => {
               Mentor <span className="gradient-text-accent">Resources</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              We set you up for success with everything you need to teach effectively.
+              The pilot resource set is being assembled to support clear, safe, Minecraft-first mentoring.
             </p>
           </motion.div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
             {[
-              { title: 'Lesson Plans', description: 'Step-by-step guides for each session', locked: true },
-              { title: 'Teaching Tips', description: 'How to explain complex concepts simply', locked: true },
-              { title: 'Troubleshooting', description: 'Solutions to common Minecraft issues', locked: true },
-              { title: 'Community Access', description: 'Connect with other mentors', locked: true },
+              { title: 'Module Guides', description: 'Step-by-step guides for pilot sessions', locked: true },
+               { title: 'Coaching Tips', description: 'Ways to explain and encourage without taking over', locked: true },
+               { title: 'Reset Paths', description: 'Calm alternatives when a Minecraft task gets stuck', locked: true },
+               { title: 'Safety Guidance', description: 'Boundaries and routes for raising concerns', locked: true },
             ].map((resource, index) => (
               <motion.div
                 key={resource.title}
@@ -240,7 +226,7 @@ const ForMentors = () => {
                 <div className="relative z-10">
                   <h4 className="font-display font-bold mb-2">{resource.title}</h4>
                   <p className="text-sm text-muted-foreground mb-4">{resource.description}</p>
-                  <span className="text-xs text-primary font-medium">Unlock by becoming a mentor →</span>
+                   <span className="text-xs text-primary font-medium">Shared when pilot readiness is confirmed →</span>
                 </div>
               </motion.div>
             ))}
@@ -260,10 +246,10 @@ const ForMentors = () => {
               Mentor Quality Controls
             </h2>
             <ul className="space-y-3 text-sm text-muted-foreground">
-                <li>Runbook contract: Hook -&gt; Worked Example -&gt; Core Quest -&gt; Side/Fallback -&gt; Exit Ticket.</li>
-              <li>Mastery contract: session advances only when Do plus one of Explain/Debug passes.</li>
-              <li>Support contract: intervention timing follows fluency limits with a fixed 7-minute hard cap.</li>
-              <li>Logging contract: every session records gates, fallback events, and next-session condition.</li>
+              <li>Session plan: each pilot module has an opening, guided flow, hint ladder, and exit reflection.</li>
+              <li>Safety plan: guardian-visible communication and a documented route for concerns are required before sessions begin.</li>
+              <li>Readiness plan: mentor onboarding, run sheets, and coordinator roles are confirmed before matching.</li>
+              <li>Honesty plan: families are told what a module covers and what the pilot has actually tested.</li>
             </ul>
           </motion.div>
         </div>
@@ -283,7 +269,7 @@ const ForMentors = () => {
               Ready to Inspire the Next Generation?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Join teen mentors who are making a difference while building real coaching and leadership skills.
+              Explore a pilot role designed to help you practice real coaching and leadership skills.
             </p>
             <Link to="/apply/mentor">
               <Button variant="hero" size="xl">

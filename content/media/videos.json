@@ -1,0 +1,43 @@
+{
+  "_meta": {
+    "description": "Approved video segment registry. Every entry is a curated SEGMENT with timestamps, review metadata, and a mandatory no-video fallback. Candidates are NOT approved for sessions.",
+    "policy": "No comments, autoplay, recommendations browsing, or arbitrary links during sessions. Never copy transcripts into the repo. Verify each segment immediately before use; YouTube availability changes."
+  },
+  "segments": [
+    {
+      "id": "video:tutorial-tiny-house-candidate",
+      "status": "candidate",
+      "url": "https://www.youtube.com/watch?v=TBD",
+      "videoId": null,
+      "title": null,
+      "creator": null,
+      "startSeconds": null,
+      "endSeconds": null,
+      "segmentDurationSeconds": null,
+      "edition": "bedrock",
+      "platformNotes": "Must demonstrate touch OR controller OR mouse - verify before approval",
+      "moduleAssociation": "tiny-tutorial-remix",
+      "skills": [
+        "tutorial-following",
+        "placing-breaking"
+      ],
+      "noticePrompts": [],
+      "pausePoints": [],
+      "predictionPrompts": [],
+      "expectedGameState": [],
+      "captionsAvailable": null,
+      "sponsorshipReviewed": false,
+      "accuracyReviewed": false,
+      "childSafetyReviewed": false,
+      "commentsHandling": "Playback via mentor screen-share only; comments hidden/closed; autoplay off",
+      "lastReviewed": null,
+      "nextReviewDate": null,
+      "verificationEvidence": null,
+      "fallback": {
+        "type": "mentor-demonstration",
+        "description": "Mentor builds a tiny house live in under 4 minutes while narrating each step; same remix step applies."
+      },
+      "note": "CANDIDATE ONLY. A specific, currently-available Bedrock-compatible beginner build segment must be located and verified (URL live, timestamps exact, controls match Bedrock, captions available, no sponsor read, child-safe comments area). Do not use in sessions until status becomes approved."
+    }
+  ]
+}

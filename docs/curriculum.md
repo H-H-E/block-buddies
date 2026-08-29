@@ -1,4 +1,6 @@
-# Curriculum Matrix (V2)
+# Curriculum Matrix (V2 - LEGACY)
+
+> **LEGACY PATHWAY (superseded by V3):** This document describes the retired V2 fluency-archetype model. It is preserved for advanced-pathway history only. Do not use it for new learner placement; use [Product Canon](./canon/product-canon.md) and the pilot modules instead.
 
 ## Purpose
 

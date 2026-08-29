@@ -1,0 +1,262 @@
+{
+  "id": "animal-farm-started",
+  "revision": 1,
+  "status": "needs-review",
+  "title": "Start an Animal Farm Together",
+  "shortChildTitle": "My Animal Farm",
+  "ageBand": {
+    "min": 6,
+    "max": 8,
+    "target": 7
+  },
+  "durationMinutes": {
+    "min": 30,
+    "max": 45
+  },
+  "outcome": "Child builds a small fenced pen, lures and keeps at least two animals (cows/pigs/sheep/chickens), names them, and can explain what their animals need to stay put and be happy.",
+  "optionalConnections": [
+    "animal-care-empathy",
+    "counting-and-groups"
+  ],
+  "editions": [
+    "bedrock"
+  ],
+  "platforms": [
+    "windows-pc-touch-mouse",
+    "tablet-ios",
+    "tablet-android",
+    "xbox",
+    "playstation",
+    "switch"
+  ],
+  "inputMethods": [
+    "touch",
+    "controller",
+    "keyboard-mouse"
+  ],
+  "testedVersions": [
+    "1.21.x (Bedrock)"
+  ],
+  "deliveryModes": [
+    "solo_guided",
+    "shared_world"
+  ],
+  "multiplayerRequirements": "Shared-world variant on adult-owned Realm in peaceful difficulty; no hostile mob surprises.",
+  "knownIncompatibilities": [
+    "Animal AI identical across Bedrock; peaceful mode required for age band"
+  ],
+  "prerequisites": [
+    "join-move-look-talk",
+    "hotbar-inventory-tools"
+  ],
+  "interests": [
+    "animals",
+    "survival-adventure",
+    "farming-growing"
+  ],
+  "setup": {
+    "guardianSteps": [
+      "Standard setup",
+      "Note for mentor if child is nervous about animals approaching"
+    ],
+    "mentorPreflight": [
+      "World set to Peaceful difficulty",
+      "Wheat/seeds/carrots available in mentor helper inventory (child picks favorites)",
+      "Fence blocks pre-staged nearby but NOT placed"
+    ]
+  },
+  "flow": [
+    {
+      "phase": "Reconnect",
+      "minutes": "3",
+      "mentorMoves": [
+        "Ask about their house or last build"
+      ],
+      "childAction": "Shares"
+    },
+    {
+      "phase": "Choose goal",
+      "minutes": "3",
+      "mentorMoves": [
+        "Offer animal choices: cows, pigs, sheep, or chickens"
+      ],
+      "childAction": "Picks animals"
+    },
+    {
+      "phase": "Quick win",
+      "minutes": "5",
+      "mentorMoves": [
+        "Guide finding one animal nearby - celebrate first sighting!"
+      ],
+      "childAction": "Spots their chosen animal"
+    },
+    {
+      "phase": "Watch or model",
+      "minutes": "4",
+      "mentorMoves": [
+        "Demonstrate holding wheat so an cow follows you"
+      ],
+      "childAction": "Watches"
+    },
+    {
+      "phase": "Predict and try",
+      "minutes": "8",
+      "mentorMoves": [
+        "Ask 'What do you think happens when you hold the wheat?'"
+      ],
+      "childAction": "Lures first animal toward pen area"
+    },
+    {
+      "phase": "Build together",
+      "minutes": "12",
+      "mentorMoves": [
+        "Help fence perimeter as child directs placement",
+        "Gather more fence blocks as runner"
+      ],
+      "childAction": "Builds fence pen with gate, lures 2+ animals inside"
+    },
+    {
+      "phase": "Remix",
+      "minutes": "5",
+      "mentorMoves": [
+        "Offer name tags OR water trough (dig + water) OR color-choice via sheep"
+      ],
+      "childAction": "Adds one personal touch"
+    },
+    {
+      "phase": "Show and celebrate",
+      "minutes": "4",
+      "mentorMoves": [
+        "Screenshot with child standing inside pen among their animals",
+        "Child introduces animals by name"
+      ],
+      "childAction": "Introduces their farm"
+    },
+    {
+      "phase": "Choose next",
+      "minutes": "2",
+      "mentorMoves": [
+        "Record next: more animals? crops? expand?"
+      ],
+      "childAction": "Chooses"
+    }
+  ],
+  "mentorScript": {
+    "openingLines": [
+      "Ready to get some animals of your own?",
+      "Which animals do you want on your farm?"
+    ],
+    "keyPhrases": [
+      "Hold the wheat out - see how it follows you?",
+      "Walk slow... it's coming!",
+      "What should we name this one?"
+    ]
+  },
+  "learnerCues": [
+    {
+      "cueText": "Hold your wheat up!",
+      "action": "Select food",
+      "iconHint": "wheat icon"
+    },
+    {
+      "cueText": "Walk backwards slowly...",
+      "action": "Lure animal",
+      "iconHint": "footsteps-back icon"
+    },
+    {
+      "cueText": "Close the gate!",
+      "action": "Secure pen",
+      "iconHint": "gate icon"
+    },
+    {
+      "cueText": "Give them a name!",
+      "action": "Name animal",
+      "iconHint": "name-tag icon"
+    }
+  ],
+  "mediaReferences": [],
+  "sharedRoles": {
+    "childRole": "Farmer - decides pen location, size, animal choices, names",
+    "mentorRole": "Farmhand - gathers materials, models lure once, helps with gate mechanics",
+    "rotationNotes": "Small groups: each child owns own pen; group may share one large pasture with separate sections"
+  },
+  "childChoicePoints": [
+    {
+      "prompt": "Which animals first?",
+      "options": [
+        "Cows",
+        "Sheep",
+        "Chickens",
+        "Pigs"
+      ]
+    },
+    {
+      "prompt": "Where does the pen go?",
+      "options": [
+        "Near your house",
+        "By the pond",
+        "Somewhere secret"
+      ]
+    },
+    {
+      "prompt": "First animal's name?",
+      "options": [
+        "A silly name",
+        "A brave name",
+        "A name from a favorite show"
+      ]
+    }
+  ],
+  "commonProblems": [
+    {
+      "problem": "Animal escapes through open gate",
+      "fix": "Normal learning moment! Ask 'what should we change?' - usually closing gates faster or double-gate design"
+    },
+    {
+      "problem": "Can't find chosen animal type nearby",
+      "fix": "Mentor walks WITH child toward biome where they spawn; or switch animal choice happily"
+    },
+    {
+      "problem": "Child upset when animal won't follow",
+      "fix": "Check they're holding (not just having) food; re-demo once; remind them animals are shy sometimes"
+    }
+  ],
+  "hintLadder": [
+    "Pick the wheat in your hand first - hold it up like showing them!",
+    "Stand close but walk backward slow...",
+    "See it following? Lead it right to your gate!"
+  ],
+  "resetPath": "Peaceful mode = animals never die from mobs. Escaped animals stay in world; mentor can help re-lure. If pen got griefed by accident (broken fences), rebuild together - it's fast.",
+  "soloFallback": "Fully works solo-guided: same goals in single-player world with mentor narrating remotely.",
+  "evidenceOptions": [
+    "screenshot",
+    "spoken-description",
+    "demonstration",
+    "artifact-photo"
+  ],
+  "accessibilityOptions": [
+    "Peaceful difficulty always",
+    "Mentor handles any part that frustrates on request while child keeps decision-making",
+    "Alternative: 'petting zoo' variant where animals come to a pre-built pen (mentor pre-builds)"
+  ],
+  "safetyRequirements": [
+    "Private world or adult-owned Realm; peaceful difficulty",
+    "No public servers; no unmanaged chat",
+    "No DMs outside guardian-visible channels"
+  ],
+  "parentSummaryTemplate": "{child} started their own Minecraft farm today! They built a pen and got {count} animals ({names}) to live there. Ask what they named them!",
+  "nextModules": [
+    "story-stage-build",
+    "dream-house-build"
+  ],
+  "review": {
+    "playtested": false,
+    "lastReviewed": "2026-08-23",
+    "notes": "Needs playtest: confirm animal lure behavior matches description on Bedrock 1.21 current patch."
+  },
+  "worldSpecification": {
+    "mode": "survival-easy",
+    "description": "BB Starter Plains variant switched to Peaceful survival; grassland area near spawn reserved for pens; starter chest contains wheat, seeds, carrots, fences, name tags."
+  },
+  "$schema": "./module.schema.json"
+}

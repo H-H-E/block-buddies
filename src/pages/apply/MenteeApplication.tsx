@@ -1,25 +1,21 @@
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Checkbox } from '@/components/ui/checkbox';
-import { 
-  ArrowRight, 
+import {
+  ArrowRight,
   ArrowLeft,
   CheckCircle2,
   Gamepad2,
   User,
   Mail,
-  Laptop,
-  Clock,
   Shield,
-  Sparkles
+  Sparkles,
 } from 'lucide-react';
-import { toast } from 'sonner';
 
 const steps = [
   { id: 1, title: 'Child Info', icon: User },
@@ -29,30 +25,35 @@ const steps = [
 ];
 
 const experienceLevels = [
-  { value: '0', label: 'Fluency 0', description: 'Needs heavy step-by-step support with files/setup' },
-  { value: '1', label: 'Fluency 1', description: 'Can follow guided steps and complete simple edits' },
-  { value: '2', label: 'Fluency 2', description: 'Can work independently and handle debugging challenges' },
+  { value: 'new', label: 'Brand new to Minecraft', description: 'Has not played yet, or only watched others play' },
+  { value: 'some', label: 'Some play time', description: 'Can move around, break and place blocks with some help' },
+  { value: 'comfortable', label: 'Comfortable player', description: 'Plays independently and can explain favorite things to do' },
 ];
 
-const archetypeOptions = [
-  { value: 'A', label: 'Track A: Visualist', description: 'Loves design, textures, and visuals' },
-  { value: 'B', label: 'Track B: Mechanist', description: 'Loves logic, automation, and systems' },
-  { value: 'C', label: 'Track C: Operator', description: 'Loves servers, rules, and moderation tools' },
+const interestOptions = [
+  'Building houses and structures',
+  'Animals, farms, and nature',
+  'Stories, characters, and role-play',
+  'Exploring caves and new places',
+  'Make/Show/Tell/Try/Fix activities',
+  'Just having fun with a buddy!',
 ];
 
-const confidenceOptions = [
-  { value: 'high', label: 'High confidence', description: 'This profile guess is very likely correct today' },
-  { value: 'medium', label: 'Medium confidence', description: 'Likely correct, but we should verify in Session 1' },
-  { value: 'low', label: 'Low confidence', description: 'Needs reassessment early based on live evidence' },
+const editionOptions = [
+  { value: 'bedrock', label: 'Bedrock (Windows, phone, tablet, or console)' },
+  { value: 'java', label: 'Java (PC / Mac)' },
+  { value: 'not-sure', label: 'Not sure which edition we have' },
 ];
 
-const learningGoals = [
-  'Learn how games store data (files & configs)',
-  'Understand how multiplayer servers work',
-  'Create custom commands and mods',
-  'Set up and manage servers',
-  'Learn programming basics',
-  'Just have fun while learning something new!',
+const platformOptions = [
+  'Windows PC', 'Mac', 'iPhone/iPad', 'Android tablet/phone',
+  'Xbox', 'PlayStation', 'Nintendo Switch',
+];
+
+const inputOptions = [
+  { value: 'touch', label: 'Touch screen' },
+  { value: 'controller', label: 'Game controller' },
+  { value: 'keyboard-mouse', label: 'Keyboard and mouse' },
 ];
 
 const availabilityOptions = [
@@ -72,476 +73,281 @@ const availabilityOptions = [
   'Sunday afternoons',
 ];
 
+const isAgeInRange = (value: string, minimum: number, maximum: number) => {
+  const age = Number(value);
+  return value.trim() !== '' && Number.isInteger(age) && age >= minimum && age <= maximum;
+};
+
+const isPlausibleEmail = (value: string) =>
+  /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/i.test(value.trim());
+
+const optionId = (prefix: string, value: string) =>
+  `${prefix}-${value.toLowerCase().replace(/[^a-z0-9]+/g, '-')}`;
+
+type CheckboxOptionProps = {
+  id: string;
+  label: string;
+  checked: boolean;
+  onChange: (checked: boolean) => void;
+  description?: string;
+};
+
+const CheckboxOption = ({ id, label, checked, onChange, description }: CheckboxOptionProps) => (
+  <div className={`rounded-lg border transition-all ${checked ? 'border-secondary bg-secondary/10' : 'border-border hover:border-secondary/50'}`}>
+    <div className="flex items-start gap-3 p-3">
+      <Checkbox
+        id={id}
+        checked={checked}
+        onCheckedChange={(nextChecked) => onChange(nextChecked === true)}
+        aria-label={label}
+        className="mt-1"
+      />
+      <Label htmlFor={id} className="flex-1 cursor-pointer">
+        <span className="text-sm font-medium">{label}</span>
+        {description && <span className="mt-1 block text-sm text-muted-foreground">{description}</span>}
+      </Label>
+    </div>
+  </div>
+);
+
+type RadioOptionProps = {
+  name: string;
+  value: string;
+  label: string;
+  description?: string;
+  checked: boolean;
+  onChange: () => void;
+};
+
+const RadioOption = ({ name, value, label, description, checked, onChange }: RadioOptionProps) => (
+  <label className={`block cursor-pointer rounded-lg border p-4 transition-all focus-within:ring-2 focus-within:ring-ring ${checked ? 'border-secondary bg-secondary/10' : 'border-border hover:border-secondary/50'}`}>
+    <input className="sr-only" type="radio" name={name} value={value} checked={checked} onChange={onChange} />
+    <span className="font-medium">{label}</span>
+    {description && <span className="mt-1 block text-sm text-muted-foreground">{description}</span>}
+  </label>
+);
+
 const MenteeApplication = () => {
-  const navigate = useNavigate();
   const [currentStep, setCurrentStep] = useState(1);
+  const [showPreview, setShowPreview] = useState(false);
   const [formData, setFormData] = useState({
     childName: '',
     childAge: '',
     parentName: '',
     parentEmail: '',
     parentPhone: '',
-    fluencyLevel: '',
-    archetypePreference: '',
-    profileConfidence: '',
-    learningGoals: [] as string[],
+    experienceLevel: '',
+    minecraftEdition: '',
+    platforms: [] as string[],
+    inputMethods: [] as string[],
+    interests: [] as string[],
     availability: [] as string[],
     accessibilityNeeds: '',
-    computerType: '',
-    internetQuality: '',
     hasMinecraft: false,
     hasWebcam: false,
     parentalConsent: false,
     safetyAcknowledgment: false,
   });
 
-  const updateFormData = (field: string, value: string | boolean | string[]) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+  const updateFormData = (field: string, value: string | boolean) => {
+    setFormData((previous) => ({ ...previous, [field]: value }));
   };
 
-  const toggleArrayItem = (field: 'learningGoals' | 'availability', item: string) => {
-    setFormData(prev => ({
-      ...prev,
-      [field]: prev[field].includes(item)
-        ? prev[field].filter(i => i !== item)
-        : [...prev[field], item]
+  const toggleArrayItem = (field: 'platforms' | 'inputMethods' | 'interests' | 'availability', item: string) => {
+    setFormData((previous) => ({
+      ...previous,
+      [field]: previous[field].includes(item)
+        ? previous[field].filter((entry) => entry !== item)
+        : [...previous[field], item],
     }));
   };
 
   const nextStep = () => {
-    if (currentStep < 4) setCurrentStep(prev => prev + 1);
+    if (currentStep < 4) setCurrentStep((previous) => previous + 1);
   };
 
   const prevStep = () => {
-    if (currentStep > 1) setCurrentStep(prev => prev - 1);
+    if (currentStep > 1) setCurrentStep((previous) => previous - 1);
   };
 
-  const handleSubmit = () => {
-    console.log('Mentee Application Submitted:', formData);
-    toast.success('Application submitted successfully! We\'ll be in touch soon.');
-    navigate('/');
+  const handlePreview = () => {
+    setShowPreview(true);
   };
 
   const canProceed = () => {
     switch (currentStep) {
       case 1:
-        return formData.childName && formData.childAge;
+        return Boolean(formData.childName.trim() && isAgeInRange(formData.childAge, 6, 10));
       case 2:
-        return formData.parentName && formData.parentEmail;
+        return Boolean(formData.parentName.trim() && isPlausibleEmail(formData.parentEmail));
       case 3:
-        return (
-          formData.fluencyLevel &&
-          formData.archetypePreference &&
-          formData.profileConfidence &&
-          formData.accessibilityNeeds.trim().length > 0 &&
-          formData.learningGoals.length > 0 &&
-          formData.availability.length > 0
+        return Boolean(
+          formData.experienceLevel &&
+          formData.minecraftEdition &&
+          formData.platforms.length > 0 &&
+          formData.interests.length > 0 &&
+          formData.inputMethods.length > 0 &&
+          formData.availability.length > 0,
         );
       case 4:
-        return formData.hasMinecraft && formData.hasWebcam && formData.parentalConsent && formData.safetyAcknowledgment;
+        return Boolean(formData.hasMinecraft && formData.hasWebcam && formData.parentalConsent && formData.safetyAcknowledgment);
       default:
         return false;
     }
   };
 
-  const profileCode = formData.fluencyLevel && formData.archetypePreference
-    ? `${formData.fluencyLevel}-${formData.archetypePreference}`
-    : '';
-
   return (
     <Layout>
-      <section className="pt-32 pb-20 md:pt-40 md:pb-32 min-h-screen">
+      <section className="min-h-screen pt-32 pb-20 md:pt-40 md:pb-32">
         <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            className="max-w-2xl mx-auto"
-          >
-            <div className="text-center mb-12">
-              <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-sm font-medium mb-6">
-                <Sparkles className="w-4 h-4" />
+          <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} className="mx-auto max-w-2xl">
+            <div className="mb-12 text-center">
+              <span className="mb-6 inline-flex items-center gap-2 rounded-full border border-secondary/20 bg-secondary/10 px-4 py-2 text-sm font-medium text-secondary">
+                <Sparkles className="h-4 w-4" />
                 Learner Sign Up
               </span>
-              <h1 className="font-display text-3xl md:text-4xl font-bold mb-4">
-                Sign Up Your Child
-              </h1>
-              <p className="text-muted-foreground">
-                This should take about 5 minutes to complete.
-              </p>
+              <h1 className="mb-4 font-display text-3xl font-bold md:text-4xl">Sign Up Your Child</h1>
+              <p className="text-muted-foreground">This should take about 5 minutes to complete.</p>
             </div>
 
-            {/* Progress Steps */}
-            <div className="flex justify-between mb-12">
+            <div role="note" className="mb-8 rounded-lg border border-amber-500/40 bg-amber-500/10 p-4 text-sm text-foreground">
+              <strong>Preview only:</strong> this form is not connected to an application service. Your answers stay on this page for review; nothing is submitted, saved, or sent.
+            </div>
+
+            <div className="mb-12 flex justify-between">
               {steps.map((step, index) => (
-                <div key={step.id} className="flex-1 flex items-center">
-                  <div className="flex flex-col items-center flex-1">
-                    <div className={`w-10 h-10 rounded-full flex items-center justify-center transition-all ${
-                      currentStep >= step.id 
-                        ? 'bg-secondary text-secondary-foreground' 
-                        : 'bg-muted text-muted-foreground'
-                    }`}>
-                      {currentStep > step.id ? (
-                        <CheckCircle2 className="w-5 h-5" />
-                      ) : (
-                        <step.icon className="w-5 h-5" />
-                      )}
+                <div key={step.id} className="flex flex-1 items-center">
+                  <div className="flex flex-1 flex-col items-center">
+                    <div className={`flex h-10 w-10 items-center justify-center rounded-full transition-all ${currentStep >= step.id ? 'bg-secondary text-secondary-foreground' : 'bg-muted text-muted-foreground'}`}>
+                      {currentStep > step.id ? <CheckCircle2 className="h-5 w-5" /> : <step.icon className="h-5 w-5" />}
                     </div>
-                    <span className={`text-xs mt-2 hidden sm:block ${currentStep >= step.id ? 'text-foreground' : 'text-muted-foreground'}`}>
-                      {step.title}
-                    </span>
+                    <span className={`mt-2 hidden text-xs sm:block ${currentStep >= step.id ? 'text-foreground' : 'text-muted-foreground'}`}>{step.title}</span>
                   </div>
-                  {index < steps.length - 1 && (
-                    <div className={`h-0.5 flex-1 mx-2 transition-all ${currentStep > step.id ? 'bg-secondary' : 'bg-muted'}`} />
-                  )}
+                  {index < steps.length - 1 && <div className={`mx-2 h-0.5 flex-1 transition-all ${currentStep > step.id ? 'bg-secondary' : 'bg-muted'}`} />}
                 </div>
               ))}
             </div>
 
-            {/* Form Steps */}
             <div className="glass-card p-6 md:p-8">
               <AnimatePresence mode="wait">
                 {currentStep === 1 && (
-                  <motion.div
-                    key="step1"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <h2 className="font-display text-xl font-bold mb-6">About Your Child</h2>
-                    
-                    <div className="grid sm:grid-cols-2 gap-4">
+                  <motion.div key="step1" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+                    <h2 className="mb-6 font-display text-xl font-bold">About Your Child</h2>
+                    <div className="grid gap-4 sm:grid-cols-2">
                       <div>
                         <Label htmlFor="childName">Child's First Name *</Label>
-                        <Input
-                          id="childName"
-                          value={formData.childName}
-                          onChange={(e) => updateFormData('childName', e.target.value)}
-                          placeholder="First name"
-                          className="mt-1"
-                        />
+                        <Input id="childName" value={formData.childName} onChange={(event) => updateFormData('childName', event.target.value)} placeholder="First name" className="mt-1" />
                       </div>
                       <div>
-                        <Label htmlFor="childAge">Child's Age *</Label>
-                        <Input
-                          id="childAge"
-                          type="number"
-                          min="9"
-                          max="12"
-                          value={formData.childAge}
-                          onChange={(e) => updateFormData('childAge', e.target.value)}
-                          placeholder="9-12"
-                          className="mt-1"
-                        />
+                        <Label htmlFor="childAge">Child's Age (6-10) *</Label>
+                        <Input id="childAge" type="number" min="6" max="10" step="1" inputMode="numeric" value={formData.childAge} onChange={(event) => updateFormData('childAge', event.target.value)} placeholder="6-10" aria-describedby="childAgeHint" className="mt-1" />
+                        <p id="childAgeHint" className="mt-1 text-xs text-muted-foreground">Learners in this pilot are around age 7.</p>
                       </div>
                     </div>
                   </motion.div>
                 )}
 
                 {currentStep === 2 && (
-                  <motion.div
-                    key="step2"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <h2 className="font-display text-xl font-bold mb-6">Parent/Guardian Information</h2>
-                    
+                  <motion.div key="step2" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+                    <h2 className="mb-6 font-display text-xl font-bold">Parent/Guardian Information</h2>
                     <div>
                       <Label htmlFor="parentName">Your Full Name *</Label>
-                      <Input
-                        id="parentName"
-                        value={formData.parentName}
-                        onChange={(e) => updateFormData('parentName', e.target.value)}
-                        placeholder="Parent/Guardian name"
-                        className="mt-1"
-                      />
+                      <Input id="parentName" value={formData.parentName} onChange={(event) => updateFormData('parentName', event.target.value)} placeholder="Parent/Guardian name" className="mt-1" />
                     </div>
-
                     <div>
                       <Label htmlFor="parentEmail">Your Email *</Label>
-                      <Input
-                        id="parentEmail"
-                        type="email"
-                        value={formData.parentEmail}
-                        onChange={(e) => updateFormData('parentEmail', e.target.value)}
-                        placeholder="you@example.com"
-                        className="mt-1"
-                      />
+                      <Input id="parentEmail" type="email" value={formData.parentEmail} onChange={(event) => updateFormData('parentEmail', event.target.value)} placeholder="you@example.com" className="mt-1" />
                     </div>
-
                     <div>
                       <Label htmlFor="parentPhone">Phone Number (optional)</Label>
-                      <Input
-                        id="parentPhone"
-                        type="tel"
-                        value={formData.parentPhone}
-                        onChange={(e) => updateFormData('parentPhone', e.target.value)}
-                        placeholder="(555) 123-4567"
-                        className="mt-1"
-                      />
+                      <Input id="parentPhone" type="tel" value={formData.parentPhone} onChange={(event) => updateFormData('parentPhone', event.target.value)} placeholder="(555) 123-4567" className="mt-1" />
                     </div>
                   </motion.div>
                 )}
 
                 {currentStep === 3 && (
-                  <motion.div
-                    key="step3"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <h2 className="font-display text-xl font-bold mb-6">Experience & Goals</h2>
-                    
-                    <div>
-                      <Label className="mb-3 block">Current learner fluency *</Label>
+                  <motion.div key="step3" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+                    <h2 className="mb-6 font-display text-xl font-bold">Minecraft & Interests</h2>
+                    <fieldset>
+                      <legend className="mb-3 block font-medium">How much has your child played Minecraft? *</legend>
                       <div className="space-y-3">
-                        {experienceLevels.map((level) => (
-                          <div
-                            key={level.value}
-                            onClick={() => updateFormData('fluencyLevel', level.value)}
-                            className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                              formData.fluencyLevel === level.value
-                                ? 'border-secondary bg-secondary/10'
-                                : 'border-border hover:border-secondary/50'
-                            }`}
-                          >
-                            <div className="font-medium">{level.label}</div>
-                            <div className="text-sm text-muted-foreground">{level.description}</div>
-                          </div>
-                        ))}
+                        {experienceLevels.map((level) => <RadioOption key={level.value} name="experienceLevel" {...level} checked={formData.experienceLevel === level.value} onChange={() => updateFormData('experienceLevel', level.value)} />)}
                       </div>
-                    </div>
-
-                    <div>
-                      <Label className="mb-3 block">Preferred starting track *</Label>
+                    </fieldset>
+                    <fieldset>
+                      <legend className="mb-3 block font-medium">Which edition of Minecraft does your child have? *</legend>
+                      <p className="mb-3 text-sm text-muted-foreground">Bedrock is the pilot's first choice for young learners.</p>
                       <div className="space-y-3">
-                        {archetypeOptions.map((option) => (
-                          <div
-                            key={option.value}
-                            onClick={() => updateFormData('archetypePreference', option.value)}
-                            className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                              formData.archetypePreference === option.value
-                                ? 'border-secondary bg-secondary/10'
-                                : 'border-border hover:border-secondary/50'
-                            }`}
-                          >
-                            <div className="font-medium">{option.label}</div>
-                            <div className="text-sm text-muted-foreground">{option.description}</div>
-                          </div>
-                        ))}
+                        {editionOptions.map((option) => <RadioOption key={option.value} name="minecraftEdition" {...option} checked={formData.minecraftEdition === option.value} onChange={() => updateFormData('minecraftEdition', option.value)} />)}
                       </div>
-                    </div>
-
-                    <div>
-                      <Label className="mb-3 block">Profile confidence for this selection *</Label>
+                    </fieldset>
+                    <fieldset>
+                      <legend className="mb-3 block font-medium">What device(s) will your child play on? *</legend>
                       <div className="space-y-3">
-                        {confidenceOptions.map((option) => (
-                          <div
-                            key={option.value}
-                            onClick={() => updateFormData('profileConfidence', option.value)}
-                            className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                              formData.profileConfidence === option.value
-                                ? 'border-secondary bg-secondary/10'
-                                : 'border-border hover:border-secondary/50'
-                            }`}
-                          >
-                            <div className="font-medium">{option.label}</div>
-                            <div className="text-sm text-muted-foreground">{option.description}</div>
-                          </div>
-                        ))}
+                        {platformOptions.map((option) => <CheckboxOption key={option} id={optionId('platform', option)} label={option} checked={formData.platforms.includes(option)} onChange={() => toggleArrayItem('platforms', option)} />)}
                       </div>
-                    </div>
-
-                    <div>
-                      <Label htmlFor="accessibilityNeeds">Accessibility or support needs *</Label>
-                      <Textarea
-                        id="accessibilityNeeds"
-                        value={formData.accessibilityNeeds}
-                        onChange={(e) => updateFormData('accessibilityNeeds', e.target.value)}
-                        placeholder="List support needs, or write: No additional support needed"
-                        className="mt-1 min-h-[96px]"
-                      />
-                    </div>
-
-                    <div className="rounded-lg border border-secondary/30 bg-secondary/5 p-4">
-                      <p className="text-sm font-medium">Profile code preview</p>
-                      <p className="text-sm text-muted-foreground mt-1">
-                        {profileCode ? `${profileCode} (${formData.profileConfidence || 'select confidence'})` : 'Select fluency and track to generate profile code'}
-                      </p>
-                    </div>
-
-                    <div>
-                      <Label className="mb-3 block">What would your child like to learn? *</Label>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {learningGoals.map((goal) => (
-                          <div
-                            key={goal}
-                            onClick={() => toggleArrayItem('learningGoals', goal)}
-                            className={`p-3 rounded-lg border cursor-pointer transition-all ${
-                              formData.learningGoals.includes(goal)
-                                ? 'border-secondary bg-secondary/10'
-                                : 'border-border hover:border-secondary/50'
-                            }`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <Checkbox checked={formData.learningGoals.includes(goal)} />
-                              <span className="text-sm">{goal}</span>
-                            </div>
-                          </div>
-                        ))}
+                    </fieldset>
+                    <fieldset>
+                      <legend className="mb-3 block font-medium">How will your child control the game? *</legend>
+                      <div className="space-y-3">
+                        {inputOptions.map((option) => <CheckboxOption key={option.value} id={optionId('input', option.value)} label={option.label} checked={formData.inputMethods.includes(option.value)} onChange={() => toggleArrayItem('inputMethods', option.value)} />)}
                       </div>
-                    </div>
-
+                    </fieldset>
                     <div>
-                      <Label className="mb-3 block">Available times for sessions *</Label>
-                      <div className="grid sm:grid-cols-2 gap-3">
-                        {availabilityOptions.map((option) => (
-                          <div
-                            key={option}
-                            onClick={() => toggleArrayItem('availability', option)}
-                            className={`p-3 rounded-lg border cursor-pointer transition-all ${
-                              formData.availability.includes(option)
-                                ? 'border-secondary bg-secondary/10'
-                                : 'border-border hover:border-secondary/50'
-                            }`}
-                          >
-                            <div className="flex items-center gap-2">
-                              <Checkbox checked={formData.availability.includes(option)} />
-                              <span className="text-sm">{option}</span>
-                            </div>
-                          </div>
-                        ))}
-                      </div>
+                      <Label htmlFor="accessibilityNeeds">Accessibility or support needs (optional)</Label>
+                      <Textarea id="accessibilityNeeds" value={formData.accessibilityNeeds} onChange={(event) => updateFormData('accessibilityNeeds', event.target.value)} placeholder="Share anything that would help us make sessions welcoming and comfortable." className="mt-1 min-h-[96px]" />
                     </div>
+                    <fieldset>
+                      <legend className="mb-3 block font-medium">What does your child love in Minecraft? *</legend>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {interestOptions.map((option) => <CheckboxOption key={option} id={optionId('interest', option)} label={option} checked={formData.interests.includes(option)} onChange={() => toggleArrayItem('interests', option)} />)}
+                      </div>
+                    </fieldset>
+                    <fieldset>
+                      <legend className="mb-3 block font-medium">Available times for sessions *</legend>
+                      <div className="grid gap-3 sm:grid-cols-2">
+                        {availabilityOptions.map((option) => <CheckboxOption key={option} id={optionId('availability', option)} label={option} checked={formData.availability.includes(option)} onChange={() => toggleArrayItem('availability', option)} />)}
+                      </div>
+                    </fieldset>
                   </motion.div>
                 )}
 
                 {currentStep === 4 && (
-                  <motion.div
-                    key="step4"
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    exit={{ opacity: 0, x: -20 }}
-                    className="space-y-6"
-                  >
-                    <h2 className="font-display text-xl font-bold mb-6">Technical Setup & Consent</h2>
-                    
+                  <motion.div key="step4" initial={{ opacity: 0, x: 20 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -20 }} className="space-y-6">
+                    <h2 className="mb-6 font-display text-xl font-bold">Technical Setup & Consent</h2>
                     <div className="space-y-4">
-                      <div
-                        onClick={() => updateFormData('hasMinecraft', !formData.hasMinecraft)}
-                        className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                          formData.hasMinecraft
-                            ? 'border-secondary bg-secondary/10'
-                            : 'border-border hover:border-secondary/50'
-                        }`}
-                      >
-                        <div className="flex items-start gap-3">
-                          <Checkbox checked={formData.hasMinecraft} className="mt-1" />
-                          <div>
-                            <span className="font-medium">My child has Minecraft Java Edition *</span>
-                            <p className="text-sm text-muted-foreground mt-1">
-                              Installed on a PC or Mac computer (not mobile or console).
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div
-                        onClick={() => updateFormData('hasWebcam', !formData.hasWebcam)}
-                        className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                          formData.hasWebcam
-                            ? 'border-secondary bg-secondary/10'
-                            : 'border-border hover:border-secondary/50'
-                        }`}
-                      >
-                        <div className="flex items-start gap-3">
-                          <Checkbox checked={formData.hasWebcam} className="mt-1" />
-                          <div>
-                            <span className="font-medium">We have a webcam and microphone *</span>
-                            <p className="text-sm text-muted-foreground mt-1">
-                              Required for video call sessions with the mentor.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div
-                        onClick={() => updateFormData('parentalConsent', !formData.parentalConsent)}
-                        className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                          formData.parentalConsent
-                            ? 'border-secondary bg-secondary/10'
-                            : 'border-border hover:border-secondary/50'
-                        }`}
-                      >
-                        <div className="flex items-start gap-3">
-                          <Checkbox checked={formData.parentalConsent} className="mt-1" />
-                          <div>
-                            <span className="font-medium">I give consent for my child to participate *</span>
-                            <p className="text-sm text-muted-foreground mt-1">
-                              I consent to my child participating in supervised video call mentoring sessions.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
-
-                      <div
-                        onClick={() => updateFormData('safetyAcknowledgment', !formData.safetyAcknowledgment)}
-                        className={`p-4 rounded-lg border cursor-pointer transition-all ${
-                          formData.safetyAcknowledgment
-                            ? 'border-secondary bg-secondary/10'
-                            : 'border-border hover:border-secondary/50'
-                        }`}
-                      >
-                        <div className="flex items-start gap-3">
-                          <Checkbox checked={formData.safetyAcknowledgment} className="mt-1" />
-                          <div>
-                            <span className="font-medium">I acknowledge the safety guidelines *</span>
-                            <p className="text-sm text-muted-foreground mt-1">
-                              I understand I can observe sessions anytime and will receive progress updates.
-                            </p>
-                          </div>
-                        </div>
-                      </div>
+                      <CheckboxOption id="hasMinecraft" label="My child has Minecraft (any edition) *" description="Bedrock on Windows, phone, tablet, or console, or Java on PC / Mac." checked={formData.hasMinecraft} onChange={(checked) => updateFormData('hasMinecraft', checked)} />
+                      <CheckboxOption id="hasWebcam" label="We have a webcam and microphone *" description="Required for video call sessions with the mentor." checked={formData.hasWebcam} onChange={(checked) => updateFormData('hasWebcam', checked)} />
+                      <CheckboxOption id="parentalConsent" label="I give consent for my child to participate *" description="I consent to my child participating in supervised video call mentoring sessions." checked={formData.parentalConsent} onChange={(checked) => updateFormData('parentalConsent', checked)} />
+                      <CheckboxOption id="safetyAcknowledgment" label="I acknowledge the safety guidelines *" description="I understand I can observe sessions anytime and will receive progress updates." checked={formData.safetyAcknowledgment} onChange={(checked) => updateFormData('safetyAcknowledgment', checked)} />
                     </div>
                   </motion.div>
                 )}
               </AnimatePresence>
-
-              {/* Navigation */}
-              <div className="flex justify-between mt-8 pt-6 border-t border-border">
-                <Button
-                  variant="ghost"
-                  onClick={prevStep}
-                  disabled={currentStep === 1}
-                >
-                  <ArrowLeft className="w-4 h-4 mr-2" />
+              <div className="mt-8 flex justify-between border-t border-border pt-6">
+                <Button type="button" variant="ghost" onClick={prevStep} disabled={currentStep === 1}>
+                  <ArrowLeft className="mr-2 h-4 w-4" />
                   Back
                 </Button>
-                
                 {currentStep < 4 ? (
-                  <Button
-                    variant="secondary"
-                    onClick={nextStep}
-                    disabled={!canProceed()}
-                  >
+                  <Button type="button" variant="secondary" onClick={nextStep} disabled={!canProceed()}>
                     Continue
-                    <ArrowRight className="w-4 h-4 ml-2" />
+                    <ArrowRight className="ml-2 h-4 w-4" />
                   </Button>
                 ) : (
-                  <Button
-                    variant="hero"
-                    onClick={handleSubmit}
-                    disabled={!canProceed()}
-                  >
-                    <Sparkles className="w-4 h-4 mr-2" />
-                    Submit Application
+                  <Button type="button" variant="hero" onClick={handlePreview} disabled={!canProceed()}>
+                    <Sparkles className="mr-2 h-4 w-4" />
+                    Review application preview
                   </Button>
                 )}
               </div>
             </div>
+            {showPreview && (
+              <div role="status" aria-live="polite" className="mt-6 rounded-lg border border-secondary/40 bg-secondary/10 p-5">
+                <h2 className="font-display text-lg font-bold">Preview ready</h2>
+                <p className="mt-1 text-sm text-muted-foreground">This is a local preview only. Nothing was submitted, saved, or sent, and this page will not navigate away.</p>
+              </div>
+            )}
           </motion.div>
         </div>
       </section>

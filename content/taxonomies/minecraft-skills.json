@@ -1,0 +1,52 @@
+{
+  "skills": [
+    {
+      "id": "movement-camera",
+      "label": "Move & look"
+    },
+    {
+      "id": "hotbar-inventory",
+      "label": "Hotbar & inventory"
+    },
+    {
+      "id": "placing-breaking",
+      "label": "Place & break blocks"
+    },
+    {
+      "id": "crafting-basics",
+      "label": "Basic crafting"
+    },
+    {
+      "id": "tools",
+      "label": "Tool basics"
+    },
+    {
+      "id": "building",
+      "label": "Building"
+    },
+    {
+      "id": "survival-safety",
+      "label": "Survival basics"
+    },
+    {
+      "id": "animals-farming",
+      "label": "Animals & farming"
+    },
+    {
+      "id": "redstone-simple",
+      "label": "Simple redstone"
+    },
+    {
+      "id": "storytelling",
+      "label": "Storytelling & role-play"
+    },
+    {
+      "id": "tutorial-following",
+      "label": "Following tutorials"
+    },
+    {
+      "id": "world-navigation",
+      "label": "Finding your way"
+    }
+  ]
+}

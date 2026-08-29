@@ -5,19 +5,19 @@ const steps = [
   {
     icon: UserCheck,
     title: 'Match',
-    description: 'We pair teen mentors (14-17) with pre-teen learners (9-12) based on interests and schedules.',
+    description: 'The pilot is designed to pair teen mentors (14-18) with young learners starting around age 7, using interests, platform, safety, and availability as fit checks.',
     color: 'primary',
   },
   {
     icon: Video,
     title: 'Learn',
-    description: 'Weekly 45-minute sessions via video call + Minecraft. Parents can observe anytime.',
+    description: 'The planned format is a guardian-visible video call plus Minecraft, with sessions of roughly 30-45 minutes and flexible stopping points.',
     color: 'secondary',
   },
   {
     icon: TrendingUp,
     title: 'Grow',
-    description: 'Kids gain real CS skills while mentors build leadership experience for college apps.',
+    description: 'Children can grow confidence in Minecraft while mentors practice real coaching and leadership; the pilot will help us learn what works.',
     color: 'accent',
   },
 ];
@@ -42,7 +42,7 @@ export const HowItWorksSection = () => {
             How It <span className="gradient-text">Works</span>
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-            Three simple steps to start your journey. No experience required—just a love for Minecraft!
+            Three simple steps describe the pilot journey. The shared starting point is a love of Minecraft, with scope and readiness confirmed before participation.
           </p>
         </motion.div>
 

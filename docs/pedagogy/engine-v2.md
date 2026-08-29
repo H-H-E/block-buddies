@@ -1,4 +1,6 @@
-# Pedagogy Engine V2
+# Pedagogy Engine V2 (LEGACY - Advanced Pathway)
+
+> **STATUS: SUPERSEDED.** The current canon is [Product & Pedagogy Canon V3](../canon/product-canon.md). This engine governs only the *optional advanced pathway* (legacy Stage 1-3 Java/modpack/server runbooks). It does not apply to beginner modules, public messaging, or intake. Its Do/Explain/Debug gates remain an internal mentor observation tool in beginner contexts - never a visible mandatory child assessment.
 
 This file is the single source of truth for teaching rules across docs, mentor materials, and the website.
 

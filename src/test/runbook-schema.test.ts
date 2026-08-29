@@ -2,7 +2,7 @@ import { describe, expect, it } from "vitest";
 import fs from "node:fs";
 import path from "node:path";
 
-const RUNBOOK_DIR = path.resolve(process.cwd(), "docs/runbooks");
+const LEGACY_RUNBOOK_DIR = path.resolve(process.cwd(), "docs/runbooks");
 const REQUIRED_FRONTMATTER_KEYS = [
   "session_id",
   "track",
@@ -16,18 +16,18 @@ const REQUIRED_FRONTMATTER_KEYS = [
 
 function readRunbookFiles(): string[] {
   return fs
-    .readdirSync(RUNBOOK_DIR)
+    .readdirSync(LEGACY_RUNBOOK_DIR)
     .filter((name) => name.endsWith(".md"))
     .sort();
 }
 
 function extractFrontmatter(content: string): string {
-  const match = content.match(/^---\n([\s\S]*?)\n---/);
+  const match = content.match(/^---\r?\n([\s\S]*?)\r?\n---/);
   return match?.[1] ?? "";
 }
 
-describe("runbook schema", () => {
-  it("contains exactly 8 canonical runbooks", () => {
+describe("legacy runbook schema", () => {
+  it("contains exactly 8 preserved legacy runbooks", () => {
     const files = readRunbookFiles();
     expect(files).toHaveLength(8);
   });
@@ -36,7 +36,10 @@ describe("runbook schema", () => {
     const files = readRunbookFiles();
 
     for (const file of files) {
-      const content = fs.readFileSync(path.join(RUNBOOK_DIR, file), "utf8");
+      const content = fs.readFileSync(
+        path.join(LEGACY_RUNBOOK_DIR, file),
+        "utf8",
+      );
       const fm = extractFrontmatter(content);
 
       expect(fm.length, `${file} missing frontmatter`).toBeGreaterThan(0);
@@ -60,7 +63,10 @@ describe("runbook schema", () => {
     ];
 
     for (const file of files) {
-      const content = fs.readFileSync(path.join(RUNBOOK_DIR, file), "utf8");
+      const content = fs.readFileSync(
+        path.join(LEGACY_RUNBOOK_DIR, file),
+        "utf8",
+      );
       for (const section of requiredSections) {
         expect(content.includes(section), `${file} missing ${section}`).toBe(true);
       }

@@ -1,0 +1,261 @@
+{
+  "id": "dream-house-build",
+  "revision": 1,
+  "status": "needs-review",
+  "title": "Build a Dream House Together",
+  "shortChildTitle": "My Dream House",
+  "ageBand": {
+    "min": 6,
+    "max": 8,
+    "target": 7
+  },
+  "durationMinutes": {
+    "min": 30,
+    "max": 45
+  },
+  "outcome": "Child designs and builds their own small house over one or two sessions - choosing shape, colors, door/window placement, and at least one surprise feature - with the mentor building only supporting parts the child assigns.",
+  "optionalConnections": [
+    "symmetry-and-shapes",
+    "planning-ahead"
+  ],
+  "editions": [
+    "bedrock"
+  ],
+  "platforms": [
+    "windows-pc-touch-mouse",
+    "tablet-ios",
+    "tablet-android",
+    "xbox",
+    "playstation",
+    "switch"
+  ],
+  "inputMethods": [
+    "touch",
+    "controller",
+    "keyboard-mouse"
+  ],
+  "testedVersions": [
+    "1.21.x (Bedrock)"
+  ],
+  "deliveryModes": [
+    "solo_guided",
+    "shared_world"
+  ],
+  "multiplayerRequirements": "Shared-world variant uses adult-owned Realm; mentor has build permission but defers to child's plan.",
+  "knownIncompatibilities": [
+    "None specific; creative mode identical across Bedrock platforms"
+  ],
+  "prerequisites": [
+    "join-move-look-talk",
+    "hotbar-inventory-tools"
+  ],
+  "interests": [
+    "building-creative",
+    "customizing-looking-cool"
+  ],
+  "setup": {
+    "guardianSteps": [
+      "Standard device setup",
+      "Optional: child can bring a drawing or toy as inspiration"
+    ],
+    "mentorPreflight": [
+      "Flat build plot reserved near spawn in BB Starter Plains",
+      "Hotbar pre-fill NOT done - child picks own blocks",
+      "If session 2 of this module: load saved world and locate child's in-progress house"
+    ]
+  },
+  "flow": [
+    {
+      "phase": "Reconnect",
+      "minutes": "3",
+      "mentorMoves": [
+        "Ask about any new build ideas since last time"
+      ],
+      "childAction": "Shares ideas"
+    },
+    {
+      "phase": "Choose goal",
+      "minutes": "4",
+      "mentorMoves": [
+        "Ask 'What makes a house YOURS?' Offer bounded choices if stuck: tall tower / wide cottage / secret underground"
+      ],
+      "childAction": "Describes or picks their dream house style"
+    },
+    {
+      "phase": "Quick win",
+      "minutes": "6",
+      "mentorMoves": [
+        "Guide placing the front door first - instant house feeling!"
+      ],
+      "childAction": "Places a door on empty ground"
+    },
+    {
+      "phase": "Watch or model",
+      "minutes": "4",
+      "mentorMoves": [
+        "Demo ONE technique they'll need: stacking walls, or making a window gap"
+      ],
+      "childAction": "Watches one demo"
+    },
+    {
+      "phase": "Predict and try",
+      "minutes": "10",
+      "mentorMoves": [
+        "Ask where walls should go before they place them"
+      ],
+      "childAction": "Lays out walls and corners"
+    },
+    {
+      "phase": "Build together",
+      "minutes": "15",
+      "mentorMoves": [
+        "Follow THEIR design decisions",
+        "Ask 'what goes here?' not 'put it here'",
+        "Take only assigned helper tasks (e.g., gathering more wool)"
+      ],
+      "childAction": "Builds walls, roof starts, decorates interior"
+    },
+    {
+      "phase": "Remix",
+      "minutes": "5",
+      "mentorMoves": [
+        "Offer one upgrade choice: secret room, garden, balcony..."
+      ],
+      "childAction": "Adds one surprise feature"
+    },
+    {
+      "phase": "Show and celebrate",
+      "minutes": "5",
+      "mentorMoves": [
+        "Screenshot from outside AND inside",
+        "Child names the house"
+      ],
+      "childAction": "Names and tours house"
+    },
+    {
+      "phase": "Choose next",
+      "minutes": "3",
+      "mentorMoves": [
+        "Record continuation: finish roof? furnish? garden?"
+      ],
+      "childAction": "Chooses"
+    }
+  ],
+  "mentorScript": {
+    "openingLines": [
+      "Today you're the architect! What does your dream house look like?",
+      "Ready to build something totally YOURS?"
+    ],
+    "keyPhrases": [
+      "It's your house - you decide!",
+      "Should I help with that part or is it yours?",
+      "What's this room going to be?"
+    ]
+  },
+  "learnerCues": [
+    {
+      "cueText": "Pick your wall color!",
+      "action": "Choose blocks",
+      "iconHint": "paint palette icon"
+    },
+    {
+      "cueText": "Stack up for walls!",
+      "action": "Place blocks vertically",
+      "iconHint": "up-stacked-squares icon"
+    },
+    {
+      "cueText": "Punch a window here!",
+      "action": "Leave a gap",
+      "iconHint": "window-frame icon"
+    },
+    {
+      "cueText": "Put your door where you want it!",
+      "action": "Place door",
+      "iconHint": "door icon"
+    }
+  ],
+  "mediaReferences": [],
+  "sharedRoles": {
+    "childRole": "Architect & Lead Builder",
+    "mentorRole": "Construction Helper - builds ONLY what child assigns; gathers materials on request",
+    "rotationNotes": "Small groups (2-3 children): each builds own house on adjacent plots; may trade helper roles"
+  },
+  "childChoicePoints": [
+    {
+      "prompt": "What shape is your house?",
+      "options": [
+        "Tall tower",
+        "Wide cottage",
+        "Secret underground"
+      ]
+    },
+    {
+      "prompt": "Favorite colors for walls?",
+      "options": [
+        "Warm (red/orange)",
+        "Cool (blue/green)",
+        "Rainbow mix"
+      ]
+    },
+    {
+      "prompt": "Surprise feature?",
+      "options": [
+        "Secret room",
+        "Flower garden",
+        "Balcony"
+      ]
+    }
+  ],
+  "commonProblems": [
+    {
+      "problem": "Roof feels too hard",
+      "fix": "Mentor offers 3 simple roof styles (flat, triangle stairs, pyramid); child picks and tries"
+    },
+    {
+      "problem": "House looks 'wrong' to child mid-build",
+      "fix": "Normalize: builders change plans! Offer to knock down just one wall rather than restart everything"
+    },
+    {
+      "problem": "Mentor accidentally builds too much",
+      "fix": "Self-check: pause and ask 'whose house is this?' - return control immediately"
+    }
+  ],
+  "hintLadder": [
+    "Where do you want the door?",
+    "Try standing inside your walls and looking around - what's missing?",
+    "Want me to show you how stairs make a pointy roof? Or we can do flat!"
+  ],
+  "resetPath": "Creative mode: no damage possible. If build collapses badly, mentor restores plot from world backup copy; child's placed door and chosen blocks list are preserved as the 'plan'.",
+  "soloFallback": "Fully works solo-guided via screen-share; mentor acts as remote construction helper by voice only.",
+  "evidenceOptions": [
+    "screenshot",
+    "spoken-description",
+    "demonstration",
+    "artifact-photo"
+  ],
+  "accessibilityOptions": [
+    "Auto-jump ON for climbing scaffolding-like moments",
+    "One-wall-per-session pacing available across two sessions",
+    "Mentor handles high/dangerous-feeling placements on request WITHOUT taking over design"
+  ],
+  "safetyRequirements": [
+    "Private world or adult-owned Realm; no public servers",
+    "No DMs; guardian-visible communication only",
+    "Shared-world variant: mentor permissions limited to build/break in designated plot area"
+  ],
+  "parentSummaryTemplate": "{child} designed and built their own dream house called '{houseName}' today! They chose every color and added {feature}. Ask them for the tour next time you're together.",
+  "nextModules": [
+    "animal-farm-started",
+    "story-stage-build"
+  ],
+  "review": {
+    "playtested": false,
+    "lastReviewed": "2026-08-23",
+    "notes": "Needs playtest especially on touch-device block placement precision."
+  },
+  "worldSpecification": {
+    "mode": "flat-creative",
+    "description": "BB Starter Plains with marked 12x12 build plots near spawn; each child gets one plot."
+  },
+  "$schema": "./module.schema.json"
+}

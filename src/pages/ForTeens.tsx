@@ -5,8 +5,6 @@ import { Button } from '@/components/ui/button';
 import { 
   Gamepad2, 
   GraduationCap, 
-  Clock, 
-  Award,
   FileText,
   Heart,
   Users,
@@ -14,53 +12,45 @@ import {
   ArrowRight,
   CheckCircle2,
   Sparkles,
-  Trophy,
-  Star
+  Trophy
 } from 'lucide-react';
 
 const benefits = [
   {
     icon: GraduationCap,
-    title: 'College App Gold',
-    description: 'Stand out with unique volunteer experience that shows leadership and initiative.',
+    title: 'Mentorship Practice',
+    description: 'Practice leadership and initiative by helping a younger learner feel confident in Minecraft.',
   },
   {
-    icon: Clock,
-    title: 'Service Hours',
-    description: 'Earn community service hours that actually feel rewarding—not boring.',
+    icon: Gamepad2,
+    title: 'Minecraft-First Contribution',
+    description: 'Use something you already know to help a younger learner make and explain projects they care about.',
   },
   {
     icon: Users,
-    title: 'Real Teaching Skills',
-    description: 'Learn communication, patience, and how to explain complex ideas simply.',
+    title: 'Communication Practice',
+    description: 'Practice communication, patience, and how to explain a Minecraft step simply.',
   },
   {
     icon: FileText,
-    title: 'Letter of Recommendation',
-    description: 'Dedicated mentors can receive a rec letter from our program coordinators.',
+    title: 'Structured Pilot Materials',
+    description: 'Use clear session guides and safety expectations as the pilot materials are made ready.',
   },
 ];
 
 const expectations = [
-  'Weekly 45-minute video call sessions with your mentee',
-  '8-week minimum commitment (most mentors stay longer!)',
-  '15-20 minutes of prep with a structured runbook',
+  'Agree on a regular session rhythm with the pilot team',
+  'Discuss the pilot commitment during intake',
+  'Prepare with a structured guide when a module is assigned',
   'Being patient, encouraging, and a good role model',
-  'Track Do/Explain/Debug mastery results after each session',
+  'Share a short summary with parents after each session',
   'Following our safety guidelines and code of conduct',
 ];
 
-const testimonials = [
-  {
-    quote: "I was nervous about teaching at first, but the lesson plans made it easy. Now I love seeing my mentee's progress!",
-    author: "Alex, 16",
-    role: "Mentor for 6 months",
-  },
-  {
-    quote: "My interviewer at MIT was super impressed when I talked about Block Buddies. It really set me apart.",
-    author: "Jordan, 17",
-    role: "Former mentor, now at MIT",
-  },
+const trainingTopics = [
+  { title: 'Coaching basics', description: 'Pilot training is planned to cover Make / Show / Tell / Try / Fix sessions with patience and warmth.' },
+  { title: 'Child safety', description: 'Pilot onboarding is planned to cover guardian-visible communication, boundaries, and how to raise concerns.' },
+  { title: 'Session structure', description: 'Pilot-module guides are planned to include an opening, cues, hint ladder, reset path, and exit reflection.' },
 ];
 
 const ForTeens = () => {
@@ -78,7 +68,7 @@ const ForTeens = () => {
           >
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary/10 border border-secondary/20 text-secondary text-sm font-medium mb-6">
               <Gamepad2 className="w-4 h-4" />
-              For Teens (14-17)
+              For Teens (14-18)
             </span>
             
             <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
@@ -87,7 +77,7 @@ const ForTeens = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              You already know Minecraft inside and out. Now use that expertise to help younger kids—and build your resume at the same time.
+              You already know Minecraft. The pilot invites you to use that experience to help a younger learner feel confident, make things, and tell their story.
             </p>
 
             <Link to="/apply/mentor">
@@ -113,7 +103,7 @@ const ForTeens = () => {
               Why <span className="gradient-text">Join?</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              This isn't your typical boring volunteer gig. Here's what you get out of it.
+              This is a pilot mentorship role. Here's what the current design asks of you and what it is intended to help you practice.
             </p>
           </motion.div>
 
@@ -154,7 +144,7 @@ const ForTeens = () => {
                 What's <span className="gradient-text-accent">Expected</span>
               </h2>
               <p className="text-muted-foreground mb-8">
-                Being a Block Buddy mentor is rewarding but does require commitment. Here's what you're signing up for:
+                Mentoring is a meaningful commitment. Here's what the pilot role is designed to involve:
               </p>
               
               <ul className="space-y-4">
@@ -187,11 +177,10 @@ const ForTeens = () => {
               
               <ul className="space-y-4">
                 {[
-                  { icon: FileText, text: 'Session runbooks with fallback options' },
-                  { icon: MessageCircle, text: 'Access to mentor community & support' },
-                  { icon: Sparkles, text: 'Training on coaching and controlled challenge' },
-                  { icon: Award, text: 'Certificate and potential letter of recommendation' },
-                  { icon: Heart, text: 'The satisfaction of making a real difference' },
+                  { icon: FileText, text: 'Pilot session guides with fallback options' },
+                  { icon: MessageCircle, text: 'A clear route for questions and concerns' },
+                  { icon: Sparkles, text: 'Planned onboarding on coaching and child safety' },
+                  { icon: Heart, text: 'A chance to practice making Minecraft welcoming' },
                 ].map((item) => (
                   <li key={item.text} className="flex items-center gap-3">
                     <div className="w-8 h-8 rounded-lg bg-primary/10 flex items-center justify-center flex-shrink-0">
@@ -206,7 +195,7 @@ const ForTeens = () => {
         </div>
       </section>
 
-      {/* Testimonials */}
+      {/* Training Preview */}
       <section className="py-20 md:py-32 bg-background-secondary">
         <div className="section-container">
           <motion.div
@@ -216,30 +205,22 @@ const ForTeens = () => {
             className="text-center mb-16"
           >
             <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              From Other <span className="gradient-text">Teen Mentors</span>
+              What Mentor Training <span className="gradient-text">Covers</span>
             </h2>
           </motion.div>
 
           <div className="grid md:grid-cols-2 gap-6 max-w-4xl mx-auto">
-            {testimonials.map((testimonial, index) => (
+            {trainingTopics.map((item, index) => (
               <motion.div
-                key={testimonial.author}
+                key={item.title}
                 initial={{ opacity: 0, y: 30 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
                 className="glass-card-hover p-6 md:p-8"
               >
-                <div className="flex gap-1 mb-4">
-                  {[...Array(5)].map((_, i) => (
-                    <Star key={i} className="w-4 h-4 fill-gold text-gold" />
-                  ))}
-                </div>
-                <p className="text-foreground mb-6">"{testimonial.quote}"</p>
-                <div>
-                  <div className="font-semibold">{testimonial.author}</div>
-                  <div className="text-sm text-muted-foreground">{testimonial.role}</div>
-                </div>
+                <h3 className="font-display font-bold mb-2">{item.title}</h3>
+                <p className="text-sm text-muted-foreground">{item.description}</p>
               </motion.div>
             ))}
           </div>
@@ -260,7 +241,7 @@ const ForTeens = () => {
               Ready to Make a Difference?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Applications take about 5 minutes. We review them weekly and get back to you fast.
+              The application helps us understand your Minecraft experience, availability, and fit. We'll share the current pilot next steps after review.
             </p>
             <Link to="/apply/mentor">
               <Button variant="hero" size="xl">

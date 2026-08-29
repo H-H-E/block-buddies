@@ -1,5 +1,7 @@
 # Agent Curriculum Guide
 
+> **LEGACY PATHWAY (superseded by V3 canon, 2026-08-23):** This document describes the retired V2 fluency-archetype model (tracks, S01-S08 spine, Do/Explain/Debug). It is preserved for the advanced pathway and historical reference only. For current truth see [Product & Pedagogy Canon](./canon/product-canon.md) or [Canon](./canon/product-canon.md).
+
 ## 1. Curriculum vision statement
 
 Block Buddies teaches computer science by making ideas visible, playable, and fixable inside Minecraft. Learners build small working systems, explain how those systems behave, and practice debugging without shame. The goal is not to turn Minecraft into school with creepers. The goal is to use Minecraft as a low-pressure engineering sandbox where learners can feel capable, curious, and in control.

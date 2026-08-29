@@ -1,0 +1,260 @@
+{
+  "id": "join-move-look-talk",
+  "revision": 1,
+  "status": "needs-review",
+  "title": "Join, Move, Look, and Communicate",
+  "shortChildTitle": "Learn to Move",
+  "ageBand": {
+    "min": 6,
+    "max": 8,
+    "target": 7
+  },
+  "durationMinutes": {
+    "min": 30,
+    "max": 45
+  },
+  "outcome": "Child can join the prepared world, walk and jump where they choose, turn their view to look at things, and use push-to-talk or in-game gesture to respond during play.",
+  "optionalConnections": [
+    "spatial-language: over/under/next to",
+    "turn-taking"
+  ],
+  "editions": [
+    "bedrock"
+  ],
+  "platforms": [
+    "windows-pc-touch-mouse",
+    "tablet-ios",
+    "tablet-android",
+    "xbox",
+    "playstation",
+    "switch"
+  ],
+  "inputMethods": [
+    "touch",
+    "controller",
+    "keyboard-mouse"
+  ],
+  "testedVersions": [
+    "1.21.x (Bedrock) - verify current patch at session prep"
+  ],
+  "deliveryModes": [
+    "solo_guided",
+    "shared_world"
+  ],
+  "multiplayerRequirements": "Solo: prepared local world. Shared: adult-owned Realm or LAN world with child + mentor only.",
+  "knownIncompatibilities": [
+    "Java Edition controls differ - do not mix instructions",
+    "Old console legacy editions untested"
+  ],
+  "prerequisites": [],
+  "interests": [
+    "exploring-caves",
+    "building-creative",
+    "survival-adventure"
+  ],
+  "setup": {
+    "guardianSteps": [
+      "Sign the child into Minecraft Bedrock before the session starts",
+      "Confirm audio works (headphones recommended) and the video call is open",
+      "Have the device charged and seated comfortably"
+    ],
+    "mentorPreflight": [
+      "Verify world 'BB Starter Plains' loads with flat grass area and creative mode",
+      "Confirm voice channel: child can hear you and you can hear them",
+      "Check input method from intake form; prepare the matching control card"
+    ]
+  },
+  "flow": [
+    {
+      "phase": "Reconnect",
+      "minutes": "3",
+      "mentorMoves": [
+        "Greet by name",
+        "Ask what they played or built since last time",
+        "If first session: ask what they already know about Minecraft"
+      ],
+      "childAction": "Answers or shows something"
+    },
+    {
+      "phase": "Choose today's goal",
+      "minutes": "2",
+      "mentorMoves": [
+        "Offer two concrete choices: 'Walk around and find something cool' or 'Build a little spot'"
+      ],
+      "childAction": "Picks one"
+    },
+    {
+      "phase": "Quick win",
+      "minutes": "5",
+      "mentorMoves": [
+        "Narrate controls once per action using the control card",
+        "Celebrate the first successful move loudly"
+      ],
+      "childAction": "Walks forward and jumps once"
+    },
+    {
+      "phase": "Watch or model",
+      "minutes": "3",
+      "mentorMoves": [
+        "Demonstrate looking around by moving the view slowly",
+        "Point out something interesting"
+      ],
+      "childAction": "Watches"
+    },
+    {
+      "phase": "Predict and try",
+      "minutes": "7",
+      "mentorMoves": [
+        "Ask 'What do you think happens if you keep walking that way?'",
+        "Let them drive"
+      ],
+      "childAction": "Explores toward their chosen landmark"
+    },
+    {
+      "phase": "Play together",
+      "minutes": "12",
+      "mentorMoves": [
+        "Follow their lead",
+        "Name things they find",
+        "Ask questions instead of directing"
+      ],
+      "childAction": "Leads a mini-adventure to a place they pick"
+    },
+    {
+      "phase": "Remix",
+      "minutes": "5",
+      "mentorMoves": [
+        "Offer: change how you move (sprint/jump) or go a different direction"
+      ],
+      "childAction": "Tries one variation"
+    },
+    {
+      "phase": "Show and celebrate",
+      "minutes": "4",
+      "mentorMoves": [
+        "Screenshot their favorite spot",
+        "Ask them to give it a tour or a name"
+      ],
+      "childAction": "Names or describes their spot"
+    },
+    {
+      "phase": "Choose next",
+      "minutes": "2",
+      "mentorMoves": [
+        "Record what they want next: build? animals? more exploring?"
+      ],
+      "childAction": "Chooses a next idea"
+    }
+  ],
+  "mentorScript": {
+    "openingLines": [
+      "Hey! Ready to explore your world today?",
+      "Before we start, show me your screen - is Minecraft open?"
+    ],
+    "keyPhrases": [
+      "You're driving - tell me where to go!",
+      "Nice! What do you see?",
+      "Want to try it yourself or should I show you first?"
+    ]
+  },
+  "learnerCues": [
+    {
+      "cueText": "Push here to walk forward",
+      "action": "Move forward",
+      "iconHint": "arrow-up icon matching input method"
+    },
+    {
+      "cueText": "Tap/slide to look around",
+      "action": "Turn view",
+      "iconHint": "eye or swipe icon"
+    },
+    {
+      "cueText": "Press jump!",
+      "action": "Jump once",
+      "iconHint": "up-arrow bounce icon"
+    },
+    {
+      "cueText": "Hold this button when you want to talk",
+      "action": "Use voice chat",
+      "iconHint": "microphone icon"
+    }
+  ],
+  "mediaReferences": [],
+  "sharedRoles": {
+    "childRole": "Explorer - decides where to go and what to try",
+    "mentorRole": "Guide - narrates controls once, then follows",
+    "rotationNotes": "In small groups, alternate who picks the destination each round"
+  },
+  "childChoicePoints": [
+    {
+      "prompt": "Where should we go first?",
+      "options": [
+        "The big tree",
+        "The water",
+        "The hills"
+      ]
+    },
+    {
+      "prompt": "How should we travel?",
+      "options": [
+        "Walking",
+        "Sprinting",
+        "Jumping the whole way"
+      ]
+    }
+  ],
+  "commonProblems": [
+    {
+      "problem": "Child cannot find the joystick/move button",
+      "fix": "Show the control card for THEIR input method; point on screen share; avoid taking control"
+    },
+    {
+      "problem": "Motion sensitivity or dizziness",
+      "fix": "Reduce camera speed in settings, take a look-away break, switch to pointing at landmarks"
+    },
+    {
+      "problem": "Audio echo or feedback",
+      "fix": "Guardian mutes game audio OR call audio; mentor lowers volume"
+    }
+  ],
+  "hintLadder": [
+    "Which way do you want to go? Let's find the button together.",
+    "Look at the left side of your screen - see that circle/arrow?",
+    "Put your finger/thumb right there... now slide up gently."
+  ],
+  "resetPath": "Return to spawn point (mentor uses /tp or walks back with them). If controls feel scrambled, pause and re-show the control card. No progress lost - exploring has no wrong answers.",
+  "soloFallback": "If multiplayer fails: child explores the same starter world solo while mentor guides by voice/screen-share. Same goals apply.",
+  "evidenceOptions": [
+    "spoken-description",
+    "pointing",
+    "demonstration",
+    "screenshot"
+  ],
+  "accessibilityOptions": [
+    "Camera sensitivity lowered for comfort",
+    "Auto-jump ON so jumping isn't a separate skill",
+    "Mentor narration replaces all text reading",
+    "Touch OR controller OR mouse - whichever the intake form says the child uses"
+  ],
+  "safetyRequirements": [
+    "Private world or Realm owned by a coordinator/adult; no public servers",
+    "No mentor-child direct messages outside guardian-visible channels",
+    "Mentor never asks for account credentials; guardian handles sign-in",
+    "Session communication on approved video-call platform only"
+  ],
+  "parentSummaryTemplate": "Today {child} learned to move and look around in their own Minecraft world. They chose where to explore and found {highlight}. Ask them about {namedSpot}!",
+  "nextModules": [
+    "hotbar-inventory-tools",
+    "tiny-tutorial-remix"
+  ],
+  "review": {
+    "playtested": false,
+    "lastReviewed": "2026-08-23",
+    "notes": "Technically valid against Bedrock 1.21 defaults; needs human playtest with an actual 7-year-old on each input method before published."
+  },
+  "worldSpecification": {
+    "mode": "flat-creative",
+    "description": "'BB Starter Plains': Flat world, creative mode, clear weather, spawn on open grass with visible landmarks within ~30 blocks: one large oak tree, a pond, gentle hills."
+  },
+  "$schema": "./module.schema.json"
+}

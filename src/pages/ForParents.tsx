@@ -8,14 +8,12 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import { 
-  Shield, 
-  GraduationCap, 
-  DollarSign, 
+import {
+  Heart,
+  Sparkles,
+  Gamepad2,
+  Shield,
   Video,
-  FileText,
-  Network,
-  Code2,
   Settings,
   CheckCircle2,
   ArrowRight,
@@ -26,85 +24,85 @@ import {
 
 const learningPhases = [
   {
-    icon: FileText,
-    title: 'File Systems & Config',
-    description: 'Kids learn to navigate folders, edit configuration files, and understand how games store data.',
+    icon: Heart,
+    title: 'Make',
+    description: 'Your child builds something small and satisfying in Minecraft right away, with a mentor beside them.',
   },
   {
-    icon: Network,
-    title: 'Networking Basics',
-    description: 'Understanding IP addresses, servers, and how multiplayer games connect people worldwide.',
+    icon: Sparkles,
+    title: 'Show & Tell',
+    description: 'Each session ends with your child showing and explaining what they made - building confidence and language.',
   },
   {
-    icon: Code2,
-    title: 'Logic & Programming',
-    description: 'Introduction to programming concepts through Redstone circuits and command blocks.',
+    icon: Gamepad2,
+    title: 'Try',
+    description: 'Mentors nudge gentle challenges based on what your child loves - never pressure, always choice.',
   },
   {
     icon: Settings,
-    title: 'System Administration',
-    description: 'Learning backups, user permissions, and responsible digital citizenship.',
+    title: 'Fix',
+    description: 'When something breaks, mentors walk through calm troubleshooting so setbacks become normal and fixable.',
   },
 ];
 
 const safetyPoints = [
   {
     icon: Video,
-    title: 'Video Call Sessions',
-    description: 'All mentoring happens on video calls. Parents can observe any session.',
+    title: 'Planned Video-Call Format',
+    description: 'The pilot is designed around approved video-call channels that guardians can observe; exact setup is shared before matching.',
   },
   {
     icon: UserCheck,
-    title: 'Vetted Teen Mentors',
-    description: 'All mentors complete an application and receive training before matching.',
+    title: 'Application & Training Plan',
+    description: 'Applications and safety training are part of the pilot design. We will confirm readiness before a match is made.',
   },
   {
     icon: Eye,
-    title: 'Parent Oversight',
-    description: 'You\'ll receive session summaries and can communicate with mentors anytime.',
+    title: 'Guardian Involvement',
+    description: 'Guardians own account setup, consent, platform readiness, and communication around the child\'s participation.',
   },
   {
     icon: MessageCircle,
-    title: 'Open Communication',
-    description: 'Direct contact with program coordinators for any questions or concerns.',
+    title: 'Clear Escalation Path',
+    description: 'Safety questions and concerns will follow a documented route shared with families before sessions begin.',
   },
 ];
 
 const pacingPoints = [
-  'Every learner follows the same 8-session spine (S01-S08).',
-  'Pacing is personalized by mastery gates, not by calendar pressure.',
-  'When a learner struggles, mentors switch to fallback mini-wins before confidence drops.',
-  'If Debug is weak, the next session starts with a 5-minute retrieval warmup.',
+  'Sessions follow pilot modules: Make, Show & Tell, Try, and Fix - with clear choice points for your child.',
+  'Mentors adjust pace to your child, never rushing and never boring them.',
+  'When something is hard, mentors use a hint ladder and a calm reset path so confidence never crashes.',
+  'The planned session close includes a short, plain-language summary so families can understand what happened.',
 ];
 
 const faqs = [
   {
-    question: 'Is this program really free?',
-    answer: 'Yes! Block Buddies is 100% free for all families. Our teen mentors volunteer their time, and we\'re supported by donations and grants. The only requirement is that your child has access to Minecraft and a computer with internet.',
+    question: 'Is there a fee?',
+    answer: 'Block Buddies is in pilot stage, so availability and any family costs are confirmed during intake. Minecraft, a compatible device, and internet access are separate requirements.',
   },
   {
     question: 'How safe is this program?',
-    answer: 'Safety is our top priority. All sessions happen via video call (Zoom or Google Meet) so you can observe anytime. Our teen mentors complete an application process and training. There are no in-person meetings required, and we have clear safety guidelines that everyone must follow.',
+    answer: 'Safety is a pilot requirement. The planned format uses approved video-call channels with guardian visibility, an application and training process, and clear safety guidance shared before participation. No in-person meeting is required by the pilot format.',
   },
   {
     question: 'Who are the teen mentors?',
-    answer: 'Our mentors are teenagers ages 14-17 who are passionate about Minecraft and technology. They apply to join our program, complete training on teaching and safety, and are supervised by adult coordinators. Many are advanced students who love sharing their knowledge.',
+    answer: 'The pilot is designed for teens ages 14-18 who are confident Minecraft players and patient communicators. Applications, safety training, and adult-owned coordination are planned parts of the model; readiness is confirmed before matching.',
   },
   {
     question: 'What does my child need to participate?',
-    answer: 'Your child needs: 1) A computer (PC or Mac) with Minecraft Java Edition installed, 2) Reliable internet connection, 3) A webcam and microphone for video calls, 4) About 45 minutes per week for sessions.',
+    answer: 'The pilot is Bedrock-first and is designed for Windows PCs, tablets, phones, or consoles that run Minecraft Bedrock; Java may be supported through a separate pathway. You also need reliable internet, a webcam and microphone for video calls, and a session window of roughly 30-45 minutes.',
   },
   {
     question: 'What if my child doesn\'t enjoy it?',
-    answer: 'That\'s okay. We review what is causing friction, adjust support, and can reassess mentor fit. If needed, we can rematch or pause with no penalty.',
+    answer: 'That\'s okay. Tell us what is causing friction so the pilot team can discuss a support adjustment, a pause, or whether the match is a fit.',
   },
   {
     question: 'How much supervision do I need to provide?',
-    answer: 'We recommend parents be nearby during the first few sessions. After that, you can choose your level of involvement. You\'ll receive session summaries after each meeting and can join any session you\'d like.',
+    answer: 'Guardians remain responsible for account setup, consent, platform readiness, and communication. The planned format is guardian-visible, and the pilot team will explain the expected involvement before sessions begin.',
   },
   {
     question: 'Is this just playing video games?',
-    answer: 'While we use Minecraft as our teaching tool, the focus is on real computer science skills. Your child will learn about file systems, networking, programming logic, and system administration. We use Minecraft because it makes these complex concepts accessible and fun!',
+    answer: 'The core of Block Buddies is the relationship with a teen mentor and growing confidence in Minecraft. Reading, planning, and simple math show up naturally inside projects; some modules offer optional coding or logic connections when a child is curious - but that is never the entry point.',
   },
 ];
 
@@ -132,14 +130,14 @@ const ForParents = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground mb-8 max-w-2xl mx-auto">
-              Free. Safe. Real skills. Your child learns actual computer science while doing what they love—playing Minecraft.
+              Minecraft-first mentorship for children beginning around age 7. Your child makes, shows, tells, tries, and fixes alongside a relatable teen mentor.
             </p>
 
             <div className="flex flex-wrap justify-center gap-4 mb-12">
               {[
-                { icon: DollarSign, text: '100% Free' },
-                { icon: Shield, text: 'Supervised & Safe' },
-                { icon: GraduationCap, text: 'Real CS Skills' },
+                { icon: Gamepad2, text: 'Minecraft-first' },
+                { icon: Shield, text: 'Guardian-visible plan' },
+                { icon: Heart, text: 'Pilot-stage access' },
               ].map((item) => (
                 <div key={item.text} className="flex items-center gap-2 px-4 py-2 rounded-full bg-muted">
                   <item.icon className="w-4 h-4 text-primary" />
@@ -170,8 +168,8 @@ const ForParents = () => {
               How Personalized Pacing Works
             </h2>
             <p className="text-muted-foreground mb-6">
-              Mentors never rush learners through sessions. Progress depends on Do/Explain/Debug evidence,
-              and support level is adjusted when needed.
+              The pilot session model uses a simple loop: your child makes something, shows it, tries a
+              gentle challenge, and fixes anything that breaks - with support tuned to their mood and energy.
             </p>
             <ul className="space-y-3">
               {pacingPoints.map((item) => (
@@ -198,7 +196,7 @@ const ForParents = () => {
               What Your Child Will <span className="gradient-text">Learn</span>
             </h2>
             <p className="text-muted-foreground max-w-2xl mx-auto">
-              Through our confidence-first approach, kids build real tech skills through projects they enjoy and can explain.
+              Through our confidence-first approach, kids make projects they enjoy and can show or explain. Coding and math are optional connections, not the entry point.
             </p>
           </motion.div>
 
@@ -318,7 +316,7 @@ const ForParents = () => {
               Ready to Get Started?
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Sign up takes just 5 minutes. We'll match your child with a great mentor within a week.
+              The intake form helps us understand fit, platform, and availability. If the pilot has space, we'll share the current next steps after review.
             </p>
             <Link to="/apply/mentee">
               <Button variant="hero" size="xl">

@@ -1,0 +1,252 @@
+{
+  "id": "hotbar-inventory-tools",
+  "revision": 1,
+  "status": "needs-review",
+  "title": "Use the Hotbar, Inventory, and Basic Tools",
+  "shortChildTitle": "Pick Your Blocks",
+  "ageBand": {
+    "min": 6,
+    "max": 8,
+    "target": 7
+  },
+  "durationMinutes": {
+    "min": 30,
+    "max": 45
+  },
+  "outcome": "Child can open their inventory or creative menu, pick blocks they like into the hotbar, select between them during play, and use one basic tool for its job (axe on wood, shovel on dirt).",
+  "optionalConnections": [
+    "sorting-and-categorizing",
+    "counting stacks"
+  ],
+  "editions": [
+    "bedrock"
+  ],
+  "platforms": [
+    "windows-pc-touch-mouse",
+    "tablet-ios",
+    "tablet-android",
+    "xbox",
+    "playstation",
+    "switch"
+  ],
+  "inputMethods": [
+    "touch",
+    "controller",
+    "keyboard-mouse"
+  ],
+  "testedVersions": [
+    "1.21.x (Bedrock) - verify current patch at session prep"
+  ],
+  "deliveryModes": [
+    "solo_guided",
+    "shared_world"
+  ],
+  "multiplayerRequirements": "Solo: prepared local world. Shared: adult-owned Realm with child + mentor only.",
+  "knownIncompatibilities": [
+    "Java inventory layout differs - never show Java screenshots"
+  ],
+  "prerequisites": [
+    "join-move-look-talk"
+  ],
+  "interests": [
+    "building-creative",
+    "customizing-looking-cool"
+  ],
+  "setup": {
+    "guardianSteps": [
+      "Same device setup as previous module",
+      "Child should be signed in and ready to play"
+    ],
+    "mentorPreflight": [
+      "World 'BB Starter Plains' loaded in creative mode",
+      "Creative inventory confirmed accessible per input method",
+      "Control card ready for hotbar/inventory actions"
+    ]
+  },
+  "flow": [
+    {
+      "phase": "Reconnect",
+      "minutes": "3",
+      "mentorMoves": [
+        "Ask about last session's exploring spot",
+        "Ask what they'd like MORE of today"
+      ],
+      "childAction": "Shares a memory or wish"
+    },
+    {
+      "phase": "Choose goal",
+      "minutes": "2",
+      "mentorMoves": [
+        "Offer: 'Collect your favorite blocks' or 'Get tools like a real builder'"
+      ],
+      "childAction": "Picks focus"
+    },
+    {
+      "phase": "Quick win",
+      "minutes": "5",
+      "mentorMoves": [
+        "Guide opening the inventory once; celebrate loudly"
+      ],
+      "childAction": "Opens inventory/creative menu"
+    },
+    {
+      "phase": "Watch or model",
+      "minutes": "4",
+      "mentorMoves": [
+        "Demonstrate picking one block into the hotbar",
+        "Point out the hotbar row at screen bottom"
+      ],
+      "childAction": "Watches"
+    },
+    {
+      "phase": "Predict and try",
+      "minutes": "8",
+      "mentorMoves": [
+        "Ask 'Which block do you think will look best?' then let them choose 2-3"
+      ],
+      "childAction": "Fills hotbar with chosen blocks"
+    },
+    {
+      "phase": "Build or play together",
+      "minutes": "12",
+      "mentorMoves": [
+        "Suggest placing blocks from different hotbar slots",
+        "Narrate switching slots"
+      ],
+      "childAction": "Builds a small colorful pillar or patch using 3+ block types"
+    },
+    {
+      "phase": "Remix",
+      "minutes": "5",
+      "mentorMoves": [
+        "Offer swapping one block for another they just noticed"
+      ],
+      "childAction": "Swaps and compares"
+    },
+    {
+      "phase": "Show and celebrate",
+      "minutes": "4",
+      "mentorMoves": [
+        "Screenshot the mini-build",
+        "Ask which block is their favorite and why"
+      ],
+      "childAction": "Explains a choice"
+    },
+    {
+      "phase": "Choose next",
+      "minutes": "2",
+      "mentorMoves": [
+        "Offer next steps: bigger build, animals, or follow a tiny tutorial"
+      ],
+      "childAction": "Picks a direction"
+    }
+  ],
+  "mentorScript": {
+    "openingLines": [
+      "Today you get to fill your own tool belt - ready?",
+      "Last time you explored. Today you collect!"
+    ],
+    "keyPhrases": [
+      "Open your backpack - that's your inventory!",
+      "That's your hotbar - it's like your pockets.",
+      "You pick. It's your build."
+    ]
+  },
+  "learnerCues": [
+    {
+      "cueText": "Press this to open your blocks",
+      "action": "Open inventory",
+      "iconHint": "backpack icon"
+    },
+    {
+      "cueText": "Touch/click the block you want",
+      "action": "Select block",
+      "iconHint": "hand-pointing icon"
+    },
+    {
+      "cueText": "Now tap a pocket number",
+      "action": "Move to hotbar slot",
+      "iconHint": "numbered squares icon"
+    },
+    {
+      "cueText": "Use the axe on wood!",
+      "action": "Try correct tool",
+      "iconHint": "axe icon"
+    }
+  ],
+  "mediaReferences": [],
+  "sharedRoles": {
+    "childRole": "Collector - chooses all blocks and tools",
+    "mentorRole": "Helper - points where menus are, never picks for them",
+    "rotationNotes": "Small groups: each child fills their own hotbar; no shared hotbar decisions"
+  },
+  "childChoicePoints": [
+    {
+      "prompt": "Which 3 blocks go in your pockets?",
+      "options": [
+        "Wool colors",
+        "Wood types",
+        "Shiny stones"
+      ]
+    },
+    {
+      "prompt": "What should we make first with them?",
+      "options": [
+        "A tall tower",
+        "A flat picnic spot",
+        "A mystery shape"
+      ]
+    }
+  ],
+  "commonProblems": [
+    {
+      "problem": "Inventory feels overwhelming",
+      "fix": "Mentor narrows to one tab/category at a time; search box if touch device"
+    },
+    {
+      "problem": "Blocks not staying in hotbar",
+      "fix": "Re-demonstrate drag vs tap-to-slot per input method; check for touch long-press behavior"
+    },
+    {
+      "problem": "Child wants EVERY block",
+      "fix": "Celebrate the enthusiasm; suggest a 'shopping trip' back later rather than forcing limits"
+    }
+  ],
+  "hintLadder": [
+    "Where do you think your blocks live? Let's peek together.",
+    "See the three dots / E button? That opens it.",
+    "Tap the block once... now tap the pocket where you want it."
+  ],
+  "resetPath": "Close and reopen inventory; hotbar contents persist in creative mode. If the world state got messy, mentor restores from the pre-session backup copy of BB Starter Plains.",
+  "soloFallback": "Same goals work fully solo-guided: mentor narrates over screen-share while the child drives their own single-player world.",
+  "evidenceOptions": [
+    "screenshot",
+    "spoken-description",
+    "demonstration"
+  ],
+  "accessibilityOptions": [
+    "Touch devices: enable 'Classic' creative inventory layout if grid overwhelms",
+    "Mentor reads any labels aloud",
+    "One-block-at-a-time pacing available"
+  ],
+  "safetyRequirements": [
+    "Private world or adult-owned Realm; no public servers",
+    "No DMs outside guardian-visible channels",
+    "No credential sharing; guardian handles sign-in"
+  ],
+  "parentSummaryTemplate": "Today {child} learned to use the Minecraft inventory and hotbar - they picked their own favorite blocks ({blocks}) and built {miniBuild}. Ask which block was their favorite!",
+  "nextModules": [
+    "tiny-tutorial-remix",
+    "dream-house-build"
+  ],
+  "review": {
+    "playtested": false,
+    "lastReviewed": "2026-08-23",
+    "notes": "Needs human playtest per input method, especially touch drag-to-slot behavior."
+  },
+  "worldSpecification": {
+    "mode": "flat-creative",
+    "description": "'BB Starter Plains' continued from module 1: same flat creative world so prior exploration spot is visible."
+  },
+  "$schema": "./module.schema.json"
+}

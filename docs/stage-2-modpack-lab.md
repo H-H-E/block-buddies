@@ -1,5 +1,7 @@
 # Stage 2: Modpack Lab
 
+> **LEGACY PATHWAY (superseded by V3 canon, 2026-08-23):** This document describes the retired V2 fluency-archetype model (tracks, S01-S08 spine, Do/Explain/Debug). It is preserved for the advanced pathway and historical reference only. For current truth see [Product & Pedagogy Canon](./canon/product-canon.md) or [Canon](./canon/product-canon.md).
+
 ## Stage Promise
 Learners move from building systems inside Minecraft to safely inspecting, changing, testing, and explaining modded Minecraft systems. By the end, they can design a tiny curated modpack experience with a player promise, controlled changes, a test plan, documentation, and debug evidence.
 

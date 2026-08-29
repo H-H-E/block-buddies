@@ -1,5 +1,7 @@
 # Track C: Operator (V2)
 
+> **LEGACY PATHWAY (superseded by V3 canon, 2026-08-23):** This document describes the retired V2 fluency-archetype model (tracks, S01-S08 spine, Do/Explain/Debug). It is preserved for the advanced pathway and historical reference only. For current truth see [Product & Pedagogy Canon](./canon/product-canon.md) or [Canon](./canon/product-canon.md).
+
 For learners motivated by server rules, reliability, and administration.
 
 ## Session Alignment (after Core)

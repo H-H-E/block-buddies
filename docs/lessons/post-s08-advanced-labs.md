@@ -1,5 +1,7 @@
 # Post-S08 Advanced Labs (Optional)
 
+> **LEGACY PATHWAY (superseded by V3 canon, 2026-08-23):** This document describes the retired V2 fluency-archetype model (tracks, S01-S08 spine, Do/Explain/Debug). It is preserved for the advanced pathway and historical reference only. For current truth see [Product & Pedagogy Canon](../canon/product-canon.md) or [Canon](../canon/product-canon.md).
+
 These lessons are optional extensions after the canonical `S01`-`S08` spine. They are designed for learners who completed Session 8 and want deeper project work.
 
 ## Contract

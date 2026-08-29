@@ -1,5 +1,7 @@
 # Value Proposition
 
+> **STATUS: LEGACY (historical draft).** Ages and framing here predate the V3 canon and are superseded by [Product & Pedagogy Canon](./canon/product-canon.md). Current truth: learners begin around age 7; the core value is the mentor-child relationship and Minecraft competence - coding/CS exposure is an optional connection, not the product.
+
 ## Who Benefits?
 
 ### 🧒 Younger Kids (Mentees, ages 8-12)

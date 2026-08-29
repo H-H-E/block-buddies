@@ -18,8 +18,9 @@ const navLinks = [
   { name: 'For Parents', path: '/for-parents' },
   { name: 'For Teens', path: '/for-teens' },
   { name: 'For Mentors', path: '/for-mentors' },
-  { name: 'Curriculum', path: '/curriculum' },
-  { name: 'Lesson Workspace', path: '/lesson' },
+  { name: 'Modules', path: '/modules' },
+  { name: 'Legacy Curriculum', path: '/curriculum' },
+  { name: 'Legacy Lesson Workspace', path: '/lesson' },
   { name: 'Resources', path: '/resources' },
 ];
 

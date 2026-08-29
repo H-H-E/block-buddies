@@ -18,14 +18,19 @@ jobs:
           node-version: 20
           cache: npm
 
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
       - name: Install
         run: npm ci
 
-      - name: Docs links
-        run: npm run check:docs-links
+      - name: Lint
+        run: npm run lint
 
-      - name: Test
-        run: npm test
+      - name: Contracts
+        run: npm run check:contracts
 
       - name: Build
         run: npm run build

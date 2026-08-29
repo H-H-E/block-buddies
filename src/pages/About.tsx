@@ -1,5 +1,4 @@
 import { motion } from 'framer-motion';
-import { Link } from 'react-router-dom';
 import { Layout } from '@/components/layout/Layout';
 import { Button } from '@/components/ui/button';
 import { 
@@ -9,15 +8,14 @@ import {
   Users,
   Mail,
   ArrowRight,
-  Sparkles,
-  Building2
+  Sparkles
 } from 'lucide-react';
 
 const values = [
   {
     icon: Lightbulb,
     title: 'Interest-First Learning',
-    description: 'We start from projects kids care about and turn that motivation into real file, network, and logic skills.',
+    description: 'We start from what each child already loves in Minecraft - building, animals, stories - and grow from there.',
   },
   {
     icon: Users,
@@ -26,28 +24,14 @@ const values = [
   },
   {
     icon: Heart,
-    title: 'Free & Accessible',
-    description: 'Quality CS education shouldn\'t be behind a paywall. Block Buddies is 100% free for all families.',
+    title: 'Careful Pilot Access',
+    description: 'Block Buddies is being developed as a pilot. Availability, family costs, and support details are shared plainly during intake.',
   },
   {
     icon: Target,
     title: 'Real Skills, Real Fun',
     description: 'Every lesson combines meaningful progress with hands-on projects learners can demonstrate and explain.',
   },
-];
-
-const team = [
-  { name: 'Founder Name', role: 'Founder & Lead', initials: 'FN' },
-  { name: 'Team Member', role: 'Curriculum Director', initials: 'TM' },
-  { name: 'Team Member', role: 'Mentor Coordinator', initials: 'TM' },
-  { name: 'Team Member', role: 'Community Lead', initials: 'TM' },
-];
-
-const partners = [
-  { name: 'Partner Org 1', type: 'Education Partner' },
-  { name: 'Partner Org 2', type: 'Community Partner' },
-  { name: 'Partner Org 3', type: 'Technology Sponsor' },
-  { name: 'Partner Org 4', type: 'Nonprofit Ally' },
 ];
 
 const About = () => {
@@ -73,7 +57,7 @@ const About = () => {
             </h1>
             
             <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-              We believe every kid deserves access to quality computer science education—and that the best teachers are often the ones closest to them in age.
+              We believe every kid deserves a patient mentor who takes their Minecraft world seriously—and that the best mentors are often the ones closest to them in age.
             </p>
           </motion.div>
         </div>
@@ -95,10 +79,10 @@ const About = () => {
                 Block Buddies was founded on a simple observation: kids learn best from people they can relate to. Teen mentors are close enough in age to understand their mentees' world, yet experienced enough to guide them.
               </p>
               <p className="text-muted-foreground mb-4">
-                We use Minecraft as an engaging learning platform that makes computer science approachable. Learners build confidence through guided projects that teach file systems, networking, programming logic, and system administration.
+                We use Minecraft as the meeting place. Learners build confidence through guided 1-on-1 sessions with teen mentors who follow structured modules built around making, showing, telling, trying, and fixing.
               </p>
               <p className="text-muted-foreground">
-                Our program is entirely volunteer-powered and free for all families, because we believe socioeconomic status shouldn't determine access to quality CS education.
+                This is a pilot-stage program. We are testing the mentor experience, module pacing, and family workflow carefully before making broader promises about access or outcomes.
               </p>
             </motion.div>
 
@@ -116,19 +100,19 @@ const About = () => {
               <ul className="space-y-2 text-sm">
                 <li className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-primary" />
-                  Config files → File system navigation
+                  Making → early wins in a familiar world
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-secondary" />
-                  Multiplayer servers → Networking concepts
+                  Showing & telling → confidence and language
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-accent" />
-                  Command blocks → Programming logic
+                  Trying → gentle, choice-based challenges
                 </li>
                 <li className="flex items-center gap-2">
                   <div className="w-2 h-2 rounded-full bg-gold" />
-                  Server management → Sysadmin skills
+                  Fixing → calm troubleshooting habits
                 </li>
               </ul>
             </motion.div>
@@ -171,82 +155,6 @@ const About = () => {
         </div>
       </section>
 
-      {/* Team */}
-      <section id="team" className="py-20 md:py-32 bg-background-secondary">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              Meet the <span className="gradient-text-accent">Team</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              A dedicated group of volunteers passionate about education and gaming.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {team.map((member, index) => (
-              <motion.div
-                key={member.name + index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="glass-card p-6 text-center"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center text-white font-bold text-lg">
-                  {member.initials}
-                </div>
-                <h3 className="font-display font-bold">{member.name}</h3>
-                <p className="text-sm text-muted-foreground">{member.role}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Partners */}
-      <section id="partners" className="py-20 md:py-32">
-        <div className="section-container">
-          <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="font-display text-3xl md:text-4xl font-bold mb-4">
-              Our <span className="gradient-text">Partners</span>
-            </h2>
-            <p className="text-muted-foreground max-w-2xl mx-auto">
-              Organizations that help make Block Buddies possible.
-            </p>
-          </motion.div>
-
-          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-            {partners.map((partner, index) => (
-              <motion.div
-                key={partner.name + index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.1 }}
-                className="glass-card p-6 text-center"
-              >
-                <div className="w-16 h-16 mx-auto mb-4 rounded-xl bg-muted flex items-center justify-center">
-                  <Building2 className="w-8 h-8 text-muted-foreground" />
-                </div>
-                <h3 className="font-display font-bold">{partner.name}</h3>
-                <p className="text-sm text-muted-foreground">{partner.type}</p>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
-
       {/* Contact */}
       <section id="contact" className="py-20 md:py-32 bg-background-secondary">
         <div className="section-container">
@@ -261,7 +169,7 @@ const About = () => {
               Get in Touch
             </h2>
             <p className="text-muted-foreground mb-8 max-w-xl mx-auto">
-              Have questions? Want to partner with us? We'd love to hear from you.
+              Have a question about the pilot or want to explore whether it is a fit? Email us and we'll share the current scope.
             </p>
             <a href="mailto:hello@blockbuddies.org">
               <Button variant="hero" size="lg">

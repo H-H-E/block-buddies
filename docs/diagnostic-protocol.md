@@ -1,4 +1,6 @@
-# Diagnostic Protocol (V2)
+# Diagnostic Protocol (V2 - LEGACY, Advanced Pathway Only)
+
+> **STATUS: SUPERSEDED for beginners.** Under the V3 canon ([Product & Pedagogy Canon](./canon/product-canon.md)), matching starts from intake facts (edition, platform, input method, comfort signals, interests) plus human review - not a rigid fluency-archetype diagnostic. This protocol survives only as an optional placement tool for older/advanced learners entering the legacy pathway. Tracks A/B/C are optional interest tags, never permanent identities.
 
 ## Goal
 

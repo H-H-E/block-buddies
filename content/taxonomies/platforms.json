@@ -1,0 +1,47 @@
+{
+  "platforms": [
+    {
+      "id": "windows-pc-touch-mouse",
+      "label": "Windows PC (mouse/keyboard)",
+      "editions": [
+        "bedrock",
+        "java"
+      ]
+    },
+    {
+      "id": "tablet-ios",
+      "label": "iPad/tablet (touch)",
+      "editions": [
+        "bedrock"
+      ]
+    },
+    {
+      "id": "tablet-android",
+      "label": "Android tablet (touch)",
+      "editions": [
+        "bedrock"
+      ]
+    },
+    {
+      "id": "xbox",
+      "label": "Xbox console (controller)",
+      "editions": [
+        "bedrock"
+      ]
+    },
+    {
+      "id": "playstation",
+      "label": "PlayStation console (controller)",
+      "editions": [
+        "bedrock"
+      ]
+    },
+    {
+      "id": "switch",
+      "label": "Nintendo Switch (controller)",
+      "editions": [
+        "bedrock"
+      ]
+    }
+  ]
+}

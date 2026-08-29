@@ -1,0 +1,255 @@
+{
+  "id": "tiny-tutorial-remix",
+  "revision": 1,
+  "status": "needs-review",
+  "title": "Follow a Tiny Minecraft Tutorial and Remix One Choice",
+  "shortChildTitle": "Try It My Way",
+  "ageBand": {
+    "min": 6,
+    "max": 8,
+    "target": 7
+  },
+  "durationMinutes": {
+    "min": 30,
+    "max": 45
+  },
+  "outcome": "Child follows one very short tutorial segment (video OR mentor demo) to make a small thing - like a tiny house or a flower garden - then changes at least one part to make it their own.",
+  "optionalConnections": [
+    "sequencing: first/next/last"
+  ],
+  "editions": [
+    "bedrock"
+  ],
+  "platforms": [
+    "windows-pc-touch-mouse",
+    "tablet-ios",
+    "tablet-android",
+    "xbox",
+    "playstation",
+    "switch"
+  ],
+  "inputMethods": [
+    "touch",
+    "controller",
+    "keyboard-mouse"
+  ],
+  "testedVersions": [
+    "1.21.x (Bedrock) - verify current patch and video segment before session"
+  ],
+  "deliveryModes": [
+    "solo_guided",
+    "shared_world"
+  ],
+  "multiplayerRequirements": "Solo or adult-owned Realm; video played on mentor's shared screen only (never the child's device unsupervised).",
+  "knownIncompatibilities": [
+    "Many YouTube tutorials are Java-only - only use segments verified for Bedrock",
+    "Touch vs controller placement differs; adapt instructions per intake"
+  ],
+  "prerequisites": [
+    "join-move-look-talk",
+    "hotbar-inventory-tools"
+  ],
+  "interests": [
+    "building-creative",
+    "storytelling-roleplay",
+    "customizing-looking-cool"
+  ],
+  "setup": {
+    "guardianSteps": [
+      "Standard device + call setup",
+      "No YouTube app needed on child's device"
+    ],
+    "mentorPreflight": [
+      "Pick ONE approved segment from content/media/videos.json (or plan a live demo instead)",
+      "Pre-watch the exact segment; confirm Bedrock controls match",
+      "Have fallback demo ready in case video unavailable"
+    ]
+  },
+  "flow": [
+    {
+      "phase": "Reconnect",
+      "minutes": "3",
+      "mentorMoves": [
+        "Ask about their hotbar picks last time"
+      ],
+      "childAction": "Shares"
+    },
+    {
+      "phase": "Choose goal",
+      "minutes": "2",
+      "mentorMoves": [
+        "Offer: tiny house, flower garden, or mini bridge"
+      ],
+      "childAction": "Picks build"
+    },
+    {
+      "phase": "Quick win",
+      "minutes": "5",
+      "mentorMoves": [
+        "Guide placing the first block of their chosen build"
+      ],
+      "childAction": "Places first block"
+    },
+    {
+      "phase": "Watch or model",
+      "minutes": "4",
+      "mentorMoves": [
+        "Play ONE short segment (2-5 min max) OR demonstrate the first two steps yourself",
+        "Pause and ask 'What do you think comes next?'"
+      ],
+      "childAction": "Watches and predicts"
+    },
+    {
+      "phase": "Predict and try",
+      "minutes": "10",
+      "mentorMoves": [
+        "Let them attempt each step after watching",
+        "Give one hint at a time only when stuck"
+      ],
+      "childAction": "Builds following the steps they saw"
+    },
+    {
+      "phase": "Remix",
+      "minutes": "8",
+      "mentorMoves": [
+        "Ask 'What would YOU change?' - door color, window spot, extra tower..."
+      ],
+      "childAction": "Changes at least one meaningful feature"
+    },
+    {
+      "phase": "Show and celebrate",
+      "minutes": "5",
+      "mentorMoves": [
+        "Screenshot",
+        "Tour: ask them to show each part and say what they changed"
+      ],
+      "childAction": "Tours their build aloud"
+    },
+    {
+      "phase": "Choose next",
+      "minutes": "3",
+      "mentorMoves": [
+        "Record what they want next time"
+      ],
+      "childAction": "Chooses"
+    }
+  ],
+  "mentorScript": {
+    "openingLines": [
+      "Today you're going to follow a build AND then make it yours.",
+      "Pick: tiny house, flower garden, or mini bridge?"
+    ],
+    "keyPhrases": [
+      "Watch this little bit, then you try.",
+      "What do you think happens next?",
+      "Now change ONE thing to make it yours!"
+    ]
+  },
+  "learnerCues": [
+    {
+      "cueText": "Eyes on the screen!",
+      "action": "Watch segment",
+      "iconHint": "eyes icon"
+    },
+    {
+      "cueText": "Your turn - try that step!",
+      "action": "Copy the step",
+      "iconHint": "hand-raised icon"
+    },
+    {
+      "cueText": "Change something to be YOURS",
+      "action": "Remix one feature",
+      "iconHint": "sparkle/wand icon"
+    },
+    {
+      "cueText": "Show me your favorite part!",
+      "action": "Point and tell",
+      "iconHint": "star icon"
+    }
+  ],
+  "mediaReferences": [],
+  "sharedRoles": {
+    "childRole": "Builder - does every block themselves",
+    "mentorRole": "Coach - pauses video, asks questions, gives single hints",
+    "rotationNotes": "Small groups: builds can be side-by-side individual versions of the same tutorial"
+  },
+  "childChoicePoints": [
+    {
+      "prompt": "What are we building today?",
+      "options": [
+        "Tiny house",
+        "Flower garden",
+        "Mini bridge"
+      ]
+    },
+    {
+      "prompt": "What will you change to make it YOURS?",
+      "options": [
+        "Color of a part",
+        "Add something new",
+        "Move something"
+      ]
+    },
+    {
+      "prompt": "Video or should I show you?",
+      "options": [
+        "Watch the clip",
+        "You show me"
+      ]
+    }
+  ],
+  "commonProblems": [
+    {
+      "problem": "Video controls differ from child's screen",
+      "fix": "Mentor plays video on THEIR machine via screen share; child never handles YouTube directly"
+    },
+    {
+      "problem": "Tutorial moves too fast",
+      "fix": "Pause constantly; one step at a time; skip ahead freely - the tutorial serves the child"
+    },
+    {
+      "problem": "Build collapses or breaks",
+      "fix": "Normal! Creative mode = no damage; celebrate trying fixes; reset path below if frustration spikes"
+    }
+  ],
+  "hintLadder": [
+    "What did the video do right there? Try that!",
+    "Look at where they placed the first block - same spot on your screen?",
+    "Want me to show just that one step?"
+  ],
+  "resetPath": "In creative mode, broken builds cost nothing. Child can either fix the wobbly part (great debugging practice) or start fresh with mentor pre-placing a floor. No shame either way.",
+  "soloFallback": "If video fails entirely: mentor demonstrates the whole build live while narrating. Same remix step applies. If multiplayer fails: solo-guided works identically.",
+  "evidenceOptions": [
+    "screenshot",
+    "spoken-description",
+    "pointing",
+    "demonstration"
+  ],
+  "accessibilityOptions": [
+    "Captions ON during any video (mentor reads aloud if needed)",
+    "Live demo alternative always available instead of video",
+    "One-step-at-a-time pacing; no timer pressure"
+  ],
+  "safetyRequirements": [
+    "Private world or adult-owned Realm; no public servers",
+    "Video shown via mentor screen-share ONLY - never child browsing YouTube",
+    "Approved segments from videos.json only; no autoplay/comments",
+    "No DMs outside guardian-visible channels"
+  ],
+  "parentSummaryTemplate": "Today {child} followed a short tutorial to build {buildType} and then made it their own by changing {remixDetail}. Ask them what they changed!",
+  "nextModules": [
+    "dream-house-build",
+    "animal-farm-started",
+    "story-stage-build"
+  ],
+  "review": {
+    "playtested": false,
+    "lastReviewed": "2026-08-23",
+    "notes": "Needs an actual approved video segment added to videos.json with verified timestamps, OR mark as demonstration-only. Needs playtest."
+  },
+  "worldSpecification": {
+    "mode": "flat-creative",
+    "description": "'BB Starter Plains' continued; clear flat area near spawn reserved for tutorial builds."
+  },
+  "$schema": "./module.schema.json"
+}
