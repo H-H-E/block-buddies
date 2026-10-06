@@ -91,7 +91,9 @@ export const pilotModules: BBModule[] = [
   storyStageBuild,
 ] as BBModule[];
 
-export const foundationModules = pilotModules.filter((m) => m.prerequisites.length === 0 || m.id === "tiny-tutorial-remix");
+// Prerequisite-free does not mean "foundation": inventory builds on movement.
+const foundationIds = new Set(["join-move-look-talk", "hotbar-inventory-tools", "tiny-tutorial-remix"]);
+export const foundationModules = pilotModules.filter((m) => foundationIds.has(m.id));
 
 export function getModule(id: string): BBModule | undefined {
   return pilotModules.find((m) => m.id === id);

@@ -1,0 +1,86 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "block-buddies/tutorial.schema.json",
+  "title": "Block Buddies Bedrock capture recipe v1",
+  "type": "object",
+  "additionalProperties": false,
+  "required": ["$schema", "id", "revision", "moduleId", "status", "title", "skills", "profile", "studio", "steps", "review"],
+  "properties": {
+    "$schema": {"type": "string", "minLength": 1},
+    "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "revision": {"type": "integer", "minimum": 1},
+    "moduleId": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+    "status": {"enum": ["draft", "needs-capture", "needs-review"]},
+    "title": {"type": "string", "minLength": 1},
+    "skills": {"type": "array", "items": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"}, "minItems": 1, "uniqueItems": true},
+    "profile": {
+      "type": "object", "additionalProperties": false,
+      "required": ["edition", "platform", "input", "version", "width", "height", "fov", "guiScale", "uiProfile", "language", "settingsSha256"],
+      "properties": {
+        "edition": {"const": "bedrock"},
+        "platform": {"const": "windows-pc-touch-mouse"},
+        "input": {"const": "keyboard-mouse"},
+        "version": {"anyOf": [{"type": "string", "pattern": "^\\d+\\.\\d+\\.\\d+(?:\\.\\d+)?$"}, {"type": "null"}]},
+        "width": {"type": "integer", "minimum": 640, "maximum": 7680},
+        "height": {"type": "integer", "minimum": 360, "maximum": 4320},
+        "fov": {"type": "number", "minimum": 30, "maximum": 110},
+        "guiScale": {"anyOf": [{"type": "integer", "minimum": -2, "maximum": 10}, {"type": "null"}]},
+        "uiProfile": {"const": "classic"},
+        "language": {"const": "en_US"},
+        "settingsSha256": {"anyOf": [{"type": "string", "pattern": "^[a-f0-9]{64}$"}, {"type": "null"}]}
+      }
+    },
+    "studio": {
+      "type": "object", "additionalProperties": false,
+      "required": ["disposableOnly", "worldName", "seed", "checkpointSha256", "bounds", "hotbar", "preflight"],
+      "properties": {
+        "disposableOnly": {"const": true},
+        "worldName": {"type": "string", "minLength": 1},
+        "seed": {"const": "0"},
+        "checkpointSha256": {"anyOf": [{"type": "string", "pattern": "^[a-f0-9]{64}$"}, {"type": "null"}]},
+        "bounds": {"type": "object", "additionalProperties": false, "required": ["min", "max"], "properties": {"min": {"const": [0, 63, 0]}, "max": {"const": [12, 74, 12]}}},
+        "hotbar": {"const": ["minecraft:stone", "minecraft:glowstone"]},
+        "preflight": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 3}
+      }
+    },
+    "steps": {
+      "type": "array", "minItems": 1, "maxItems": 12,
+      "items": {
+        "type": "object", "additionalProperties": false,
+        "required": ["id", "instruction", "action", "mentorNote", "hints", "recovery", "completion", "frame"],
+        "properties": {
+          "id": {"type": "string", "pattern": "^[a-z0-9]+(?:-[a-z0-9]+)*$"},
+          "instruction": {"type": "string", "minLength": 1, "maxLength": 100},
+          "action": {"enum": ["select-slot", "place-block", "look"]},
+          "mentorNote": {"type": "string", "minLength": 1},
+          "hints": {"type": "array", "items": {"type": "string", "minLength": 1}, "minItems": 3, "maxItems": 5},
+          "recovery": {"type": "string", "minLength": 1},
+          "completion": {"type": "string", "minLength": 1},
+          "frame": {
+            "type": "object", "additionalProperties": false,
+            "required": ["blocks", "position", "lookAt", "selectedSlot", "screen", "moment", "target"],
+            "properties": {
+              "blocks": {"type": "array", "maxItems": 16, "items": {"type": "object", "additionalProperties": false, "required": ["at", "item"], "properties": {"at": {"type": "array", "items": {"type": "integer"}, "minItems": 3, "maxItems": 3}, "item": {"enum": ["minecraft:stone", "minecraft:glowstone"]}}}},
+              "position": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+              "lookAt": {"type": "array", "items": {"type": "number"}, "minItems": 3, "maxItems": 3},
+              "selectedSlot": {"type": "integer", "minimum": 0, "maximum": 1},
+              "screen": {"const": "hud"},
+              "moment": {"const": "after"},
+              "target": {"oneOf": [
+                {"type": "object", "additionalProperties": false, "required": ["kind", "slot"], "properties": {"kind": {"const": "hotbar-slot"}, "slot": {"type": "integer", "minimum": 0, "maximum": 8}}},
+                {"type": "object", "additionalProperties": false, "required": ["kind", "at"], "properties": {"kind": {"const": "block"}, "at": {"type": "array", "items": {"type": "integer"}, "minItems": 3, "maxItems": 3}}}
+              ]}
+            }
+          }
+        }
+      }
+    },
+    "review": {
+      "type": "object", "additionalProperties": false, "required": ["technicalVerified", "reviewer"],
+      "properties": {
+        "technicalVerified": {"type": "boolean"},
+        "reviewer": {"anyOf": [{"type": "string", "minLength": 1}, {"type": "null"}]}
+      }
+    }
+  }
+}

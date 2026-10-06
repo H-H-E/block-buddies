@@ -1,28 +1,27 @@
 <!-- GENERATED from content/modules/tiny-tutorial-remix.json - edit the canonical module, not this file. -->
-# Try It My Way!
+# Help Your Buddy Find You!
 
-Child follows one very short tutorial segment (video OR mentor demo) to make a small thing - like a tiny house or a flower garden - then changes at least one part to make it their own.
+Make a marker so your buddy can find your meeting spot. Follow the tiny example, then change its shape, place, or path.
 
 ## Your Steps
 
-1. Eyes on the screen! _(then: Watch segment)_
-2. Your turn - try that step! _(then: Copy the step)_
-3. Change something to be YOURS _(then: Remix one feature)_
-4. Show me your favorite part! _(then: Point and tell)_
+1. Choose the stone block. _(then: Pick a block)_
+2. Place one block on the ground. _(then: Mark your spot)_
+3. Place a block on top. _(then: Stack a block)_
+4. Choose the glowing block. _(then: Switch blocks)_
+5. Place the glowing block on top. _(then: Add the top)_
+6. Look back at your marker. _(then: Find your marker)_
 
 ## Fun Choices
 
-- What are we building today?
-  - Tiny house
-  - Flower garden
-  - Mini bridge
-- What will you change to make it YOURS?
-  - Color of a part
-  - Add something new
-  - Move something
-- Video or should I show you?
-  - Watch the clip
-  - You show me
+- Where should your buddy meet you?
+  - Outside my base
+  - At a new meeting spot
+  - At another safe place I choose
+- What would make your marker easier to find?
+  - Change its shape
+  - Move it somewhere clearer
+  - Add a short path toward it
 
 Show your grown-up what you made today!
 

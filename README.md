@@ -1,43 +1,39 @@
 # Block Buddies
 
-> Teen mentors (14-18) help children (starting around age 7) feel at home in Minecraft through warm, safe, one-to-one mentorship.
+> Teen mentors (14-18) help children (starting around age 7) feel at home in Minecraft through safe, one-to-one mentorship.
 
-## What Block Buddies Is
+## What Block Buddies is
 
-Block Buddies is a cross-age Minecraft mentorship program. A teen mentor helps a younger child:
+Block Buddies is a cross-age Minecraft mentorship program. A teen mentor helps a younger child get comfortable playing, follow short guided tutorials, build and experiment, pursue their interests, and gradually need less help. The child is the primary maker and decision-maker.
 
-- get comfortable playing Minecraft;
-- follow short guided tutorials;
-- watch carefully selected parts of approved videos;
-- build, play, experiment, and solve problems together;
-- pursue projects based on the child's interests;
-- gradually follow tutorials and finish projects more independently;
-- feel capable, socially connected, and taken seriously.
+The central value is the relationship with a relatable older player. Computer science, mathematics, design, and systems thinking may appear naturally during play as optional connections, never as the governing purpose. This is not a coding course disguised as Minecraft.
 
-The central value is **the relationship with a relatable older Minecraft player**. Computer science, math, design, and systems thinking may appear naturally during play - as optional connections, never as the governing purpose. This is not a coding course disguised as Minecraft.
+## Canon and source of truth
 
-## Canon & Source of Truth
+- [Product and Pedagogy Canon V3](./docs/canon/product-canon.md)
+- [Source of Truth Mapping](./docs/pedagogy/source-of-truth-mapping.md)
+- Canonical pilot content: `content/` (schemas, modules, taxonomies, media, and tutorial recipes)
 
-- [Product & Pedagogy Canon V3](./docs/canon/product-canon.md) - authoritative product identity, priorities, pedagogy
-- [Source of Truth Mapping](./docs/pedagogy/source-of-truth-mapping.md) - which file owns each decision
-- Canonical pilot content lives in `content/` (schemas, modules, taxonomies, media)
+## Beginner pilot: Bedrock-first
 
-## Beginner Pilot (Bedrock-First)
+Six structured module drafts cover three common foundations and interest-led projects in building, animals, and storytelling. These are not six finished, human-playtested tutorials. Check each module's asset, platform, and review status before use. Solo-guided and private shared-world modes are intended delivery options; device/input support still needs actual verification.
 
-Six complete modules for children around age seven: three common foundations, then three interest-led shared projects (building/creative, survival/animals, storytelling). Every module supports solo-guided and private shared-world modes, plus an immediate fallback when multiplayer fails.
+## Tutorial production
 
-## Advanced Pathway (Legacy Material)
+The first reference rebuild is `tiny-tutorial-remix`, using a six-step meetup-marker example. The compiler validates content and emits a draft learner sheet, mentor sheet, capture plan, and independent studio command recipes. It can package actual reviewed PNG captures with annotations. It does not launch Minecraft or take screenshots.
 
-The previous diagnostic-first, Java/modpack/server curriculum (Stages 1-3, Visualist/Mechanist/Operator tracks) is preserved under `docs/runbooks/stage-*` and related docs as an **optional advanced pathway for older learners**. It no longer defines the beginner product or public messaging.
+See [Tutorial authoring and capture](./docs/tutorials/README.md) and the [curriculum audit](./docs/tutorials/curriculum-audit-2026-10-06.md). Exact installed-version settings, actual captures, and a human playtest remain required before the reference is ready for learner delivery.
 
-## Key Documents
+## Advanced pathway
+
+The previous diagnostic-first Java/modpack/server curriculum (Stages 1-3 and Visualist/Mechanist/Operator tracks) is preserved under `docs/runbooks/stage-*` and related docs as optional advanced material. It does not define the beginner product or public messaging.
+
+## Key documents
 
 - [Safety Guidelines](./docs/safety-guidelines.md)
 - [Mentor Training](./docs/mentor-training.md)
 - [Curriculum Matrix](./docs/curriculum.md)
 - [Pilot Coordinator Runbook](./docs/operations/pilot-coordinator-runbook.md)
-- [Contributor Decision Tree](./docs/pedagogy/contributor-decision-tree.md)
+- [Contribution guidance](./CONTRIBUTING.md)
 
-## Public Messaging Principle
-
-Public pages use family-friendly framing: Minecraft mentorship, relationship-first, confidence through making. Ages are always "learners starting around age 7" and "mentors 14-18". No fake testimonials or unsupported claims.
+Public messaging should say Minecraft mentorship, relationship-first, learner agency, and independence. Do not publish unsupported impact claims or imply unimplemented services.

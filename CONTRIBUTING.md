@@ -1,54 +1,35 @@
 # Contributing to Block Buddies
 
-## Contribution Principles
+## Contribution principles
 
-1. Mission first
-2. Safety always
-3. Pedagogy consistency
-4. Evidence over opinion
-5. Human review for sensitive content
+Mission first. Safety always. Preserve the mentor relationship and the learner as maker. Prefer one usable, reviewed slice over speculative curriculum expansion.
 
-## Canonical Source Requirement
+## Canonical sources
 
-All pedagogy changes must align with:
-- [Pedagogy Engine V2](./docs/pedagogy/engine-v2.md)
-- [Session Template](./docs/pedagogy/session-template.md)
-- [Mastery Gate Rubric](./docs/pedagogy/mastery-gate-rubric.md)
-- [Contributor Decision Tree](./docs/pedagogy/contributor-decision-tree.md)
-- [Source of Truth Mapping](./docs/pedagogy/source-of-truth-mapping.md)
+For the beginner product, follow this order:
 
-## Contribution Flow
+1. [Product and Pedagogy Canon V3](./docs/canon/product-canon.md).
+2. Machine-readable contracts in `content/schemas/`.
+3. Canonical content in `content/modules/`, `content/media/`, `content/tutorials/`, and `content/taxonomies/`.
+4. Operational policies consistent with the canon.
+5. Derived run-sheets, quest cards, and UI surfaces.
 
-1. Open issue for significant pedagogy/curriculum changes.
-2. Propose change with explicit impact on Do/Explain/Debug gates.
-3. Update affected docs/pages/forms in same PR.
-4. Validate runbooks and links.
+See the [Source of Truth Mapping](./docs/pedagogy/source-of-truth-mapping.md). V2 diagnostic routing, mastery gates, and technical stages are legacy/advanced material. Do/Explain/Debug is not a mandatory beginner assessment or child-facing requirement.
 
-## Quality Gates
+## Contribution flow
 
-### Curriculum Content
-- [ ] Uses required runbook structure and frontmatter
-- [ ] Includes early win, side quests, fallback path
-- [ ] Includes Do/Explain/Debug gates
-- [ ] Uses controlled friction timing and hard cap rules
+Describe the observed problem and proposed change in an issue or pull request. Cite the source paths and distinguish observed evidence from design assumptions. Update affected canonical content and derived surfaces together. Preserve existing module IDs unless migration is intentional.
 
-### Program Documentation
-- [ ] Reflects personalized pacing policy
-- [ ] Uses consistent external language style
-- [ ] References current canonical docs
+## Quality gates
 
-### Technical Content
-- [ ] Version details and prerequisites are explicit
-- [ ] Troubleshooting paths are actionable
-- [ ] Instructions tested on supported platforms
+Beginner activities must have an authentic Minecraft outcome, meaningful choice, a small early win, short learner actions, mentor support without takeover, a recoverable failure path, natural evidence, and a next-session hook. Planned phase durations must fit the stated session budget; allow room for recovery.
 
-## AI Contribution Policy
+Declare edition, intended platform/input support, and review status honestly. Broad compatibility claims are not tests. A schema-valid module is not a playtested module. No fabricated screenshots, reviews, testimonials, or impact measures.
 
-AI can help draft and organize materials, but humans must review:
-- safety-critical guidance
-- participant-facing promises
-- consent and legal content
+Tutorial recipes must resolve their module/media/skill references. Learner instructions and recipe instructions must agree. Keep studio setup, commands, capture assertions, and review notes out of learner instructions. Never apply destructive studio resets to learner worlds. See [Tutorial authoring](./docs/tutorials/README.md).
 
-## Questions
+Run `npm run check:contracts` and `npm run build` in a complete checkout. For tutorial-only checks, run `npm run validate:tutorials` and `npm run test:tutorials`. Record checks that could not be run. Regenerate affected run-sheets and quest cards with `python scripts/generate-derived.py`.
 
-Open an issue for any ambiguity in pedagogy or curriculum rules.
+## Human review
+
+Humans must review safety-critical guidance, participant-facing promises, consent/legal content, actual Minecraft instructions and captures, and pilot readiness. Never mark content human-playtested until that has occurred. Changes to recording, consent, permissions, or retention policy require explicit adult review, not an inferred implementation decision.
