@@ -1,0 +1,99 @@
+{
+  "$schema": "../../schemas/tutorial.schema.json",
+  "id": "meetup-marker",
+  "revision": 1,
+  "moduleId": "tiny-tutorial-remix",
+  "status": "needs-capture",
+  "title": "Make a marker your buddy can find",
+  "skills": ["tutorial-following", "hotbar-inventory", "placing-breaking", "world-navigation"],
+  "profile": {
+    "edition": "bedrock",
+    "platform": "windows-pc-touch-mouse",
+    "input": "keyboard-mouse",
+    "version": null,
+    "width": 1280,
+    "height": 720,
+    "fov": 70,
+    "guiScale": null,
+    "uiProfile": "classic",
+    "language": "en_US",
+    "settingsSha256": null
+  },
+  "studio": {
+    "disposableOnly": true,
+    "worldName": "BB Studio - disposable capture copy",
+    "seed": "0",
+    "checkpointSha256": null,
+    "bounds": {"min": [0, 63, 0], "max": [12, 74, 12]},
+    "hotbar": ["minecraft:stone", "minecraft:glowstone"],
+    "preflight": [
+      "Adult operator uses a new offline studio world, never a learner world, Realm, or shared server.",
+      "Create and hash the empty-world checkpoint; record the installed version and full client settings before capture.",
+      "Creative mode, peaceful difficulty, no entities, no resource packs or add-ons, no chat/nameplates/personal information in frame.",
+      "Confirm the two hotbar selection bindings and placement control on this exact client. Capture other inputs as separate profiles; never relabel Java screenshots."
+    ]
+  },
+  "steps": [
+    {
+      "id": "pick-stone",
+      "instruction": "Choose the stone block.",
+      "action": "select-slot",
+      "mentorNote": "Name the selected slot only if needed. The learner selects it; do not touch their controls.",
+      "hints": ["What are you trying to change?", "Point to the matching part of the picture.", "Show one action in your own demo area, then let the learner do it."],
+      "recovery": "Pause. Keep the learner build. Help undo only the last misplaced block, or reselect the intended hotbar slot. Never restore the studio fixture over learner work.",
+      "completion": "Learner can select their chosen building block.",
+      "frame": {"blocks": [], "position": [4.5, 64, 0.5], "lookAt": [4.5, 65.5, 4.5], "selectedSlot": 0, "screen": "hud", "moment": "after", "target": {"kind": "hotbar-slot", "slot": 0}}
+    },
+    {
+      "id": "place-base",
+      "instruction": "Place one block on the ground.",
+      "action": "place-block",
+      "mentorNote": "Let the learner choose a real meeting spot first. The fixed coordinates belong only to the screenshot example.",
+      "hints": ["What are you trying to change?", "Point to the matching part of the picture.", "Show one action in your own demo area, then let the learner do it."],
+      "recovery": "Pause. Keep the learner build. Help undo only the last misplaced block, or reselect the intended hotbar slot. Never restore the studio fixture over learner work.",
+      "completion": "One block marks the learner-chosen meeting spot.",
+      "frame": {"blocks": [{"at": [4, 64, 4], "item": "minecraft:stone"}], "position": [4.5, 64, 0.5], "lookAt": [4.5, 65.5, 4.5], "selectedSlot": 0, "screen": "hud", "moment": "after", "target": {"kind": "block", "at": [4, 64, 4]}}
+    },
+    {
+      "id": "stack-stone",
+      "instruction": "Place a block on top.",
+      "action": "place-block",
+      "mentorNote": "Point at the top face if the block lands beside the first. A different chosen shape is not an error.",
+      "hints": ["What are you trying to change?", "Point to the matching part of the picture.", "Show one action in your own demo area, then let the learner do it."],
+      "recovery": "Pause. Keep the learner build. Help undo only the last misplaced block, or reselect the intended hotbar slot. Never restore the studio fixture over learner work.",
+      "completion": "Learner stacks or deliberately chooses another visible shape.",
+      "frame": {"blocks": [{"at": [4, 64, 4], "item": "minecraft:stone"}, {"at": [4, 65, 4], "item": "minecraft:stone"}], "position": [4.5, 64, 0.5], "lookAt": [4.5, 65.5, 4.5], "selectedSlot": 0, "screen": "hud", "moment": "after", "target": {"kind": "block", "at": [4, 65, 4]}}
+    },
+    {
+      "id": "pick-light",
+      "instruction": "Choose the glowing block.",
+      "action": "select-slot",
+      "mentorNote": "Model switching slots once only. Glowstone is a visible decoration here, not a beacon mechanic.",
+      "hints": ["What are you trying to change?", "Point to the matching part of the picture.", "Show one action in your own demo area, then let the learner do it."],
+      "recovery": "Pause. Keep the learner build. Help undo only the last misplaced block, or reselect the intended hotbar slot. Never restore the studio fixture over learner work.",
+      "completion": "Learner switches material without the mentor selecting it.",
+      "frame": {"blocks": [{"at": [4, 64, 4], "item": "minecraft:stone"}, {"at": [4, 65, 4], "item": "minecraft:stone"}], "position": [4.5, 64, 0.5], "lookAt": [4.5, 65.5, 4.5], "selectedSlot": 1, "screen": "hud", "moment": "after", "target": {"kind": "hotbar-slot", "slot": 1}}
+    },
+    {
+      "id": "cap-marker",
+      "instruction": "Place the glowing block on top.",
+      "action": "place-block",
+      "mentorNote": "Let the learner place the interesting final block. The sample shows one possible marker, not a required design.",
+      "hints": ["What are you trying to change?", "Point to the matching part of the picture.", "Show one action in your own demo area, then let the learner do it."],
+      "recovery": "Pause. Keep the learner build. Help undo only the last misplaced block, or reselect the intended hotbar slot. Never restore the studio fixture over learner work.",
+      "completion": "A recognisable three-block example is complete.",
+      "frame": {"blocks": [{"at": [4, 64, 4], "item": "minecraft:stone"}, {"at": [4, 65, 4], "item": "minecraft:stone"}, {"at": [4, 66, 4], "item": "minecraft:glowstone"}], "position": [4.5, 64, 0.5], "lookAt": [4.5, 65.5, 4.5], "selectedSlot": 1, "screen": "hud", "moment": "after", "target": {"kind": "block", "at": [4, 66, 4]}}
+    },
+    {
+      "id": "spot-marker",
+      "instruction": "Look back at your marker.",
+      "action": "look",
+      "mentorNote": "In shared play, ask whether you can find their spot from spawn. In solo-guided play, ask them to point it out from farther away.",
+      "hints": ["What are you trying to change?", "Point to the matching part of the picture.", "Show one action in your own demo area, then let the learner do it."],
+      "recovery": "Pause. Keep the learner build. Help undo only the last misplaced block, or reselect the intended hotbar slot. Never restore the studio fixture over learner work.",
+      "completion": "The learner recognises their landmark and chooses what to change.",
+      "frame": {"blocks": [{"at": [4, 64, 4], "item": "minecraft:stone"}, {"at": [4, 65, 4], "item": "minecraft:stone"}, {"at": [4, 66, 4], "item": "minecraft:glowstone"}], "position": [10.5, 64, 4.5], "lookAt": [4.5, 65.5, 4.5], "selectedSlot": 1, "screen": "hud", "moment": "after", "target": {"kind": "block", "at": [4, 66, 4]}}
+    }
+  ],
+  "review": {"technicalVerified": false, "reviewer": null}
+}

@@ -1,8 +1,8 @@
 <!-- GENERATED from content/modules/tiny-tutorial-remix.json - edit the canonical module, not this file. -->
 
-# Mentor Run-Sheet: Follow a Tiny Minecraft Tutorial and Remix One Choice
+# Mentor Run-Sheet: Follow a Tiny Tutorial: Make a Meetup Marker
 
-**Module:** `tiny-tutorial-remix` (rev 1, status: needs-review)  
+**Module:** `tiny-tutorial-remix` (rev 2, status: needs-assets)  
 **Ages:** 6-8 (target ~7)  
 **Duration:** 30-45 min  
 **Edition:** Bedrock | **Input:** touch, controller, keyboard-mouse  
@@ -11,92 +11,98 @@
 ## Preparation
 
 ### Guardian setup
-- Standard device + call setup
-- No YouTube app needed on child's device
+- Sign in and confirm the approved call and learner world work before the session.
+- Keep the previous build saved; the screenshot studio is a separate adult-only world.
 
 ### Mentor preflight
-- Pick ONE approved segment from content/media/videos.json (or plan a live demo instead)
-- Pre-watch the exact segment; confirm Bedrock controls match
-- Have fallback demo ready in case video unavailable
+- Read the exact six-action demo recipe: content/tutorials/bedrock/meetup-marker.json.
+- Confirm placement and hotbar controls on the learner input method before the session. Do not claim the draft screenshots are ready.
+- Keep two familiar materials available, plus a learner-selected alternative. A bright decorative cap is optional.
+- Locate the previous build and two safe nearby marker sites. Keep the learner world in creative mode; do not run studio reset commands there.
+- The core flow is 35 minutes; use the remaining time for recovery or play. At 30 minutes, stop after a meaningful result and preserve the next idea.
 
 ### World spec (flat-creative)
-'BB Starter Plains' continued; clear flat area near spawn reserved for tutorial builds.
+Continue the learner saved world near a place they care about. Keep two safe marker sites accessible. Exact coordinates, camera poses, and destructive resets in the capture recipe apply only to BB Studio, never to the learner build.
 
 ## Quick Win
-Places first block
+Places the first block at their chosen spot.
 
 ## Session Flow
 
 | Phase | Min | You do | Child does |
 |---|---|---|---|
-| Reconnect | 3 | Ask about their hotbar picks last time | Shares |
-| Choose goal | 2 | Offer: tiny house, flower garden, or mini bridge | Picks build |
-| Quick win | 5 | Guide placing the first block of their chosen build | Places first block |
-| Watch or model | 4 | Play ONE short segment (2-5 min max) OR demonstrate the first two steps yourself; Pause and ask 'What do you think comes next?' | Watches and predicts |
-| Predict and try | 10 | Let them attempt each step after watching; Give one hint at a time only when stuck | Builds following the steps they saw |
-| Remix | 8 | Ask 'What would YOU change?' - door color, window spot, extra tower... | Changes at least one meaningful feature |
-| Show and celebrate | 5 | Screenshot; Tour: ask them to show each part and say what they changed | Tours their build aloud |
-| Choose next | 3 | Record what they want next time | Chooses |
+| Reconnect | 3 | Ask what they made last time and which place they want a buddy to find. | Shows or points to a previous creation. |
+| Choose goal | 2 | Offer a marker outside their base or beside a meeting place; accept another safe location. | Chooses the location and purpose. |
+| Quick win | 3 | Help select one familiar block only if needed. | Places the first block at their chosen spot. |
+| Watch or model | 1 | Show only the next action for 10-30 seconds, then stop. Use the six meetup-marker steps; no unapproved video. | Watches one action, not the complete build. |
+| Predict and try | 9 | Alternate a single picture or tiny demo with the learner trying it.; Use the six-step recipe in content/tutorials/bedrock/meetup-marker.json. | Selects a block, places it, stacks another, switches material, caps the marker, and looks back. |
+| Build together | 7 | Ask where you should stand to test whether the marker is easy to find.; In solo-guided play, ask the learner to show the marker from a different nearby spot. | Tests whether their marker helps locate the meeting place. |
+| Remix | 5 | Offer a taller silhouette, a different location, or a short path pointing toward the destination.; Build only a supporting part the learner assigns. Do not correct aesthetic differences. | Changes the marker so it works for their chosen place. |
+| Show and celebrate | 3 | Let them show their favourite detail; capture a screenshot only with the required consent. | Shows or points to the result; spoken explanation is optional. |
+| Choose next | 2 | Record what they want to make nearby next, the chosen location, and one useful support note. Keep logging under three minutes. | Chooses a next idea or asks to continue this project. |
 
 ## Script Starters
 
-> "Today you're going to follow a build AND then make it yours."
-> "Pick: tiny house, flower garden, or mini bridge?"
+> "Where should we meet in your world?"
+> "Let us make a marker so I can find the place you pick."
 
 **Key phrases:**
-- "Watch this little bit, then you try."
-- "What do you think happens next?"
-- "Now change ONE thing to make it yours!"
+- "Your spot, your design."
+- "Look at this one action, then you try."
+- "Can I find it from here?"
+- "Would you change the shape, the place, or the way to it?"
 
 ## Shared Roles
 
-- **Child (Builder - does every block themselves):** primary maker and decision-maker
-- **Mentor (Coach - pauses video, asks questions, gives single hints):** support only
-- **Rotation:** Small groups: builds can be side-by-side individual versions of the same tutorial
+- **Child (Maker and location chooser - owns the marker and every interesting placement):** primary maker and decision-maker
+- **Mentor (Visitor and helper - models one action in a separate demo area, then follows the learner directions):** support only
+- **Rotation:** The reference slice is one-to-one. Group rotation is not a requirement.
 
 ## Choice Points
 
-- **What are we building today?** -> Tiny house / Flower garden / Mini bridge
-- **What will you change to make it YOURS?** -> Color of a part / Add something new / Move something
-- **Video or should I show you?** -> Watch the clip / You show me
+- **Where should your buddy meet you?** -> Outside my base / At a new meeting spot / At another safe place I choose
+- **What would make your marker easier to find?** -> Change its shape / Move it somewhere clearer / Add a short path toward it
 
 ## Hint Ladder (one at a time!)
 
-1. "What did the video do right there? Try that!"
-2. "Look at where they placed the first block - same spot on your screen?"
-3. "Want me to show just that one step?"
+1. "What are you trying to make or change?"
+2. "Point to the matching block or highlighted hotbar slot."
+3. "Give one concrete cue: the top face, or the next slot."
+4. "Demonstrate that one action in a separate demo area."
+5. "With permission, resolve only the blocking mechanical issue; the learner places the meaningful block."
 
 ## Common Problems
 
 | Problem | Fix |
 |---|---|
-| Video controls differ from child's screen | Mentor plays video on THEIR machine via screen share; child never handles YouTube directly |
-| Tutorial moves too fast | Pause constantly; one step at a time; skip ahead freely - the tutorial serves the child |
-| Build collapses or breaks | Normal! Creative mode = no damage; celebrate trying fixes; reset path below if frustration spikes |
+| A block lands beside the stack. | Point at the intended top face. Let the learner remove only that block or keep the new shape if intentional. |
+| The wrong material is selected. | Point to the highlighted hotbar slot; let the learner switch. Do not refill their whole inventory. |
+| The learner loses the meeting spot. | Walk back from the previous build together. Keep the marker and add a landmark or path instead of deleting progress. |
+| The picture does not match the device. | Stop using that picture. Use a verified device-specific micro-demo, or one familiar block with spoken/pointed guidance. |
 
 ## Recovery / Reset
 
-In creative mode, broken builds cost nothing. Child can either fix the wobbly part (great debugging practice) or start fresh with mentor pre-placing a floor. No shame either way.
+Learner recovery is local: undo the last accidental placement, reselect the slot, or walk back together. Preserve all earlier work. Adult world-backup restore is a last resort after saving the current world and explaining what would be lost. The capture compiler resets ONLY a separate disposable studio world.
 
 ## Solo Fallback (multiplayer fails)
 
-If video fails entirely: mentor demonstrates the whole build live while narrating. Same remix step applies. If multiplayer fails: solo-guided works identically.
+Learner builds in their own private world while the mentor models one action at a time through approved screen-share. Without usable visual media, use the same concrete three-block example in the mentor demo area. Never demonstrate the entire build while the learner waits.
 
 ## Evidence Options
-screenshot, spoken-description, pointing, demonstration
+screenshot, pointing, demonstration, spoken-description
 
 ## Safety Notes
 
-- Private world or adult-owned Realm; no public servers
-- Video shown via mentor screen-share ONLY - never child browsing YouTube
-- Approved segments from videos.json only; no autoplay/comments
-- No DMs outside guardian-visible channels
+- Private world or adult-owned Realm, guardian-visible communication, no private mentor-child messages.
+- No account sharing or arbitrary downloads. Adults own setup and administration.
+- Studio commands must never be executed in learner worlds or shared sessions.
+- Capture no personal names, chat, account details, or session recordings by default.
 
 ## Parent Summary Template
 
-> Today {child} followed a short tutorial to build {buildType} and then made it their own by changing {remixDetail}. Ask them what they changed!
+> Today {child} made a meeting marker at {location} and changed {remixDetail}. Next time they want to {nextIdea}.
 
 ## Next Modules
 `dream-house-build`, `animal-farm-started`, `story-stage-build`
 
-*Review status: **NOT yet human-playtested**. Last reviewed 2026-08-23. Needs an actual approved video segment added to videos.json with verified timestamps, OR mark as demonstration-only. Needs playtest.*
+*Review status: **NOT yet human-playtested**. Last reviewed 2026-10-06. Revision 2 is an authored reference, not a tested lesson. Exact Bedrock version, client settings, screenshots, per-input verification, and a mentor-child playtest remain required.*

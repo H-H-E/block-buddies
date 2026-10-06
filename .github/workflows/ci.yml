@@ -24,7 +24,9 @@ jobs:
           python-version: "3.11"
 
       - name: Install
-        run: npm ci
+        run: |
+          npm ci
+          python -m pip install -r requirements-dev.txt
 
       - name: Lint
         run: npm run lint
