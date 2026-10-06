@@ -1,0 +1,2 @@
+# Existing module and tutorial validation dependency, pinned to the tested version.
+jsonschema==4.26.0
